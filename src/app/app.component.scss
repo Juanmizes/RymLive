@@ -1,0 +1,20 @@
+app-header{
+    position: relative;
+    top: -16px;
+}
+app-main{
+    position: relative;
+    top: -32px;
+}
+app-music-player{
+    color: #FFF;
+    background: rgba(22, 21, 21, 0.705);
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 50px;
+    z-index: 1;
+
+    text-align: center;
+}
