@@ -10,13 +10,15 @@ import { HeaderComponent } from './header/header.component';
 import { MusicPlayerComponent } from './music-player/music-player.component';
 
 import { PlyrModule } from 'ngx-plyr';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     HeaderComponent,
-    MusicPlayerComponent
+    MusicPlayerComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
