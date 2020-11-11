@@ -1,0 +1,117 @@
+#naturalContainer{
+    width: 100%;
+    height: calc(100% - 100px);
+    background-color: #A09F9F;
+}
+
+#container {
+    margin: auto;
+    width: 60%;
+    height: 100%;
+}
+
+#profile-header {
+    background: linear-gradient(115deg, #EC2E26 -20%, transparent 110%);
+    position: relative;
+    width: 100%;
+    height: 30%;
+}
+
+#image-profile {
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+#user-icon {
+    margin-left: 10%;
+    margin-top: 8%;
+    width: 80%;
+    height: 80%;
+}
+
+#info-profile {
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+
+#settings-icon {
+    display: inline-flex;
+    float: right;
+    padding: 10px;
+}
+
+#settings-icon p {
+    margin: 0;
+    margin-top: 3px;
+    font-size: small;
+}
+
+#settings-icon img {
+    padding-left: 10px;
+}
+
+#changeImage {
+    margin-left: 45px;
+    width: 132px;
+}
+
+#userName {
+    padding-top: 20px;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: x-large;
+    font-family: Arial;
+}
+
+#completeName {
+    padding-top: 3px;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: medium;
+    font-family: Arial;
+}
+
+#biography {
+    padding-top: 15px;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: small;
+    font-family: Arial;
+}
+
+#profile-main {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 70%;
+}
+
+#mySongs-header {
+    width: 100%;
+    height: 8%;
+    border-bottom: #A09F9F solid 0.2px;
+}
+
+#profile-main-misCanciones {
+    float: left;
+    padding-top: 15px;
+    padding-left: 30px;
+    font-weight: 500;
+    font-size: medium;
+    font-family: Arial;
+}
+
+#profile-main-miLista {
+    float: left;
+    padding-top: 15px;
+    padding-left: 40px;
+    font-weight: 500;
+    font-size: medium;
+    font-family: Arial;
+}
+
+#mySongs-main {
+    width: 100%;
+    height: 92%;
+}

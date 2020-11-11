@@ -1,0 +1,29 @@
+<app-header></app-header>
+<section id="naturalContainer">
+    <section id="container">
+        <div id="profile-header">
+            <div id="image-profile">
+                <img src="../../assets/img/account_circle-24px.svg" id="user-icon">
+                <input *ngIf="showChangeImage" type="file" name="myImage" accept="image/*" id="changeImage"/>
+            </div>
+            <div id="info-profile">
+                <div id="settings-icon" (click)="changeImage()">
+                    <p>Cambiar foto de perfil</p><img src="../../assets/img/insert_photo-24px.svg" onclick="">
+                </div>
+                
+                <p id="userName">Firesao </p>
+                <p id="completeName">Asdrúbal Sánchez Carnicero</p>
+                <p id="biography">Músico, cantante, compositor... Apasionado de la música RAP, TRAP y HIPHOP. Algún día seré tu cantante favorito.</p>
+            </div>
+        </div>
+        <div id="profile-main">
+            <div id="mySongs-header">
+                <span id="profile-main-misCanciones">Mis Canciones</span>
+                <span id="profile-main-miLista">Mi Lista</span>
+            </div>
+            <div id="mySongs-main">
+    
+            </div>
+        </div>
+    </section>
+</section>

@@ -12,12 +12,15 @@ import { MusicPlayerComponent } from './music-player/music-player.component';
 import { PlyrModule } from 'ngx-plyr';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     HeaderComponent,
-    MusicPlayerComponent
+    MusicPlayerComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
