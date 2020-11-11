@@ -86,6 +86,7 @@
     font-size: 16px;
     line-height: 16px;
     display: block;
+    cursor: pointer;
     text-align: right;
     transition: .3s ease all;
     color: #BBBBBB;
@@ -102,11 +103,11 @@
     opacity: 0;
 }
 
-.popup form .container-inputs {
+.popup div .container-inputs {
     opacity: 0;
 }
 
-.popup form .container-inputs input {
+.popup div .container-inputs input {
     width: 100%;
     margin-bottom: 20px;
     height: 52px;
@@ -115,11 +116,11 @@
     border: 1px solid #BBBBBB;
 }
 
-.popup form .container-inputs input[type=text],  input[type=password]{
+.popup div .container-inputs input[type=text],  input[type=password]{
     padding-left: 16px;
 }
 
-.popup form .btn-submit {
+.popup div .btn-submit {
     padding: 0 20px;
     height: 40px;
     line-height: 40px;
@@ -133,7 +134,7 @@
     transition: .3s ease all;
 }
 
-.popup form .btn-submit:hover {
+.popup div .btn-submit:hover {
     background: rgba(50, 51, 53, 0.9);
 }
 

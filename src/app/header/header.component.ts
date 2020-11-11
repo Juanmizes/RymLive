@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 @Component({
@@ -8,10 +9,34 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup;
+
+  user = "";
+  password = "";
+  
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
     this.popUp();
+    this.loginForm = this.formBuilder.group({
+      Name:[],
+      Password:[]
+    })
+  }
+
+  submit() {
+    this.localLogin();
+  }
+
+  localLogin(){
+    var localUser = "admin";
+    var localPassword = "admin";
+
+    if(this.loginForm.value.Name == localUser && this.loginForm.value.Password == localPassword){
+      console.log("AAAAAAA");
+    }
   }
   
   popUp() {
