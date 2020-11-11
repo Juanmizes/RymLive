@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { MusicPlayerComponent } from './music-player/music-player.component';
 
 import { PlyrModule } from 'ngx-plyr';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PlyrModule } from 'ngx-plyr';
     AppRoutingModule,
     NoopAnimationsModule,
     MatCardModule,
+    MatTooltipModule,
     PlyrModule
   ],
   providers: [],

@@ -6,8 +6,22 @@
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
     </div>
-    <div class="header-right">
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+    <div class="header-right" (click)="popUp()">
+        <span id="btn-open-popup">Login</span>
       </div>
   </div>
+
+<div class="overlay" id="overlay">
+  <div class="popup" id="popup">
+      <a  id="btn-close-popup" class="btn-close-popup"><i class="fas fa-times"></i></a>
+      <h3>Login</h3><br>
+      <form id="popUpFormId">
+          <div class="container-inputs">
+            <input type="text" id="user" name="user" value="" placeholder="Username"><br>
+            <input type="password" id="password" name="password" value="" placeholder="Password"><br>
+          </div>
+          <button type="button" class="btn btn-dark" onclick="submit()">Submit</button>
+      </form>
+  </div>
+</div>
+
