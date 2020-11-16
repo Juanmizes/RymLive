@@ -1,29 +1,165 @@
-<app-header></app-header>
 <section id="naturalContainer">
     <section id="container">
+        <!--USUARIO-->
         <div id="profile-header">
+            <!--IMAGEN DE PERFIL DE USUARIO-->
             <div id="image-profile">
-                <img src="../../assets/img/account_circle-24px.svg" id="user-icon">
-                <input *ngIf="showChangeImage" type="file" name="myImage" accept="image/*" id="changeImage"/>
-            </div>
-            <div id="info-profile">
-                <div id="settings-icon" (click)="changeImage()">
-                    <p>Cambiar foto de perfil</p><img src="../../assets/img/insert_photo-24px.svg" onclick="">
+                <img src="{{imgRute}}{{imageActually}}" id="user-icon">
+                <div *ngIf="settingsAppear" class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
-                
+
+            </div>
+            <!--INFORMACIÓN DEL USUARIO-->
+            <div id="info-profile">
+                <div id="settings-icon" (click)="inSettings()">
+                    <img src="../../assets/img/settings-24px.svg" onclick="">
+                </div>
+
                 <p id="userName">Firesao </p>
                 <p id="completeName">Asdrúbal Sánchez Carnicero</p>
-                <p id="biography">Músico, cantante, compositor... Apasionado de la música RAP, TRAP y HIPHOP. Algún día seré tu cantante favorito.</p>
+
+                <p id="temporal" style="display: none;">Me encanta decir HOLA en alto</p>
+                <div *ngIf="settingsAppear">
+                    <input id="biography-input" type="text" value="{{oldValues}}" placeholder="Write your biography"
+                        maxlength="110">
+                </div>
+                <div *ngIf="!settingsAppear">
+                    <p id="biography">{{oldValues}}</p>
+                </div>
+
+                <button *ngIf="settingsAppear" type="button" class="btn btn-dark btn-sm" id="saveChanges"
+                    (click)="saveChanges()">Guardar</button>
             </div>
         </div>
+
+        <!--FUNCIONALIDADES DEL USUARIO-->
         <div id="profile-main">
+            <!--BARRA DE NAVEGACIÓN-->
             <div id="mySongs-header">
-                <span id="profile-main-misCanciones">Mis Canciones</span>
-                <span id="profile-main-miLista">Mi Lista</span>
+                <div id="profile-main-mySongs" (click)="loadTable()"><span>Mis Canciones</span></div>
+                <div id="profile-main-myList"><span>Mi Lista</span></div>
+                
+                
             </div>
+            <!--FUNCIONALIDAD ESPECIFICADA-->
             <div id="mySongs-main">
-    
+                <table class="table table-striped">
+                    <thead id="tableHeader">     
+                        <tr *ngIf="showTableHeader">
+                            <th scope="col">#</th>
+                            <th scope="col">Song name</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Play</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- <tr>
+                            <th scope="row">1</th>
+                            <td>Pensando en tí</td>
+                            <td>Firesao</td>
+                            <td>03:45</td>
+                            <td>
+                                <div id="musicPlayer-icon" (click)="playMusic()">
+                                    <img src="../../assets/img/play_arrow-24px.svg">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Fuera de estas rejas</td>
+                            <td>Firesao</td>
+                            <td>04:20</td>
+                            <td>
+                                <div id="musicPlayer-icon" (click)="playMusic()">
+                                    <img src="../../assets/img/play_arrow-24px.svg">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Quizás no vuelva</td>
+                            <td>Firesao</td>
+                            <td>03:25</td>
+                            <td>
+                                <div id="musicPlayer-icon" (click)="playMusic()">
+                                    <img src="../../assets/img/play_arrow-24px.svg">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Quizás no vuelva</td>
+                            <td>Firesao</td>
+                            <td>03:25</td>
+                            <td>
+                                <div id="musicPlayer-icon" (click)="playMusic()">
+                                    <img src="../../assets/img/play_arrow-24px.svg">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Quizás no vuelva</td>
+                            <td>Firesao</td>
+                            <td>03:25</td>
+                            <td>
+                                <div id="musicPlayer-icon" (click)="playMusic()">
+                                    <img src="../../assets/img/play_arrow-24px.svg">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Quizás no vuelva</td>
+                            <td>Firesao</td>
+                            <td>03:25</td>
+                            <td>
+                                <div id="musicPlayer-icon" (click)="playMusic()">
+                                    <img src="../../assets/img/play_arrow-24px.svg">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Quizás no vuelva</td>
+                            <td>Firesao</td>
+                            <td>03:25</td>
+                            <td>
+                                <div id="musicPlayer-icon" (click)="playMusic()">
+                                    <img src="../../assets/img/play_arrow-24px.svg">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Quizás no vuelva</td>
+                            <td>Firesao</td>
+                            <td>03:25</td>
+                            <td>
+                                <div id="musicPlayer-icon" (click)="playMusic()">
+                                    <img src="../../assets/img/play_arrow-24px.svg">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Quizás no vuelva</td>
+                            <td>Firesao</td>
+                            <td>03:25</td>
+                            <td>
+                                <div id="musicPlayer-icon" (click)="playMusic()">
+                                    <img src="../../assets/img/play_arrow-24px.svg">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>-->
+                </table> 
+
+                <!-- <button type="button" class="btn btn-outline-dark btn-sm" (click)="playMusic()">Play</button> -->
             </div>
         </div>
     </section>
-</section>
+</section>  

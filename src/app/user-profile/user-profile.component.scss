@@ -1,7 +1,7 @@
 #naturalContainer{
     width: 100%;
-    height: calc(100% - 100px);
-    background-color: #A09F9F;
+    height: calc(100% - 84px);
+    background-color: #c9c9c949;
 }
 
 #container {
@@ -27,7 +27,7 @@
     margin-left: 10%;
     margin-top: 8%;
     width: 80%;
-    height: 80%;
+    height: 78%;
 }
 
 #info-profile {
@@ -39,22 +39,12 @@
 #settings-icon {
     display: inline-flex;
     float: right;
-    padding: 10px;
+    padding: 5px;
 }
 
-#settings-icon p {
-    margin: 0;
-    margin-top: 3px;
-    font-size: small;
-}
-
-#settings-icon img {
-    padding-left: 10px;
-}
-
-#changeImage {
-    margin-left: 45px;
-    width: 132px;
+.custom-file {
+    margin-left: 5px;
+    margin-bottom: 3px !important;
 }
 
 #userName {
@@ -73,12 +63,29 @@
     font-family: Arial;
 }
 
+#biography-input {
+    display: block;
+    width: 70% !important;
+    font-size: 0.8rem !important;
+    margin-left: 18px;
+    margin-top: 20px;
+}
+
 #biography {
     padding-top: 15px;
     padding-left: 20px;
     font-weight: 500;
     font-size: small;
     font-family: Arial;
+}
+
+#saveChanges {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    height: calc(1.5em + .75rem + 2px);
 }
 
 #profile-main {
@@ -93,20 +100,28 @@
     border-bottom: #A09F9F solid 0.2px;
 }
 
-#profile-main-misCanciones {
+#profile-main-mySongs {
     float: left;
-    padding-top: 15px;
-    padding-left: 30px;
-    font-weight: 500;
+    padding: 10px 10px 10px 10px;
+    margin-left: 30px;
+    margin-top: 4px;
+}
+
+#profile-main-mySongs span{
+    font-weight: 600;
     font-size: medium;
     font-family: Arial;
 }
 
-#profile-main-miLista {
+#profile-main-myList {
     float: left;
-    padding-top: 15px;
-    padding-left: 40px;
-    font-weight: 500;
+    padding: 10px 10px 10px 10px;
+    margin-left: 20px;
+    margin-top: 4px;
+}
+
+#profile-main-myList span{
+    font-weight: 600;
     font-size: medium;
     font-family: Arial;
 }
@@ -114,4 +129,20 @@
 #mySongs-main {
     width: 100%;
     height: 92%;
+}
+
+#biography-input {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
