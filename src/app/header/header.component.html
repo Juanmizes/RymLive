@@ -1,5 +1,5 @@
 <div class="header">
-    <a href="#main" class="logo">
+    <a routerLink="/home" class="logo">
         <img src="../../assets/img/rymLive logo.png" alt="rymLiveLogo">
     </a>
     <div class="header-left">
@@ -20,7 +20,7 @@
             <input ([ngModel])="user" formControlName="Name" type="text" id="user" name="user" value="" placeholder="Username"><br>
             <input ([ngModel])="password" formControlName="Password"  type="password" id="password" name="password" value="" placeholder="Password"><br>
           </div>
-          <button type="submit" class="btn btn-dark" (click)="submit()">Submit</button>
+          <button type="submit" class="btn btn-dark" routerLink="/profile" (click)="submit()">Submit</button>
         </div>
   </div>
 </div>

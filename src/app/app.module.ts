@@ -3,17 +3,17 @@ import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
 import { MusicPlayerComponent } from './music-player/music-player.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 import { PlyrModule } from 'ngx-plyr';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,13 +25,13 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     NoopAnimationsModule,
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
     MatTooltipModule,
-    PlyrModule
+    PlyrModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
