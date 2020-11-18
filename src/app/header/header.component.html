@@ -14,13 +14,16 @@
 <div class="overlay" id="overlay">
   <div class="popup" id="popup" [formGroup]="loginForm">
       <a  id="btn-close-popup" class="btn-close-popup"><img src="../../assets/img/close-24px.svg" alt=""></a>
-      <h3>Login</h3><br>
+      <h3 *ngIf="!register">Login</h3><h3 *ngIf="register">Sing In</h3><br>
       <div id="popUpFormId" role="form">
           <div class="container-inputs">
-            <input ([ngModel])="user" formControlName="Name" type="text" id="user" name="user" value="" placeholder="Username"><br>
+            <input *ngIf="register" ([ngModel])="name" formControlName="Name"  type="text" id="name" name="name" value="" placeholder="Name"><br>
+            <input ([ngModel])="username" formControlName="Username" type="text" id="user" name="user" value="" placeholder="Username"><br>         
             <input ([ngModel])="password" formControlName="Password"  type="password" id="password" name="password" value="" placeholder="Password"><br>
+            <input *ngIf="register" ([ngModel])="email" formControlName="Email"  type="text" id="email" name="email" value="" placeholder="Email"><br>
           </div>
-          <button type="submit" class="btn btn-dark" routerLink="/profile" (click)="submit()">Submit</button>
+          <a *ngIf="!register" id="register" (click)="toggleRegister()">Register</a><a *ngIf="register" id="register" (click)="toggleRegister()">Cancel Register</a>
+          <button id="submitButton" type="submit" class="btn btn-dark" routerLink="/profile" (click)="submit()">Submit</button>
         </div>
   </div>
 </div>

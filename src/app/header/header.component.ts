@@ -10,9 +10,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export class HeaderComponent implements OnInit {
 
   loginForm: FormGroup;
+  register: boolean;
 
-  user = "";
+  name = "";
+  username = "";
   password = "";
+  email = "";
   
   constructor(
     private formBuilder: FormBuilder
@@ -20,13 +23,16 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.popUp();
+    this.register = false;
     this.loginForm = this.formBuilder.group({
       Name:[],
-      Password:[]
+      Username:[],
+      Password:[],
+      Email:[]
     })
   }
 
-  submit() {
+  submit(){
     this.localLogin();
   }
 
@@ -36,6 +42,16 @@ export class HeaderComponent implements OnInit {
 
     if(this.loginForm.value.Name == localUser && this.loginForm.value.Password == localPassword){
       console.log("AAAAAAA");
+    }
+  }
+
+  toggleRegister(){
+    if(this.register === true){
+      this.register = false;
+      document.getElementById("submitButton").style.marginLeft = "-50px";
+    }else if(this.register === false){
+      this.register = true;
+      document.getElementById("submitButton").style.marginLeft = "-100px";
     }
   }
   
@@ -57,6 +73,7 @@ export class HeaderComponent implements OnInit {
       overlay.classList.remove('active');
       popup.classList.remove('active');
     });
+    this.register = false;
   }
 
 }
