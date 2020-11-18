@@ -10,6 +10,7 @@ export class UserProfileComponent implements OnInit {
   oldValues: string;
   newValues: string;
   imgRute: string;
+  imgRuteActually: string;
   imageDefault: string;
   imageActually: string;
 
@@ -21,13 +22,13 @@ export class UserProfileComponent implements OnInit {
     this.oldValues = document.getElementById('temporal').innerHTML;
 
     this.imgRute = "../../assets/img/";
+    this.imgRuteActually = this.imgRute;
     this.imageDefault = "account_circle-24px.svg";
     this.imageActually = this.imageDefault;
 
     this.settingsAppear = false;
     this.showTableHeader = false;
 
-    this.playMusic();
   }
 
   inSettings(){
@@ -45,7 +46,8 @@ export class UserProfileComponent implements OnInit {
     if(input.files && input.files[0]){
       console.log("File selected : ", input.files[0]);
       this.imageActually =  input.files[0].name;
-      
+      //this.imgRuteActually = (document.getElementById("customFile") as HTMLInputElement).value;
+
     }else 
       console.log("No file selected " + input.files[0]);
 
@@ -74,16 +76,12 @@ export class UserProfileComponent implements OnInit {
             <td>${item.soungName}</td>
             <td>${item.autor}</td>
             <td>${item.time}</td>
-            <td><div id="musicPlayer-icon"><button type="button" class="btn btn-outline-dark btn-sm" (click)="playMusic()">Play</button></div></td>
+            <td><div id="musicPlayer-icon"><button type="button" class="btn btn-outline-light btn-sm" (click)="playMusic()">Play</button></div></td>
           </tr>
           `
         }
       }
     }
-  }
-
-  playMusic(){  
-
   }
 
 }

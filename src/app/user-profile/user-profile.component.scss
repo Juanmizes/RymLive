@@ -1,7 +1,6 @@
 #naturalContainer{
     width: 100%;
-    height: calc(100% - 84px);
-    background-color: #c9c9c949;
+    height: calc(100% - 90px);
 }
 
 #container {
@@ -98,6 +97,8 @@
     width: 100%;
     height: 8%;
     border-bottom: #A09F9F solid 0.2px;
+    background-color: #3e444a;
+    color: #FFFFFF;
 }
 
 #profile-main-mySongs {
@@ -131,6 +132,11 @@
     height: 92%;
 }
 
+.table{
+    margin: 0 0 114px 0;
+    border: solid 1px #495057;
+}
+
 #biography-input {
     display: block;
     width: 100%;
@@ -145,4 +151,8 @@
     border: 1px solid #ced4da;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#transparent{
+    height: 110px;
 }
