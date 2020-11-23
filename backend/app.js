@@ -19,7 +19,7 @@ app.use(express.json());
 // CORS (permitir peticiones desde el front end)
 
 // Añadir prefijos a rutas/ Cargar rutas
-app.use('/', user_routes);
+app.use('/api', user_routes);
 
 
 //Ruta o metodo prueba
