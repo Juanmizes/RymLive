@@ -24,7 +24,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     UserProfileComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     NoopAnimationsModule,
     MatCardModule,
     FormsModule,
