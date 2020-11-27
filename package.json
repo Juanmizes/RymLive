@@ -12,7 +12,7 @@
     "serve:ssr": "node dist/RymLive/server/main.js",
     "build:ssr": "ng build --prod && ng run RymLive:server:production",
     "prerender": "ng run RymLive:prerender",
-    "start:heroku": "node dist/server",
+    "start:heroku": "node server",
     "postinstall": "npm run build:ssr"
   },
   "private": true,
