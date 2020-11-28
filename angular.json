@@ -133,5 +133,8 @@
       }
     }
   },
-  "defaultProject": "RymLive"
+  "defaultProject": "RymLive",
+  "cli": {
+    "analytics": "2497c14f-fe6c-4d20-a13b-9c5b74690686"
+  }
 }
