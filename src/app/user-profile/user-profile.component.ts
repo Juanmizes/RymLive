@@ -68,6 +68,7 @@ export class UserProfileComponent implements OnInit {
         let datos = JSON.parse(this.responseText);
         let res = document.querySelector('#tableBody');
         res.innerHTML='';
+        var contador = 0;
 
         for(let item of datos){
           res.innerHTML += `
@@ -79,7 +80,9 @@ export class UserProfileComponent implements OnInit {
             <td><div id="musicPlayer-icon"><button type="button" class="btn btn-outline-light btn-sm" (click)="playMusic()">Play</button></div></td>
           </tr>
           `
+          contador++
         }
+        //document.getElementById('mySongs-main').style.height = "120px + (46px +(56px * "+contador+"))";
       }
     }
   }

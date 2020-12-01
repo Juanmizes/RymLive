@@ -34,6 +34,7 @@ export class HeaderComponent implements OnInit {
 
   submit(){
     this.localLogin();
+    var overlay = document.getElementById('overlay').classList.remove('active');
   }
 
   localLogin(){
@@ -65,8 +66,6 @@ export class HeaderComponent implements OnInit {
       overlay.classList.add('active');
       popup.classList.add('active');
     });
-    
-   
     
     btnClosePopup.addEventListener('click', function(e){
       e.preventDefault();
