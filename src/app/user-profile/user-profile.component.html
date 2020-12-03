@@ -43,7 +43,7 @@
                 <div id="profile-main-myList"><span>Mi Lista</span></div>
             </div>
             <!--FUNCIONALIDAD ESPECIFICADA-->
-            <div id="mySongs-main">
+            <div id="mySongs-main" [style.height.px]="heightTable()">
                 <table class="table table-striped table-white" *ngIf="showTableHeader">
                     <thead id="tableHeader">     
                         <tr>
@@ -59,6 +59,7 @@
                 </table> 
 
                 <!-- <button type="button" class="btn btn-outline-dark btn-sm" (click)="playMusic()">Play</button> -->
+                <!-- <button type="button" class="btn btn-outline-dark btn-sm" (click)="hazmeunaprueba()">Play</button> -->
             </div>
         </div>
     </section>

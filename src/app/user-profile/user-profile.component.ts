@@ -15,6 +15,9 @@ export class UserProfileComponent implements OnInit {
   imageActually: string;
 
   showTableHeader: boolean;
+  totalRowsSongs: number;
+
+  test: any;
 
   constructor() { }
 
@@ -57,19 +60,28 @@ export class UserProfileComponent implements OnInit {
 
   loadTable(){
     this.showTableHeader = true;
+    this.totalRowsSongs = 9;
 
+    this.getSongs();
+  }
+
+  heightTable(){
+    let height;
+    height = 120 + (46 +(56 * this.totalRowsSongs));
+    return height;
+  }
+
+  getSongs(){
     const xhttp = new XMLHttpRequest();
     xhttp.open('GET', '../../assets/json/mySongTable.json', true);
     xhttp.send();
     xhttp.onreadystatechange = function(){
 
       if(this.readyState == 4 && this.status == 200){
-
         let datos = JSON.parse(this.responseText);
         let res = document.querySelector('#tableBody');
         res.innerHTML='';
-        var contador = 0;
-
+        
         for(let item of datos){
           res.innerHTML += `
           <tr>
@@ -77,14 +89,15 @@ export class UserProfileComponent implements OnInit {
             <td>${item.soungName}</td>
             <td>${item.autor}</td>
             <td>${item.time}</td>
-            <td><div id="musicPlayer-icon"><button type="button" class="btn btn-outline-light btn-sm" (click)="playMusic()">Play</button></div></td>
+            <td><div id="musicPlayer-icon"><button type="button" class="btn btn-outline-dark btn-sm">Play</button></div></td>
           </tr>
           `
-          contador++
         }
-        //document.getElementById('mySongs-main').style.height = "120px + (46px +(56px * "+contador+"))";
       }
     }
   }
 
+  hazmeunaprueba(){
+    console.log("funciona");
+  }
 }
