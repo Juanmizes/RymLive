@@ -4,3 +4,28 @@
 .music-player ::ng-deep .plyr__controls{
     color: #FFF;
 }
+
+#songListening{
+    background-color: #282828;
+    height: 20px;
+    text-align: left;
+}
+
+#songName{
+    margin-top: 5px;
+    margin-left: 100px;
+}
+
+#musicButtons{
+    background-color: #282828;
+    height: 40px;
+}
+
+#oneMore{
+    background-color: #282828;  
+}
+
+#oneLess{
+    background-color: #282828;
+    margin-right: 10px;
+}
