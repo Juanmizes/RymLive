@@ -35,6 +35,7 @@ export class HeaderComponent implements OnInit {
   submit(){
     this.localLogin();
     var overlay = document.getElementById('overlay').classList.remove('active');
+    var popup = document.getElementById('popup').classList.remove('active');
   }
 
   localLogin(){
