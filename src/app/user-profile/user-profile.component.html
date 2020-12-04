@@ -1,5 +1,5 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<section id="naturalContainer">
+<section id="naturalContainer" *ngIf="user">
     <section id="container">
         <!--USUARIO-->
         <div id="profile-header">
@@ -18,10 +18,10 @@
                     <img src="../../assets/img/settings-24px.svg" onclick="">
                 </div>
 
-                <p id="userName">Firesao </p>
-                <p id="completeName">Asdrúbal Sánchez Carnicero</p>
+                <p id="userName">{{ user.username }} </p>
+                <p id="completeName">{{ user.name }}</p>
 
-                <p id="temporal" style="display: none;">Me encanta decir HOLA en alto</p>
+                <p id="temporal" style="display: none;">{{ user.description }}</p>
                 <div *ngIf="settingsAppear">
                     <input id="biography-input" type="text" value="{{oldValues}}" placeholder="Write your biography"
                         maxlength="110">
