@@ -60,17 +60,10 @@ export class UserProfileComponent implements OnInit {
 
   loadTable(){
     this.showTableHeader = true;
-    this.totalRowsSongs = 9;
 
     this.getSongs();
   }
-
-  heightTable(){
-    let height;
-    height = 120 + (46 +(56 * this.totalRowsSongs));
-    return height;
-  }
-
+  
   getSongs(){
     const xhttp = new XMLHttpRequest();
     xhttp.open('GET', '../../assets/json/mySongTable.json', true);
