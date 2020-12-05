@@ -16,6 +16,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
+import { UserService } from './services/user.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     AppRoutingModule,
     LayoutModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

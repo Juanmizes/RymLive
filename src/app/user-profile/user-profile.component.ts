@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { User } from '../shared/user';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
   settingsAppear: boolean;
-  oldValues: string;
+  oldValues: String;
   newValues: string;
   imgRute: string;
   imgRuteActually: string;
@@ -19,10 +21,14 @@ export class UserProfileComponent implements OnInit {
 
   test: any;
 
-  constructor() { }
+  user: User;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.oldValues = document.getElementById('temporal').innerHTML;
+    this.user = this.userService.getUser(1);
+
+    this.oldValues = this.user.description;
 
     this.imgRute = "../../assets/img/";
     this.imgRuteActually = this.imgRute;
