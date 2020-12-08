@@ -15,6 +15,11 @@ var songSchema = schema({
     nameFile: {
         type: String,
         require: true
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        require: true,
+        ref: 'User'
     }
 });
 
