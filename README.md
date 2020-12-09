@@ -1,6 +1,9 @@
 # RymLive
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Este proyecto está generado en [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+
+El proyecto consta de una red social musical donde los usuarios suben sus canciones para compartirlas con el mundo sin el uso excesivo del copyright.
+Esto dará libertad para usar esta aplicación web mientras usamos otros programas como programas de stream.
 
 ## Development server
 

@@ -183,3 +183,20 @@
     float: left;
     margin-top: 10px;
 }
+
+#browser{
+    font-size: large;
+}
+
+.browserSpan{
+    font-size: large !important;
+}
+
+@media screen and (max-width: 800px){
+    #browser{
+        font-size: small;
+    }
+    .browserSpan{
+        font-size: small !important;
+    }
+}

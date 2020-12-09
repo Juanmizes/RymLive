@@ -1,2 +1,9 @@
-<div  class="music-player" mat-card-image plyr loadSprite plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" 
+<div id="songListening"> 
+  <span id="songName" class="badge badge-dark">Listening: {{songName}}</span>
+</div>
+<div class="music-player" mat-card-image plyr loadSprite plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" 
   [plyrCrossOrigin]="true" [plyrSources]="audioSources"></div>
+<div id="musicButtons"> 
+  <button id="oneLess" type="button" class="btn btn-secondary btn-sm" (click)="oneLess()">←</button>
+  <button id="oneMore" type="button" class="btn btn-secondary btn-sm" (click)="oneMore()">→</button>
+</div>

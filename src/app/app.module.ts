@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { LayoutModule } from '@angular/cdk/layout';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,7 +16,8 @@ import { PlyrModule } from 'ngx-plyr';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -32,9 +35,13 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     ReactiveFormsModule,
     MatTooltipModule,
     PlyrModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LayoutModule,
+    HttpClientModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

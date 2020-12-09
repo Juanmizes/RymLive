@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UserService } from '../services/user.service';
+import { User } from '../shared/user';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
   settingsAppear: boolean;
-  oldValues: string;
+  oldValues: String;
   newValues: string;
   imgRute: string;
   imgRuteActually: string;
@@ -15,11 +18,28 @@ export class UserProfileComponent implements OnInit {
   imageActually: string;
 
   showTableHeader: boolean;
+  totalRowsSongs: number;
 
-  constructor() { }
+  test: any;
+
+  user: User;
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.oldValues = document.getElementById('temporal').innerHTML;
+    this.userService.getUser("5fce7127c91df933046b0d8a").subscribe(
+      res => { 
+        this.user = res.user;
+        this.oldValues = this.user.description;
+        if(this.user.image == null){
+          this.user.image = "../../assets/img/account_circle-24px.svg"
+        }
+      },
+      error => {
+        console.log(error);
+      }
+      );
+
 
     this.imgRute = "../../assets/img/";
     this.imgRuteActually = this.imgRute;
@@ -58,17 +78,20 @@ export class UserProfileComponent implements OnInit {
   loadTable(){
     this.showTableHeader = true;
 
+    this.getSongs();
+  }
+  
+  getSongs(){
     const xhttp = new XMLHttpRequest();
     xhttp.open('GET', '../../assets/json/mySongTable.json', true);
     xhttp.send();
     xhttp.onreadystatechange = function(){
 
       if(this.readyState == 4 && this.status == 200){
-
         let datos = JSON.parse(this.responseText);
         let res = document.querySelector('#tableBody');
         res.innerHTML='';
-
+        
         for(let item of datos){
           res.innerHTML += `
           <tr>
@@ -76,7 +99,7 @@ export class UserProfileComponent implements OnInit {
             <td>${item.soungName}</td>
             <td>${item.autor}</td>
             <td>${item.time}</td>
-            <td><div id="musicPlayer-icon"><button type="button" class="btn btn-outline-light btn-sm" (click)="playMusic()">Play</button></div></td>
+            <td><div id="musicPlayer-icon"><button type="button" class="btn btn-outline-dark btn-sm">Play</button></div></td>
           </tr>
           `
         }
@@ -84,4 +107,7 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
+  hazmeunaprueba(){
+    console.log("funciona");
+  }
 }
