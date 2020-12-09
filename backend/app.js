@@ -6,18 +6,18 @@ var express = require('express');
 
 
 // Ejecutar express(http)
-var api = express();
+var app = express();
 
 
 // Cargar ficheros rutas
 var user_routes = require('./routes/users');
 
 // Middlewares
-api.use(express.urlencoded({extended:false}));
-api.use(express.json());
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
 // CORS (permitir peticiones desde el front end)
-api.use((req, res, next) => {
+app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
@@ -26,7 +26,7 @@ api.use((req, res, next) => {
 });
 
 // Añadir prefijos a rutas/ Cargar rutas
-api.use('/api', user_routes);
+app.use('/api', user_routes);
 
 
 //Ruta o metodo prueba
@@ -39,4 +39,4 @@ api.use('/api', user_routes);
 });
 */
 // Exportar modulo (fichero actual)
-module.exports = api;
+module.exports = app;
