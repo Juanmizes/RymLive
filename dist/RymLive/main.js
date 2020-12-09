@@ -244,7 +244,7 @@ UserProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Juanma\Desktop\RymLive\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! C:\Users\Asdru\OneDrive\Escritorio\RymLive\src\main.ts */"zUnb");
 
 
 /***/ }),
