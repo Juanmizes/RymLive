@@ -5,12 +5,11 @@
         <div id="profile-header">
             <!--IMAGEN DE PERFIL DE USUARIO-->
             <div id="image-profile">
-                <img src="{{imgRuteActually}}{{imageActually}}" id="user-icon">
+                <img src="{{user.image}}" id="user-icon">
                 <div *ngIf="settingsAppear" class="custom-file">
                     <input type="file" class="custom-file-input" id="customFile">
                     <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
-
             </div>
             <!--INFORMACIÓN DEL USUARIO-->
             <div id="info-profile">

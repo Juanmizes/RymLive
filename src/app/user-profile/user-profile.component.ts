@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { UserService } from '../services/user.service';
 import { User } from '../shared/user';
 
@@ -26,9 +27,19 @@ export class UserProfileComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.user = this.userService.getUser(1);
+    this.userService.getUser("5fce7127c91df933046b0d8a").subscribe(
+      res => { 
+        this.user = res.user;
+        this.oldValues = this.user.description;
+        if(this.user.image == null){
+          this.user.image = "../../assets/img/account_circle-24px.svg"
+        }
+      },
+      error => {
+        console.log(error);
+      }
+      );
 
-    this.oldValues = this.user.description;
 
     this.imgRute = "../../assets/img/";
     this.imgRuteActually = this.imgRute;

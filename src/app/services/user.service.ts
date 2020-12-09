@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../shared/user';
-import { USERS } from '../shared/users';
+import { Res } from '../shared/res';
+import { Global } from '../services/global';
+import { from, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() { }
+  public url: string;
 
-  getUser(id: number) {
-    return USERS.filter((user) => (user.id === id))[0];
+  constructor( private _http: HttpClient) { 
+    this.url = Global.url;
   }
 
-  getUsers(): User[] {
-    return USERS;
+  getUser(_id: String) {
+    return  this._http.get<Res>(this.url+'profile/user/'+_id);
+  }
+
+  getUsers():Observable<any> {
+    return this._http.get(this.url+'profile');
   }
 
 }
