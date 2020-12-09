@@ -6,7 +6,6 @@ const app = express();
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname+"/dist/RymLive"));
-app.use('/api', api);
 
 app.get('/*', function(req,res) {
     
