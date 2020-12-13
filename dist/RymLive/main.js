@@ -435,32 +435,32 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MusicPlayerComponent", function() { return MusicPlayerComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
-/* harmony import */ var ngx_plyr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-plyr */ "pr9R");
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
+/* harmony import */ var ngx_plyr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-plyr */ "pr9R");
+
 
 
 
 
 class MusicPlayerComponent {
-    constructor() {
-        this.audioSources = [
-            {
-                src: '../../assets/music/' + '1 - J Balvin - Brillo.mp3',
-                type: 'audio/mp3',
-                id: 'song',
-            },
-        ];
-    }
+    constructor() { }
     ngOnInit() {
-        this.musicList = ['1 - J Balvin - Brillo.mp3', '2 - Ozuna - La Modelo.mp3', '5 - Aitana - Lo Malo.mp3'];
         this.musicRute = "../../assets/music/";
+        this.musicList = ['1 - J Balvin - Brillo.mp3', '2 - Ozuna - La Modelo.mp3', '5 - Aitana - Lo Malo.mp3'];
         this.songSelected = 0;
         this.musicListLength = 2; //One less of the true length
+        this.songName = this.musicList[this.songSelected];
+        this.audio = [
+            {
+                src: this.musicRute + this.musicList[this.songSelected],
+                type: 'audio/mp3',
+                id: 'song',
+            }
+        ];
     }
-    played(event) {
-        console.log('played', event);
-    }
+    ;
     play() {
         this.player.play(); // or this.plyr.player.play()
     }
@@ -471,7 +471,6 @@ class MusicPlayerComponent {
         this.player.stop(); // or this.plyr.player.stop()
     }
     oneMore() {
-        console.log("Funciona el botón de oneMore");
         if (this.songSelected === this.musicListLength) {
             this.songSelected = 0;
         }
@@ -479,11 +478,9 @@ class MusicPlayerComponent {
             this.songSelected++;
         }
         this.listenMusic = this.musicRute + this.musicList[this.songSelected];
-        console.log(this['listenMusic']);
-        //document.getElementById("song").replaceWith( "<source src='"+this.listenMusic+"' type='audio/mp3' id='song'>" );
+        this.songChanges();
     }
     oneLess() {
-        console.log("Funciona el botón de oneLess");
         if (this.songSelected === 0) {
             this.songSelected = this.musicListLength;
         }
@@ -491,35 +488,47 @@ class MusicPlayerComponent {
             this.songSelected--;
         }
         this.listenMusic = this.musicRute + this.musicList[this.songSelected];
-        console.log(this['listenMusic']);
+        this.songChanges();
+    }
+    songChanges() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.songName = this.musicList[this.songSelected];
+            this.audio = yield [
+                {
+                    src: this.musicRute + this.musicList[this.songSelected],
+                    type: 'audio/mp3',
+                    id: 'song',
+                }
+            ];
+        });
     }
 }
 MusicPlayerComponent.ɵfac = function MusicPlayerComponent_Factory(t) { return new (t || MusicPlayerComponent)(); };
-MusicPlayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MusicPlayerComponent, selectors: [["app-music-player"]], decls: 9, vars: 4, consts: [["id", "songListening"], ["id", "songName", 1, "badge", "badge-dark"], ["mat-card-image", "", "plyr", "", "loadSprite", "", "plyrTitle", "Audio", "plyrType", "audio", 1, "music-player", 3, "plyrPlaysInline", "plyrCrossOrigin", "plyrSources"], ["id", "musicButtons"], ["id", "oneLess", "type", "button", 1, "btn", "btn-secondary", "btn-sm", 3, "click"], ["id", "oneMore", "type", "button", 1, "btn", "btn-secondary", "btn-sm", 3, "click"]], template: function MusicPlayerComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "button", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MusicPlayerComponent_Template_button_click_5_listener() { return ctx.oneLess(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "\u2190");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MusicPlayerComponent_Template_button_click_7_listener() { return ctx.oneMore(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "\u2192");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+MusicPlayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: MusicPlayerComponent, selectors: [["app-music-player"]], decls: 9, vars: 4, consts: [["id", "songListening"], ["id", "songName", 1, "badge", "badge-dark"], ["mat-card-image", "", "plyr", "", "loadSprite", "", "plyrTitle", "Audio", "plyrType", "audio", 1, "music-player", 3, "plyrPlaysInline", "plyrCrossOrigin", "plyrSources"], ["id", "musicButtons"], ["id", "oneLess", "type", "button", 1, "btn", "btn-secondary", "btn-sm", 3, "click"], ["id", "oneMore", "type", "button", 1, "btn", "btn-secondary", "btn-sm", 3, "click"]], template: function MusicPlayerComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "span", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](3, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](5, "button", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function MusicPlayerComponent_Template_button_click_5_listener() { return ctx.oneLess(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](6, "\u2190");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "button", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function MusicPlayerComponent_Template_button_click_7_listener() { return ctx.oneMore(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "\u2192");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Listening: ", ctx.songName, "");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("plyrPlaysInline", true)("plyrCrossOrigin", true)("plyrSources", ctx.audioSources);
-    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardImage"], ngx_plyr__WEBPACK_IMPORTED_MODULE_2__["PlyrComponent"]], styles: [".music-player[_ngcontent-%COMP%]     .plyr__controls {\n  background-color: #282828;\n}\n\n.music-player[_ngcontent-%COMP%]     .plyr__controls {\n  color: #FFF;\n}\n\n#songListening[_ngcontent-%COMP%] {\n  background-color: #282828;\n  height: 20px;\n  text-align: left;\n}\n\n#songName[_ngcontent-%COMP%] {\n  margin-top: 5px;\n  margin-left: 100px;\n}\n\n#musicButtons[_ngcontent-%COMP%] {\n  background-color: #282828;\n  height: 40px;\n}\n\n#oneMore[_ngcontent-%COMP%] {\n  background-color: #282828;\n}\n\n#oneLess[_ngcontent-%COMP%] {\n  background-color: #282828;\n  margin-right: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbXVzaWMtcGxheWVyL211c2ljLXBsYXllci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHlCQUFBO0FBQ0o7O0FBQ0E7RUFDSSxXQUFBO0FBRUo7O0FBQ0E7RUFDSSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQUVKOztBQUNBO0VBQ0ksZUFBQTtFQUNBLGtCQUFBO0FBRUo7O0FBQ0E7RUFDSSx5QkFBQTtFQUNBLFlBQUE7QUFFSjs7QUFDQTtFQUNJLHlCQUFBO0FBRUo7O0FBQ0E7RUFDSSx5QkFBQTtFQUNBLGtCQUFBO0FBRUoiLCJmaWxlIjoic3JjL2FwcC9tdXNpYy1wbGF5ZXIvbXVzaWMtcGxheWVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm11c2ljLXBsYXllciA6Om5nLWRlZXAgLnBseXJfX2NvbnRyb2xze1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxufVxyXG4ubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHN7XHJcbiAgICBjb2xvcjogI0ZGRjtcclxufVxyXG5cclxuI3NvbmdMaXN0ZW5pbmd7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjgyODI4O1xyXG4gICAgaGVpZ2h0OiAyMHB4O1xyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxufVxyXG5cclxuI3NvbmdOYW1le1xyXG4gICAgbWFyZ2luLXRvcDogNXB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwMHB4O1xyXG59XHJcblxyXG4jbXVzaWNCdXR0b25ze1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgIGhlaWdodDogNDBweDtcclxufVxyXG5cclxuI29uZU1vcmV7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjgyODI4OyAgXHJcbn1cclxuXHJcbiNvbmVMZXNze1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDtcclxufSJdfQ== */"] });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MusicPlayerComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"]("Listening: ", ctx.songName, "");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("plyrPlaysInline", true)("plyrCrossOrigin", true)("plyrSources", ctx.audio);
+    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_2__["MatCardImage"], ngx_plyr__WEBPACK_IMPORTED_MODULE_3__["PlyrComponent"]], styles: [".music-player[_ngcontent-%COMP%]     .plyr__controls {\n  background-color: #282828;\n}\n\n.music-player[_ngcontent-%COMP%]     .plyr__controls {\n  color: #FFF;\n}\n\n#songListening[_ngcontent-%COMP%] {\n  background-color: #282828;\n  height: 20px;\n  text-align: left;\n}\n\n#songName[_ngcontent-%COMP%] {\n  margin-top: 5px;\n  margin-left: 100px;\n}\n\n#musicButtons[_ngcontent-%COMP%] {\n  background-color: #282828;\n  height: 40px;\n}\n\n#oneMore[_ngcontent-%COMP%] {\n  background-color: #282828;\n}\n\n#oneLess[_ngcontent-%COMP%] {\n  background-color: #282828;\n  margin-right: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbXVzaWMtcGxheWVyL211c2ljLXBsYXllci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLHlCQUFBO0FBQ0o7O0FBQ0E7RUFDSSxXQUFBO0FBRUo7O0FBQ0E7RUFDSSx5QkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQUVKOztBQUNBO0VBQ0ksZUFBQTtFQUNBLGtCQUFBO0FBRUo7O0FBQ0E7RUFDSSx5QkFBQTtFQUNBLFlBQUE7QUFFSjs7QUFDQTtFQUNJLHlCQUFBO0FBRUo7O0FBQ0E7RUFDSSx5QkFBQTtFQUNBLGtCQUFBO0FBRUoiLCJmaWxlIjoic3JjL2FwcC9tdXNpYy1wbGF5ZXIvbXVzaWMtcGxheWVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm11c2ljLXBsYXllciA6Om5nLWRlZXAgLnBseXJfX2NvbnRyb2xze1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxufVxyXG4ubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHN7XHJcbiAgICBjb2xvcjogI0ZGRjtcclxufVxyXG5cclxuI3NvbmdMaXN0ZW5pbmd7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjgyODI4O1xyXG4gICAgaGVpZ2h0OiAyMHB4O1xyXG4gICAgdGV4dC1hbGlnbjogbGVmdDtcclxufVxyXG5cclxuI3NvbmdOYW1le1xyXG4gICAgbWFyZ2luLXRvcDogNXB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwMHB4O1xyXG59XHJcblxyXG4jbXVzaWNCdXR0b25ze1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgIGhlaWdodDogNDBweDtcclxufVxyXG5cclxuI29uZU1vcmV7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjgyODI4OyAgXHJcbn1cclxuXHJcbiNvbmVMZXNze1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgIG1hcmdpbi1yaWdodDogMTBweDtcclxufSJdfQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](MusicPlayerComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"],
         args: [{
                 selector: 'app-music-player',
                 templateUrl: './music-player.component.html',
