@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { tick } from '@angular/core/testing';
+import { AudioSources } from '../shared/audioSources';
 
 @Component({
   selector: 'app-music-player',
@@ -11,31 +13,26 @@ export class MusicPlayerComponent implements OnInit {
   listenMusic: string;
   songSelected: number;
   musicListLength: number;
-  musicList: string[]
+  musicList: string[];
+  audio: AudioSources[];
+  player: Plyr;
   
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
-    this.musicList = ['1 - J Balvin - Brillo.mp3', '2 - Ozuna - La Modelo.mp3', '5 - Aitana - Lo Malo.mp3'];
     this.musicRute = "../../assets/music/";
+    this.musicList = ['1 - J Balvin - Brillo.mp3', '2 - Ozuna - La Modelo.mp3', '5 - Aitana - Lo Malo.mp3'];
     this.songSelected = 0;
     this.musicListLength = 2; //One less of the true length
-  
-  }
-  
-  player: Plyr;
-
-  audioSources = [
-    {
-      src: '../../assets/music/'+'1 - J Balvin - Brillo.mp3',
-      type: 'audio/mp3',
-      id: 'song',
-    },
-  ];
-
-  played(event: Plyr.PlyrEvent) {
-    console.log('played', event);
-  }
+    this.songName = this.musicList[this.songSelected];
+    this.audio = [
+      {
+        src: this.musicRute+this.musicList[this.songSelected],
+        type: 'audio/mp3',
+        id: 'song',
+      }
+    ]
+  };
 
   play(): void {
     this.player.play(); // or this.plyr.player.play()
@@ -50,26 +47,34 @@ export class MusicPlayerComponent implements OnInit {
   }
 
   oneMore(){
-    console.log("Funciona el botón de oneMore");
     if (this.songSelected === this.musicListLength){
       this.songSelected = 0;
     }else{
       this.songSelected++;
     }
     this.listenMusic = this.musicRute+this.musicList[this.songSelected];
-    console.log(this['listenMusic'])
-    //document.getElementById("song").replaceWith( "<source src='"+this.listenMusic+"' type='audio/mp3' id='song'>" );
+    this.songChanges();
   }
 
   oneLess(){
-    console.log("Funciona el botón de oneLess");
     if (this.songSelected === 0){
       this.songSelected = this.musicListLength;
     }else{
       this.songSelected--;
     }
     this.listenMusic = this.musicRute+this.musicList[this.songSelected];
-    console.log(this['listenMusic'])
+    this.songChanges();
+  }
+
+  async songChanges() {
+    this.songName = this.musicList[this.songSelected];
+    this.audio = await [
+      {
+        src: this.musicRute+this.musicList[this.songSelected],
+        type: 'audio/mp3',
+        id: 'song',
+      }
+    ];
   }
 
 }
