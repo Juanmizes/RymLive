@@ -58,10 +58,10 @@ ___CSS_LOADER_EXPORT___.push([module.i, "/* Colors for the ripple elements.*/\n/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Juanma\Desktop\RymLive\node_modules\@angular\material\prebuilt-themes\purple-green.css */"af/a");
-__webpack_require__(/*! C:\Users\Juanma\Desktop\RymLive\node_modules\bootstrap\dist\css\bootstrap.min.css */"q4sD");
-__webpack_require__(/*! C:\Users\Juanma\Desktop\RymLive\src\styles.scss */"+EN/");
-module.exports = __webpack_require__(/*! C:\Users\Juanma\Desktop\RymLive\node_modules\plyr\dist\plyr.css */"ePZ7");
+__webpack_require__(/*! C:\Users\Asdru\OneDrive\Escritorio\RymLive\node_modules\@angular\material\prebuilt-themes\purple-green.css */"af/a");
+__webpack_require__(/*! C:\Users\Asdru\OneDrive\Escritorio\RymLive\node_modules\bootstrap\dist\css\bootstrap.min.css */"q4sD");
+__webpack_require__(/*! C:\Users\Asdru\OneDrive\Escritorio\RymLive\src\styles.scss */"+EN/");
+module.exports = __webpack_require__(/*! C:\Users\Asdru\OneDrive\Escritorio\RymLive\node_modules\plyr\dist\plyr.css */"ePZ7");
 
 
 /***/ }),
