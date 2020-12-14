@@ -24,7 +24,7 @@ export class MusicPlayerComponent implements OnInit {
     this.musicList = ['1 - J Balvin - Brillo.mp3', '2 - Ozuna - La Modelo.mp3', '5 - Aitana - Lo Malo.mp3'];
     this.songSelected = 0;
     this.musicListLength = 2; //One less of the true length
-    this.songName = this.musicList[this.songSelected];
+    this.songName = this.musicList[this.songSelected].toString().substring(0, this.musicList[this.songSelected].length - 4);
     this.audio = [
       {
         src: this.musicRute+this.musicList[this.songSelected],
@@ -67,7 +67,7 @@ export class MusicPlayerComponent implements OnInit {
   }
 
   async songChanges() {
-    this.songName = this.musicList[this.songSelected];
+    this.songName = this.musicList[this.songSelected].toString().substring(0, this.musicList[this.songSelected].length - 4);
     this.audio = await [
       {
         src: this.musicRute+this.musicList[this.songSelected],
