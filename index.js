@@ -3,7 +3,7 @@
 var mongoose = require ('mongoose');
 //const url = 'mongodb://localhost:27017/RymLive';
 var app = require('./app');
-var port = 3900;
+var port = process.env.PORT || 3900;
 const { database } = require('./key');
 
 mongoose.set('useFindAndModify', false);
