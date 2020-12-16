@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Juanma\Desktop\RymLive\src\polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! C:\Users\Juanma\Desktop\RymLiveFront\RymLive\src\polyfills.ts */"hN/g");
 
 
 /***/ }),
@@ -20,7 +20,7 @@ module.exports = __webpack_require__(/*! C:\Users\Juanma\Desktop\RymLive\src\pol
 /***/ (function(module, exports) {
 
 /**
- * @license Angular v10.2.1
+ * @license Angular v11.0.4
  * (c) 2010-2020 Google LLC. https://angular.io/
  * License: MIT
  */

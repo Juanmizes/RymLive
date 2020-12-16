@@ -244,7 +244,7 @@ UserProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Juanma\Desktop\RymLive\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! C:\Users\Juanma\Desktop\RymLiveFront\RymLive\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -732,6 +732,7 @@ class HeaderComponent {
                 this.error = true;
                 return;
             }
+            this.error = true;
             try {
                 //Buscar en db el user
             }
@@ -869,7 +870,7 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineCo
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Global", function() { return Global; });
 var Global = {
-    url: 'http://localhost:3900/api/'
+    url: 'https://rymliveapi.herokuapp.com/api/'
 };
 
 
