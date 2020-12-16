@@ -18,6 +18,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 
 import { UserService } from './services/user.service';
+import { NgbdAlertSelfclosing } from './alert/alert.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { UserService } from './services/user.service';
     MainComponent,
     HeaderComponent,
     MusicPlayerComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    NgbdAlertSelfclosing
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { UserService } from './services/user.service';
     PlyrModule,
     AppRoutingModule,
     LayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
     UserService

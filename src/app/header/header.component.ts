@@ -1,6 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../services/user.service';
+import { User } from '../shared/user';
+import { NgbdAlertSelfclosing } from '../alert/alert.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
@@ -9,8 +13,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 })
 export class HeaderComponent implements OnInit {
 
+  @ViewChild('submitUserError', {static: false}) submitUserError: NgbdAlertSelfclosing;
+
   loginForm: FormGroup;
   register: boolean;
+  userService: UserService;
+  user: User;
+  alert: NgbdAlertSelfclosing;
+  error: boolean;
 
   name = "";
   username = "";
@@ -24,27 +34,28 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.popUp();
     this.register = false;
+    this.error = false;
     this.loginForm = this.formBuilder.group({
-      Name:[],
-      Username:[],
-      Password:[],
-      Email:[]
+      Name:['', [Validators.pattern(/^\D+$/)]],
+      Username:['', [Validators.required, Validators.pattern(/^\D+$/)]],
+      Password:['', [Validators.required]],
+      Email:['', [Validators.email]]
     })
   }
 
-  submit(){
-    this.localLogin();
+  async submit(){
+    if(this.loginForm.invalid){
+      this.error = true;
+      return;
+    }
+    this.error = true;
+    try {
+      //Buscar en db el user
+    }catch(e){
+      console.log(e);
+    }
     var overlay = document.getElementById('overlay').classList.remove('active');
     var popup = document.getElementById('popup').classList.remove('active');
-  }
-
-  localLogin(){
-    var localUser = "admin";
-    var localPassword = "admin";
-
-    if(this.loginForm.value.Name == localUser && this.loginForm.value.Password == localPassword){
-      console.log("AAAAAAA");
-    }
   }
 
   toggleRegister(){

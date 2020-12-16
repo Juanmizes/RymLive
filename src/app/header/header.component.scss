@@ -191,6 +191,12 @@
 .browserSpan{
     font-size: large !important;
 }
+ngbd-alert-selfclosing {
+    z-index: 1;
+    position: absolute;
+    right: 8px;
+    top: 100px;
+}
 
 @media screen and (max-width: 800px){
     #browser{
