@@ -1,3 +1,3 @@
 export var Global = {
-    url: 'http://rymlive.herokuapp.com/api/'
+    url: 'https://rymliveapi.herokuapp.com/api/'
 };
