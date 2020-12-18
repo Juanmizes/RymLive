@@ -40,10 +40,11 @@
             <div id="mySongs-header">
                 <div id="profile-main-mySongs" (click)="loadTable()"><span>Mis Canciones</span></div>
                 <div id="profile-main-myList"><span>Mi Lista</span></div>
+                <div id="profile-main-upload" (click)="uploadSong()"><span>Subir canción</span></div>
             </div>
             <!--FUNCIONALIDAD ESPECIFICADA-->
-            <div id="mySongs-main">
-                <table class="table table-striped table-white" *ngIf="showTableHeader">
+            <div id="mySongs-main" *ngIf="showTableHeader">
+                <table class="table table-striped table-white">
                     <thead id="tableHeader">     
                         <tr>
                             <th scope="col">#</th>
@@ -56,9 +57,11 @@
                     <tbody id="tableBody">
                     </tbody>
                 </table> 
-
-                <!-- <button type="button" class="btn btn-outline-dark btn-sm" (click)="playMusic()">Play</button> -->
-                <!-- <button type="button" class="btn btn-outline-dark btn-sm" (click)="hazmeunaprueba()">Play</button> -->
+            </div>
+            <div id="uploadSong-container" *ngIf="showUploadSong">
+                <div id="uploadSong">
+                    <input id="uploadSong-input" type="file">
+                </div>
             </div>
         </div>
     </section>

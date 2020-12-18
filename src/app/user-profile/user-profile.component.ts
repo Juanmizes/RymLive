@@ -18,6 +18,7 @@ export class UserProfileComponent implements OnInit {
   imageActually: string;
 
   showTableHeader: boolean;
+  showUploadSong: boolean;
   totalRowsSongs: number;
 
   test: any;
@@ -48,6 +49,7 @@ export class UserProfileComponent implements OnInit {
 
     this.settingsAppear = false;
     this.showTableHeader = false;
+    this.showUploadSong = false;
 
   }
 
@@ -76,8 +78,8 @@ export class UserProfileComponent implements OnInit {
   }
 
   loadTable(){
+    this.showUploadSong = false;
     this.showTableHeader = true;
-
     this.getSongs();
   }
   
@@ -107,7 +109,9 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
-  hazmeunaprueba(){
+  uploadSong(){
+    this.showTableHeader = false;
+    this.showUploadSong = true;
     console.log("funciona");
   }
 }
