@@ -61,10 +61,10 @@ export class HeaderComponent implements OnInit {
   toggleRegister(){
     if(this.register === true){
       this.register = false;
-      document.getElementById("submitButton").style.marginLeft = "-50px";
+      document.getElementById("submitButton").style.marginLeft = "-12%";
     }else if(this.register === false){
       this.register = true;
-      document.getElementById("submitButton").style.marginLeft = "-100px";
+      document.getElementById("submitButton").style.marginLeft = "-24%";
     }
   }
   

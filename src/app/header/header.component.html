@@ -23,7 +23,7 @@
             <input *ngIf="register" ([ngModel])="email" formControlName="Email"  type="text" id="email" name="email" value="" placeholder="Email"><br>
           </div>
           <a *ngIf="!register" id="register" (click)="toggleRegister()">Register</a><a *ngIf="register" id="register" (click)="toggleRegister()">Cancel Register</a>
-          <button id="submitButton" type="submit" class="btn btn-dark" routerLink="/profile" (click)="submit()">Submit</button>
+          <button id="submitButton" type="submit" class="btn btn-dark btn-sm" routerLink="/profile" (click)="submit()">Submit</button>
         </div>
   </div>
 </div>
