@@ -108,14 +108,14 @@ var controller = {
             if (!req.headers.auth) {
                 return res.status(401).send({
                     status: 'error',
-                    message: 'No tienes autorizacion'
+                    message: 'No tienes autorizacion 1'
                 });
             }
             let token = req.headers.auth.split(' ')[1];
             if (token === 'null') {
                 return res.status(401).send({
                     status: 'error',
-                    message: 'No tienes autorizacion'
+                    message: 'No tienes autorizacion 2'
                 });
             }
 
@@ -123,14 +123,14 @@ var controller = {
             if (!payload) {
                 return res.status(401).send({
                     status: 'error',
-                    message: 'No tienes autorizacion'
+                    message: 'No tienes autorizacion 3'
                 });
             }
             const exist = await User.findById({ _id: payload._id });
             if (!exist) {
                 return res.status(401).send({
                     status: 'error',
-                    message: 'No tienes autorizacion'
+                    message: 'No tienes autorizacion 4'
                 });
             }
             req.userId = payload._id;
