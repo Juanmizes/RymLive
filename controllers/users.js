@@ -105,6 +105,7 @@ var controller = {
 
     tokenMiddleware: async (req, res, next) => {
         try {
+            console.log(req.headers)
             if (!req.headers.auth) {
                 return res.status(401).send({
                     status: 'error',
