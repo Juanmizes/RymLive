@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserService } from '../services/user.service';
 import { User } from '../shared/user';
+import { Res } from '../shared/res';
+
+import {StorageService} from "../services/storage.service";
+import {AuthenticationService} from "../services/authentication.service";
+import {Session} from "../shared/session";
 
 @Component({
   selector: 'app-user-profile',
@@ -22,24 +26,43 @@ export class UserProfileComponent implements OnInit {
 
   test: any;
 
-  user: User;
+  res: Res;
+  user;
+  session: Session;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private storageService: StorageService,
+    private authenticationService: AuthenticationService
+  ) { }
 
   ngOnInit(): void {
-    this.userService.getUser("5fce7127c91df933046b0d8a").subscribe(
-      res => { 
-        this.user = res.user;
+    this.storageService.getCurrentUser().subscribe(
+      data => {
+        this.res = data;
+        this.user = this.res.user;
+        console.log(this.user)
         this.oldValues = this.user.description;
+        this.user.image = this.user.image;
         if(this.user.image == null){
           this.user.image = "../../assets/img/account_circle-24px.svg"
         }
-      },
-      error => {
-        console.log(error);
       }
-      );
-
+    );
+    //Ochando 5fce7127c91df933046b0d8a
+    //Juanma 5fda5e3291ea0200173870d0
+    
+    // this.userService.getUser("5fda5e3291ea0200173870d0").subscribe(
+    //   res => { 
+    //     this.user = res.user;
+    //     this.oldValues = this.user.description;
+    //     if(this.user.image == null){
+    //       this.user.image = "../../assets/img/account_circle-24px.svg"
+    //     }
+    //   },
+    //   error => {
+    //     console.log(error);
+    //   }
+    // );
 
     this.imgRute = "../../assets/img/";
     this.imgRuteActually = this.imgRute;
@@ -107,7 +130,9 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
-  hazmeunaprueba(){
-    console.log("funciona");
+  public logout(): void{
+    this.authenticationService.logout().subscribe(
+        response => {if(response) {this.storageService.logout();}}
+    );
   }
 }
