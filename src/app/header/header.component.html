@@ -24,6 +24,7 @@
             <input *ngIf="register" ([ngModel])="email" formControlName="Email"  type="text" id="email" name="email" value="" placeholder="Email"><br>
           </div>
           <a *ngIf="!register" id="register" (click)="toggleRegister()">Register</a><a *ngIf="register" id="register" (click)="toggleRegister()">Cancel Register</a>
+<<<<<<< HEAD
           <button id="submitButton" type="submit" class="btn btn-dark" routerLink="/profile" (click)="submit()">Submit</button>
       </div> -->
       <!-- <div style="width: 100%; margin-bottom: 10px;" [ngClass]="{'mat-input-invalid': submitted && error?.code == 1}">
@@ -50,6 +51,9 @@
         <div class="container-inputs">      
           <input ([ngModel])="email" formControlName="email"  type="text" id="email" name="email" placeholder="Email"><br>
           <input ([ngModel])="password" formControlName="password"  type="password" id="password" name="password" placeholder="Password"><br>
+=======
+          <button id="submitButton" type="submit" class="btn btn-dark btn-sm" routerLink="/profile" (click)="submit()">Submit</button>
+>>>>>>> e89ac55c92e2e5e5c7e672944f5467bb2781694c
         </div>
       </div>
 

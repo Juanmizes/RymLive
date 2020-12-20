@@ -1,9 +1,8 @@
 <div id="songListening"> 
-  <span id="songName" class="badge badge-dark">Listening: {{songName}}</span>
+  <p id="songName">{{songName}}</p>
 </div>
+<div id="oneLess" (click)="oneLess()"><img src="../assets/img/skip_previous-white-18dp.svg"></div>
+<div id="oneMore" (click)="oneMore()"><img src="../assets/img/skip_next-white-18dp.svg"></div>
 <div class="music-player" mat-card-image plyr loadSprite plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" 
   [plyrCrossOrigin]="true" [plyrSources]="audio"></div>
-<div id="musicButtons"> 
-  <button id="oneLess" type="button" class="btn btn-secondary btn-sm" (click)="oneLess()">←</button>
-  <button id="oneMore" type="button" class="btn btn-secondary btn-sm" (click)="oneMore()">→</button>
-</div>
+
