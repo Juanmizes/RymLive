@@ -38,6 +38,7 @@
 #settings-icon {
     display: inline-flex;
     float: right;
+    cursor: pointer;
     padding: 5px;
 }
 
@@ -104,6 +105,7 @@
 
 #profile-main-mySongs {
     float: left;
+    cursor: pointer;
     padding: 10px 10px 10px 10px;
     margin-left: 30px;
     margin-top: 4px;
@@ -117,6 +119,7 @@
 
 #profile-main-myList {
     float: left;
+    cursor: pointer;
     padding: 10px 10px 10px 10px;
     margin-left: 20px;
     margin-top: 4px;
@@ -130,6 +133,7 @@
 
 #profile-main-upload{
     float: right;
+    cursor: pointer;
     padding: 10px 10px 10px 10px;
     margin-right: 20px;
     margin-top: 4px;
