@@ -4,9 +4,11 @@ const Validator = require('validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { secretKey } = require('../configuraciones.json');
-const fs = require('fs');
+const { randomName } = require('../helpers/libs');
+const fs = require('fs-extra');
 const path = require('path');
 var User = require('../models/users');
+var Song = require('../models/songs');
 
 var controller = {
 
@@ -92,7 +94,6 @@ var controller = {
         const user = await User.findOne({ email });
         if (!user) return res.status(401).send('El email o la contraseña no existe');
 
-
         if (!await bcrypt.compare(password, user.password)) return res.status(401).send('El email o la contraseña no existe');
 
         const token = jwt.sign({ _id: user._id }, secretKey, { expiresIn: '2 days' });
@@ -105,18 +106,17 @@ var controller = {
 
     tokenMiddleware: async (req, res, next) => {
         try {
-            console.log(req.headers)
             if (!req.headers.auth) {
                 return res.status(401).send({
                     status: 'error',
-                    message: 'No tienes autorizacion 1'
+                    message: 'No tienes autorizacion'
                 });
             }
             let token = req.headers.auth.split(' ')[1];
             if (token === 'null') {
                 return res.status(401).send({
                     status: 'error',
-                    message: 'No tienes autorizacion 2'
+                    message: 'No tienes autorizacion'
                 });
             }
 
@@ -124,14 +124,14 @@ var controller = {
             if (!payload) {
                 return res.status(401).send({
                     status: 'error',
-                    message: 'No tienes autorizacion 3'
+                    message: 'No tienes autorizacion'
                 });
             }
             const exist = await User.findById({ _id: payload._id });
             if (!exist) {
                 return res.status(401).send({
                     status: 'error',
-                    message: 'No tienes autorizacion 4'
+                    message: 'No tienes autorizacion'
                 });
             }
             req.userId = payload._id;
@@ -205,17 +205,57 @@ var controller = {
         }
     },//end getUser
     uploadImage: async (req, res) => {
-       
-        //recoger fichero peticion 
-        let file_name = 'Imagen no subida...';
-        //comprobamos que tiene algo
-        
-       
+        //Creamos una función para salvar la imagen
+        console.log(req.file);
+        const saveImage = async () => {
+
+            //Creamos un nombre random de 20 digitos para la imagen 
+            const imgUrl = randomName(20);
+            
+            //sacamos la extension de la imagen que el usuaria ha enviado    
+            const ext = path.extname(req.file.originalname).toLowerCase();
+            
+            //buscamos para ver si ya hay una imagen que se llame igual
+            const images = await User.find({ image: [imgUrl + ext] });
+            
+            //si hay una imagen que se llame igual volvemos a llamar a la función
+            if (images.length > 0) {
+                saveImage();
+                return;
+            }else {
+
+                const imageTempPath = req.file.path;
+
+                if (ext === '.png' || ext === '.jpg' || ext === '.jpeg' || ext === '.gif') {        //comprobamos que sea una imagen
+                    const imageTempPath = req.file.path;
+                    const targetPath = path.resolve(`public/upload/usersImage/${imgUrl}${ext}`)
+
+                    await fs.rename(imageTempPath, targetPath); //Guardamos la imagen en la carpeta upload
+
+                    const save = await User.findByIdAndUpdate({ _id: req.userId},{ image: imgUrl + ext }); //subimos el viaje a la bbdd
+
+                    res.json({      //respondemos al usuario que todo ha ido bien
+                        status: 'success',
+                        message: `Imagen guardada satisfactoriamente en el usuario: ${save._id}`
+                    });
+
+                } else {
+                    await fs.unlink(imageTempPath);
+                    res.status(500).json({
+                        status: 'error',
+                        message: 'Extensión no válida'
+                    })
+                }
+            }
+        }
+        saveImage(); 
+
+
     }, //end updateImage
     getImage: (req, res) => {
         const file = req.params.image;
 
-        var path_file = './upload/usersImage/' + file;
+        var path_file = './public/upload/usersImage/' + file;
 
         const exist = fs.existsSync(path_file);
 
@@ -227,6 +267,83 @@ var controller = {
             return res.status(404).json({
                 status: 'error',
                 message: 'La imagen no existe'
+            });
+
+        }
+    },//end getImage
+    
+    
+    uploadSong: async (req, res) => {
+        
+        const {title, autor} = req.body;
+        if(!title && !autor){
+            return res.status(500).json({
+                status: 'error',
+                message: 'No has enviado todos los datos'
+            })
+        }
+        //Creamos una función para salvar la cancion
+        const saveSong = async () => {
+            //Creamos un nombre random de 20 digitos para la cancion 
+            const songUrl = randomName(20);
+            console.log("Random");
+            //sacamos la extension de la cancion que el usuaria ha enviado    
+            const ext = path.extname(req.file.originalname).toLowerCase();
+            console.log(ext);
+            //buscamos para ver si ya hay una cancion que se llame igual
+            const songs = await Song.find({ nameFile: [songUrl + ext] });
+            console.log("Primera busqueda");
+            //si hay una cancion que se llame igual volvemos a llamar a la función
+            if (songs.length > 0) {
+                saveSong();
+                return;
+            }else {
+                console.log(req.file);
+                if(req.body.title){
+
+                }
+                const songTempPath = req.file.path;
+
+                if (ext === '.mp3' || ext === '.wav' || ext === '.wma' || ext === '.mid') {        //comprobamos que sea una imagen
+                    const songTempPath = req.file.path;
+                    const targetPath = path.resolve(`public/upload/usersSong/${songUrl}${ext}`)
+
+                    await fs.rename(songTempPath, targetPath); //Guardamos la imagen en la carpeta upload
+                    const song = new Song({title: title, autor: autor, user: req.userId, nameFile: songUrl + ext });
+                    await song.save(); //subimos el viaje a la bbdd
+
+                    res.json({      //respondemos al usuario que todo ha ido bien
+                        status: 'success',
+                        message: `Canción guardada satisfactoriamente en el usuario: ` + req.userId
+                    });
+
+                } else {
+                    await fs.unlink(songTempPath);
+                    res.status(500).json({
+                        status: 'error',
+                        message: 'Extensión no válida'
+                    })
+                }
+            }
+        }
+        saveSong(); 
+    },//end uploadSong
+    
+    getSong: (req, res) => {
+        const file = req.params.song;
+
+        var path_file = './public/upload/usersSong/' + file;
+
+        const exist = fs.existsSync(path_file);
+
+        if (exist) {
+
+            return res.sendFile(path.resolve(path_file));
+
+        } else {
+            return res.status(404).json({
+                status: 'error',
+                message: 'La canción no existe'
             });
 
         }

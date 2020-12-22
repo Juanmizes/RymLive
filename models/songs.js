@@ -20,6 +20,15 @@ var songSchema = schema({
         type: mongoose.Schema.Types.ObjectId,
         require: true,
         ref: 'User'
+    },
+    views: {
+        type: Number,
+        require: false,
+        default: 0
+    },
+    createDate: {
+        type: Date,
+        default: Date.now
     }
 });
 

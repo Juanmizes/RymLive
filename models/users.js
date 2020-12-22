@@ -28,6 +28,10 @@ var userSchema = schema({
         type: String,
         require: false
     },
+    createDate: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 module.exports = mongoose.model('User', userSchema);
