@@ -1,4 +1,4 @@
-div{
+.main{
     background-color: azure;
    
     right: 0px;
@@ -7,7 +7,13 @@ div{
     width: 100%;
     height: 2000px;
 
+    margin-top: -6px;
+
     text-align: center;
+}
+
+div{
+    top: 100px;
 }
 
 html, body{
@@ -27,8 +33,8 @@ body{
 .title{
     text-align: center;
     font-size: 40px;
+    padding-top: 50px;
     color: #6a6a6a;
-    margin-top: 100px;
     font-weight: 100;
     font-family: 'Roboto', sans-serif;
 }

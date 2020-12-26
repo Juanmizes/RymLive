@@ -3,13 +3,13 @@
     margin: 0;
 }
 
-.header {
+.header-container {
     overflow: hidden;
     background-color: #616161;
     width: 100%;
 }
 
-.header a, .header span{
+.logo, .header-container span{
     float: left;
     color: #fff;
     text-align: center;
@@ -182,6 +182,7 @@
 #register{
     float: left;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 #browser{
@@ -203,6 +204,13 @@ ngbd-alert-selfclosing {
     top: 10px;
     float: right;
     margin-right: 32px;
+    cursor: pointer;
+}
+
+.logout-menu a:hover, .logout-menu a:hover, .logout-menu span:hover{
+    background-color: #282828;
+    color: #fff;
+    cursor: pointer;
 }
 
 .profile-menu{
@@ -210,6 +218,13 @@ ngbd-alert-selfclosing {
     top: 10px;
     float: right;
     margin-right: 16px;
+    cursor: pointer;
+}
+
+.profile-menu a:hover, .profile-menu a:hover, .profile-menu span:hover{
+    background-color: #282828;
+    color: #fff;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 800px){
