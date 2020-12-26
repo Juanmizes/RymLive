@@ -6,11 +6,16 @@
       <!-- <a id="browser" href="#contact">Contact</a>
       <a id="browser" href="#about">About</a> -->
     </div>
-    <div class="header-right" (click)="popUp()">
+    <div *ngIf="!logged" class="header-right" (click)="popUp()">
         <span class="browserSpan" id="btn-open-popup">Login</span>
     </div>
-  </div>
-
+    <div *ngIf="logged" class="logout-menu" (click)="logout()">
+      <span class="logout-menu button">Logout</span>
+    </div>
+    <div *ngIf="logged" class="profile-menu" (click)="profile()">
+      <span class="profile-menu button">Profile</span>
+    </div>
+    
 <div class="overlay" id="overlay">
   <div class="popup" id="popup" [formGroup]="loginForm">
       <a  id="btn-close-popup" class="btn-close-popup"><img src="../../assets/img/close-24px.svg" alt=""></a>

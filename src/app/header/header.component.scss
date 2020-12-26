@@ -198,6 +198,20 @@ ngbd-alert-selfclosing {
     top: 100px;
 }
 
+.logout-menu{
+    position: relative;
+    top: 10px;
+    float: right;
+    margin-right: 32px;
+}
+
+.profile-menu{
+    position: relative;
+    top: 10px;
+    float: right;
+    margin-right: 16px;
+}
+
 @media screen and (max-width: 800px){
     #browser{
         font-size: small;

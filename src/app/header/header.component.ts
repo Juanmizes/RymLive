@@ -27,6 +27,8 @@ export class HeaderComponent implements OnInit {
   user: User;
   alert: NgbdAlertSelfclosing;
   errorr: boolean;
+  currentSession;
+  logged;
 
   public submitted: Boolean = false;
   public error: {code: number, message: string} = null;
@@ -44,9 +46,11 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.popUp();
+    this.logged = false;
+    this.currentSession = this.storageService.getCurrentSession();
+    if (this.currentSession) this.logged = true;
     this.register = false;
-    this.errorr = false;
+    this.errorr = false;  
     // this.loginForm = this.formBuilder.group({
     //   Name:['', [Validators.pattern(/^\D+$/)]],
     //   Username:['', [Validators.required, Validators.pattern(/^\D+$/)]],
@@ -69,10 +73,13 @@ export class HeaderComponent implements OnInit {
     this.submitted = true;
     this.error = null;
     if(this.loginForm.valid){
+      this.logged = true;
       this.authenticationService.login(new LoginObject(this.loginForm.value)).subscribe(
         data => this.correctLogin(data),
         error => this.error = JSON.parse(error._body)
       )
+      var overlay = document.getElementById('overlay').classList.remove('active');
+      var popup = document.getElementById('popup').classList.remove('active');
     }
   }
 
@@ -125,6 +132,15 @@ export class HeaderComponent implements OnInit {
       popup.classList.remove('active');
     });
     this.register = false;
+  }
+
+  logout(){
+    this.logged = false;
+    this.currentSession = this.storageService.logout();
+  }
+
+  profile(){
+    this.router.navigate(['/profile']);
   }
 
 }

@@ -64,6 +64,7 @@ export class StorageService {
   logout(): void{
     this.removeCurrentSession();
     this.router.navigate(['/home']);
+    console.log(this.currentSession)
   }
 
 }
