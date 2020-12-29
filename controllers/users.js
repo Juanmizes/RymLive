@@ -211,18 +211,18 @@ var controller = {
 
             //Creamos un nombre random de 20 digitos para la imagen 
             const imgUrl = randomName(20);
-            
+
             //sacamos la extension de la imagen que el usuaria ha enviado    
             const ext = path.extname(req.file.originalname).toLowerCase();
-            
+
             //buscamos para ver si ya hay una imagen que se llame igual
             const images = await User.find({ image: [imgUrl + ext] });
-            
+
             //si hay una imagen que se llame igual volvemos a llamar a la función
             if (images.length > 0) {
                 saveImage();
                 return;
-            }else {
+            } else {
 
                 const imageTempPath = req.file.path;
 
@@ -232,7 +232,7 @@ var controller = {
 
                     await fs.rename(imageTempPath, targetPath); //Guardamos la imagen en la carpeta upload
 
-                    const save = await User.findByIdAndUpdate({ _id: req.userId},{ image: imgUrl + ext }); //subimos el viaje a la bbdd
+                    const save = await User.findByIdAndUpdate({ _id: req.userId }, { image: imgUrl + ext }); //subimos el viaje a la bbdd
 
                     res.json({      //respondemos al usuario que todo ha ido bien
                         status: 'success',
@@ -248,7 +248,7 @@ var controller = {
                 }
             }
         }
-        saveImage(); 
+        saveImage();
 
 
     }, //end updateImage
@@ -271,12 +271,12 @@ var controller = {
 
         }
     },//end getImage
-    
-    
+
+
     uploadSong: async (req, res) => {
-        
-        const {title, autor} = req.body;
-        if(!title && !autor){
+
+        const { title, autor } = req.body;
+        if (!title && !autor) {
             return res.status(500).json({
                 status: 'error',
                 message: 'No has enviado todos los datos'
@@ -286,49 +286,53 @@ var controller = {
         const saveSong = async () => {
             //Creamos un nombre random de 20 digitos para la cancion 
             const songUrl = randomName(20);
-            console.log("Random");
             //sacamos la extension de la cancion que el usuaria ha enviado    
             const ext = path.extname(req.file.originalname).toLowerCase();
-            console.log(ext);
             //buscamos para ver si ya hay una cancion que se llame igual
             const songs = await Song.find({ nameFile: [songUrl + ext] });
-            console.log("Primera busqueda");
             //si hay una cancion que se llame igual volvemos a llamar a la función
             if (songs.length > 0) {
                 saveSong();
                 return;
-            }else {
+            } else {
                 console.log(req.file);
-                if(req.body.title){
-
-                }
-                const songTempPath = req.file.path;
-
-                if (ext === '.mp3' || ext === '.wav' || ext === '.wma' || ext === '.mid') {        //comprobamos que sea una imagen
-                    const songTempPath = req.file.path;
-                    const targetPath = path.resolve(`public/upload/usersSong/${songUrl}${ext}`)
-
-                    await fs.rename(songTempPath, targetPath); //Guardamos la imagen en la carpeta upload
-                    const song = new Song({title: title, autor: autor, user: req.userId, nameFile: songUrl + ext });
-                    await song.save(); //subimos el viaje a la bbdd
-
-                    res.json({      //respondemos al usuario que todo ha ido bien
-                        status: 'success',
-                        message: `Canción guardada satisfactoriamente en el usuario: ` + req.userId
-                    });
-
-                } else {
-                    await fs.unlink(songTempPath);
+                let RepitSong = await Song.find({ title: req.body.title, autor: req.body.autor });
+                if (RepitSong.length > 0) {
+                    await fs.unlink(req.file.path);
                     res.status(500).json({
                         status: 'error',
-                        message: 'Extensión no válida'
+                        message: 'Este autor ya posee una cancion con el mismo titulo'
                     })
+                } else {
+                    const songTempPath = req.file.path;
+
+                    if (ext === '.mp3' || ext === '.wav' || ext === '.wma' || ext === '.mid') {        //comprobamos que sea una imagen
+                        const songTempPath = req.file.path;
+                        const targetPath = path.resolve(`public/upload/usersSong/${songUrl}${ext}`)
+
+                        await fs.rename(songTempPath, targetPath); //Guardamos la imagen en la carpeta upload
+                        const song = new Song({ title: title, autor: autor, user: req.userId, nameFile: songUrl + ext });
+                        await song.save(); //subimos el viaje a la bbdd
+
+                        res.json({      //respondemos al usuario que todo ha ido bien
+                            status: 'success',
+                            message: `Canción guardada satisfactoriamente en el usuario: ` + req.userId
+                        });
+
+                    } else {
+                        await fs.unlink(songTempPath);
+                        res.status(500).json({
+                            status: 'error',
+                            message: 'Extensión no válida'
+                        })
+                    }
                 }
+
             }
         }
-        saveSong(); 
+        saveSong();
     },//end uploadSong
-    
+
     getSong: (req, res) => {
         const file = req.params.song;
 
@@ -347,7 +351,42 @@ var controller = {
             });
 
         }
-    }//end getImage
+    },//end getImage
+    getUserSongs: async (req, res) => {
+        const userId = req.userId;
+        const users = await Song.find({user: userId});
+        console.log(users);
+        res.status(200).json({
+            status: 'success',
+            song: users
+        })
+
+    },//end getUserSongs
+    AddViews: async (req, res) => {
+        const params = req.params;
+        try {
+            let songUpdate = await Song.findOne({nameFile: params.nameFile});
+            let viewsUpdated = songUpdate.views + 1;
+            const updateSong = await Song.findOneAndUpdate({ nameFile: params.nameFile }, { views: viewsUpdated  }, { new: true });
+            return res.status(500).send({
+                status: 'success',
+                song: updateSong
+            })
+        } catch (err) {
+            return res.status(500).send({
+                status: 'error',
+                message: 'Error al sumar una View'
+            });
+        }
+        
+    },//end AddViews
+    getPopularSong: async (req,res) => {
+        const songs = await Song.find().sort({views: -1}).limit(1);
+        return res.status(500).send({
+            status: 'success',
+            song: songs
+        })
+    }//end getPopularSong
 
 } //end controller
 
