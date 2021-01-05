@@ -12,7 +12,7 @@ var router = express.Router();
 //Rutas para usuarios
 router.post('/register', userController.register);
 router.post('/login', userController.login);
-router.put('/profile/update',userController.tokenMiddleware, userController.updateProfile);
+router.put('/profile/update/:id', userController.updateProfile);
 router.get('/profile',userController.tokenMiddleware,userController.getOwnUser);
 router.get('/profile/user/:id', userController.getUser);
 router.put('/profile/updateImage',userController.tokenMiddleware, uploadImages ,userController.uploadImage);

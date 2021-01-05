@@ -146,10 +146,10 @@ var controller = {
     },//end tokenMiddleware
     updateProfile: async (req, res) => {
         const params = req.body;
-        const userId = req.userId;
+        // const userId = req.userId;
 
         try {
-            const updateUser = await User.findByIdAndUpdate({ _id: userId }, { description: params.description }, { new: true });
+            const updateUser = await User.findByIdAndUpdate({ _id: req.params.id }, { description: params.description }, { new: true });
             return res.status(500).send({
                 status: 'success',
                 user: updateUser
