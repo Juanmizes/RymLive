@@ -147,10 +147,10 @@ var controller = {
     updateProfile: async (req, res) => {
         const params = req.body;
         const userId = req.userId;
-
+        console.log(req.body);
         try {
             const updateUser = await User.findByIdAndUpdate({ _id: userId }, { description: params.description }, { new: true });
-            return res.status(500).send({
+            return res.status(200).send({
                 status: 'success',
                 user: updateUser
             })
@@ -382,11 +382,24 @@ var controller = {
     },//end AddViews
     getPopularSong: async (req,res) => {
         const songs = await Song.find().sort({views: -1}).limit(1);
-        return res.status(500).send({
+        return res.status(200).send({
             status: 'success',
             song: songs
         })
-    }//end getPopularSong
+    },//end getPopularSong
+
+    searchUser: async (req,res) =>{
+        let searchString = req.params.search
+        const usersSearched = await User.find({ "$or": [
+            {username: {"$regex": searchString, "$options": "i"}}
+        ]}).sort().catch(() => []);
+        
+        return res.status(200).send({
+            status: 'success',
+            usersSearched
+        });
+
+    }//end searchUser
 
 } //end controller
 
