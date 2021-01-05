@@ -147,10 +147,11 @@ var controller = {
     updateProfile: async (req, res) => {
         const params = req.body;
         // const userId = req.userId;
-
+        console.log(params);
+        console.log(req.params);
         try {
             const updateUser = await User.findByIdAndUpdate({ _id: req.params.id }, { description: params.description }, { new: true });
-            return res.status(500).send({
+            return res.status(200).send({
                 status: 'success',
                 user: updateUser
             })
