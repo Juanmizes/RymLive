@@ -354,7 +354,7 @@ var controller = {
     },//end getImage
     getUserSongs: async (req, res) => {
         const userId = req.userId;
-        const users = await Song.find({user: userId});
+        const users = await Song.find({user: userId}).catch(() => []);
         console.log(users);
         res.status(200).json({
             status: 'success',
