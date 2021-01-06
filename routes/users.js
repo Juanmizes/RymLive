@@ -21,7 +21,7 @@ router.get('/getImage/:image', userController.tokenMiddleware, userController.ge
 
 //Rutas Musica usuario
 router.post('/uploadSong',userController.tokenMiddleware, uploadSongs ,userController.uploadSong);
-router.get('/getSong/:song', userController.getSong);
+router.get('/getSong/:song', userController.tokenMiddleware, userController.getSong);
 router.get('/getNameFile', userController.tokenMiddleware, userController.getUserSongs);
 router.put('/addViews/:nameFile', userController.AddViews);
 router.get('/popularSong', userController.getPopularSong)
