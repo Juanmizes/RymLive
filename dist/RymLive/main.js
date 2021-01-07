@@ -1298,8 +1298,7 @@ StorageService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineIn
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Global", function() { return Global; });
 var Global = {
-    // url: 'https://rymliveapi.herokuapp.com/api/'
-    url: 'http://localhost:3900/api/'
+    url: 'https://rymliveapi.herokuapp.com/api/'
 };
 
 
