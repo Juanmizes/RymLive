@@ -23,9 +23,10 @@ export class AuthenticationService {
     return this._http.post(this.url+'/login', loginObj).pipe(map(this.extractData));
   }
 
-  // login(email: String, password: String) {
-  //   return  this._http.get<Res>(this.url+'/login?'+ email + password);
-  // }
+  register(loginObj: LoginObject): Observable<Session> {
+    console.log(loginObj);
+    return this._http.post(this.url+'/register', loginObj).pipe(map(this.extractData));
+  }
  
   logout(): Observable<Boolean> {
     return this._http.post(this.url + 'logout', {}).pipe(map(this.extractData));

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../shared/user';
 import { Res } from '../shared/res';
@@ -14,12 +14,13 @@ import {Session} from "../shared/session";
 })
 export class UserProfileComponent implements OnInit {
   settingsAppear: boolean;
-  oldValues: String;
+  oldValues: string;
   newValues: string;
   imgRute: string;
   imgRuteActually: string;
   imageDefault: string;
   imageActually: string;
+  profileImage: any;
 
   showTableHeader: boolean;
   showUploadSong: boolean;
@@ -28,8 +29,13 @@ export class UserProfileComponent implements OnInit {
   test: any;
 
   res: Res;
-  user;
+  user: User;
   session: Session;
+  nameService;
+  nameSongs;
+
+
+  fileToUpload: File = null;
 
   constructor(
     private storageService: StorageService,
@@ -37,20 +43,31 @@ export class UserProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.storageService.getNameFiles().subscribe(
+      data => {
+        this.nameService = data,
+        this.nameSongs = this.nameService.song
+        console.log("Mis canciones: ",this.nameSongs)
+      }
+    );
     this.storageService.getCurrentUser().subscribe(
       data => {
         this.res = data;
         this.user = this.res.user;
-        console.log(this.user)
-        this.oldValues = this.user.description;
-        this.user.image = this.user.image;
+        console.log("Usuario: ", this.user)
+        this.oldValues = this.res.user.description;
+        this.user.image = this.res.user.image;
         if(this.user.image == null){
           this.user.image = "../../assets/img/account_circle-24px.svg"
         }
       }
     );
+    // this.storageService.getCurrentImage().subscribe(
+    //   data => console.log(data,"3")
+    // );
+
+
     //Ochando 5fce7127c91df933046b0d8a
-    //Juanma 5fda5e3291ea0200173870d0
     
     // this.userService.getUser("5fda5e3291ea0200173870d0").subscribe(
     //   res => { 
@@ -83,6 +100,7 @@ export class UserProfileComponent implements OnInit {
 
   saveChanges(){
     //Change Biography
+    let error = null;
     this.newValues = (document.getElementById('biography-input') as HTMLInputElement).value;
     this.oldValues = this.newValues;
 
@@ -93,43 +111,16 @@ export class UserProfileComponent implements OnInit {
       this.imageActually =  input.files[0].name;
       //this.imgRuteActually = (document.getElementById("customFile") as HTMLInputElement).value;
 
-    }else 
-      console.log("No file selected " + input.files[0]);
+    }else  console.log("No file selected " + input.files[0]);
+    this.user.description = this.oldValues;
+
+    this.storageService.updateUser(this.user);
+    this.storageService.updateImage(this.imageActually).subscribe(
+      data => console.log(data)
+    );
 
     this.settingsAppear = false;
     console.log("Settings disappear");
-  }
-
-  loadTable(){
-    this.showUploadSong = false;
-    this.showTableHeader = true;
-    this.getSongs();
-  }
-  
-  getSongs(){
-    const xhttp = new XMLHttpRequest();
-    xhttp.open('GET', '../../assets/json/mySongTable.json', true);
-    xhttp.send();
-    xhttp.onreadystatechange = function(){
-
-      if(this.readyState == 4 && this.status == 200){
-        let datos = JSON.parse(this.responseText);
-        let res = document.querySelector('#tableBody');
-        res.innerHTML='';
-        
-        for(let item of datos){
-          res.innerHTML += `
-          <tr>
-            <th scope="row">${item.id}</th>
-            <td>${item.soungName}</td>
-            <td>${item.autor}</td>
-            <td>${item.time}</td>
-            <td><div id="musicPlayer-icon"><button type="button" class="btn btn-outline-dark btn-sm">Play</button></div></td>
-          </tr>
-          `
-        }
-      }
-    }
   }
   
   public logout(): void{
@@ -138,9 +129,29 @@ export class UserProfileComponent implements OnInit {
     );
   }
 
-  uploadSong(){
+  closePopup(){
+    this.showTableHeader = true;
+    this.showUploadSong = false;
+  }
+
+  popupSong(){
     this.showTableHeader = false;
     this.showUploadSong = true;
-    console.log("funciona");
+  }
+
+  uploadSong() {
+    let song = <HTMLInputElement>document.getElementById('uploadSong-input');
+    let cadena;
+    let autor;
+    let cancion;
+    if(song.files && song.files[0]){
+      cadena = song.files[0].name;
+      autor = cadena.split("-")[0];
+      cancion = cadena.split("-")[1];
+    }
+    this.storageService.uploadSong(autor, cancion).subscribe(
+      data => this.closePopup(),
+      error => console.log(error)
+    );
   }
 }

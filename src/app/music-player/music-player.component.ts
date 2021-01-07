@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { tick } from '@angular/core/testing';
 import { AudioSources } from '../shared/audioSources';
+import {StorageService} from "../services/storage.service";
+import { subscribeOn } from 'rxjs/operators';
+import { Global } from '../services/global';
+
 
 @Component({
   selector: 'app-music-player',
@@ -16,22 +20,48 @@ export class MusicPlayerComponent implements OnInit {
   musicList: string[];
   audio: AudioSources[];
   player: Plyr;
-  
-  constructor() {}
+  nameSongs;
+  nameService;
+  public url: string;
+
+  constructor(
+    private storageService: StorageService
+  ) {
+    this.url = Global.url;
+  }
 
   ngOnInit(): void {
+    this.nameSongs= [''];
+    this.songSelected = 0,
+    this.storageService.getNameFiles().subscribe(
+      data => {
+        this.nameService = data,
+        this.nameSongs = this.nameService.song,
+        this.musicListLength = this.nameSongs.length,
+        this.songName = this.nameSongs[this.songSelected].title + " - " + this.nameSongs[this.songSelected].autor;
+        // this.storageService.playThisSong(this.nameSongs[this.songSelected].nameFile).subscribe(
+        //   data => {
+        //     console.log(data)
+        //   },
+        //   error =>{
+        //     console.log(error)
+        //   }
+        // );
+        this.audio = [
+          {
+            src: this.nameSongs[this.songSelected].nameFile,
+            type: 'audio/mp3',
+            id: 'song',
+          }
+        ]
+      }
+    );
     this.musicRute = "../../assets/music/";
     this.musicList = ['1 - J Balvin - Brillo.mp3', '2 - Ozuna - La Modelo.mp3', '5 - Aitana - Lo Malo.mp3'];
-    this.songSelected = 0;
-    this.musicListLength = 2; 
-    this.songName = this.musicList[this.songSelected].toString().substring(0, this.musicList[this.songSelected].length - 4);
-    this.audio = [
-      {
-        src: this.musicRute+this.musicList[this.songSelected],
-        type: 'audio/mp3',
-        id: 'song',
-      }
-    ]
+    // this.storageService.playThisSong(this.nameSongs[this.songSelected]).subscribe(
+    //   data => console.log(data,"1")
+    // );
+    this.songName = this.nameSongs;
   };
 
   play(): void {
@@ -47,6 +77,7 @@ export class MusicPlayerComponent implements OnInit {
   }
 
   oneMore(){
+    
     if (this.songSelected === this.musicListLength){
       this.songSelected = 0;
     }else{
@@ -67,14 +98,21 @@ export class MusicPlayerComponent implements OnInit {
   }
 
   songChanges() {
-    this.songName = this.musicList[this.songSelected].toString().substring(0, this.musicList[this.songSelected].length - 4);
-    this.audio = [
-      {
-        src: this.musicRute+this.musicList[this.songSelected],
-        type: 'audio/mp3',
-        id: 'song',
+    this.storageService.getNameFiles().subscribe(
+      data => {
+        this.nameService = data,
+        this.nameSongs = this.nameService.song,
+        this.musicListLength = this.nameSongs.length,
+        this.songName = this.nameSongs[this.songSelected].title + " - " + this.nameSongs[this.songSelected].autor;
+        this.audio = [
+          {
+            src: this.nameSongs[this.songSelected].nameFile,
+            type: 'audio/mp3',
+            id: 'song',
+          }
+        ]
       }
-    ];
+    );
   }
 
 }

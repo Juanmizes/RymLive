@@ -7,6 +7,7 @@ import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
 
 
 import {LoginObject} from "../shared/loginObject";
+import {RegisterObject} from "../shared/registerObject";
 import {AuthenticationService} from "../services/authentication.service";
 import {StorageService} from "../services/storage.service";
 import {Router} from "@angular/router";
@@ -51,21 +52,15 @@ export class HeaderComponent implements OnInit {
     if (this.currentSession) this.logged = true;
     this.register = false;
     this.errorr = false;  
-    // this.loginForm = this.formBuilder.group({
-    //   Name:['', [Validators.pattern(/^\D+$/)]],
-    //   Username:['', [Validators.required, Validators.pattern(/^\D+$/)]],
-    //   Password:['', [Validators.required]],
-    //   Email:['', [Validators.email]]
-    // })
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
     this.registerForm = this.formBuilder.group({
-      name:['', [Validators.pattern(/^\D+$/)]],
+      name:['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
-      email:['', [Validators.email]],
+      email:['', [Validators.required, Validators.email]],
     });
   }
 
@@ -78,15 +73,29 @@ export class HeaderComponent implements OnInit {
         data => this.correctLogin(data),
         error => this.error = JSON.parse(error._body)
       )
-      var overlay = document.getElementById('overlay').classList.remove('active');
-      var popup = document.getElementById('popup').classList.remove('active');
+      this.loginForm.reset();
+    }
+
+    if(this.registerForm.valid){
+      console.log("register")
+      this.authenticationService.register(new RegisterObject(this.registerForm.value)).subscribe(
+        data => this.correctRegister(data),
+        error => this.error = JSON.parse(error._body)
+      )
+      this.registerForm.reset();
     }
   }
 
   private correctLogin(data: Session){
-    console.log(data.user)
+    console.log(data)
     this.storageService.setCurrentSession(data);
-    this.router.navigate(['/profile']);
+    this.closePopup();
+    this.profile();
+  }
+  private correctRegister(data: Session){
+    console.log(data)
+    this.storageService.setCurrentSession(data);
+    this.closePopup();
   }
 
   // async submit(){
@@ -120,6 +129,8 @@ export class HeaderComponent implements OnInit {
     overlay = document.getElementById('overlay'),
     popup = document.getElementById('popup'),
     btnClosePopup = document.getElementById('btn-close-popup');
+    overlay.classList.add('active');
+    popup.classList.add('active');
     
     btnOpenPopup.addEventListener('click', function(){
       overlay.classList.add('active');
@@ -132,6 +143,11 @@ export class HeaderComponent implements OnInit {
       popup.classList.remove('active');
     });
     this.register = false;
+  }
+
+  closePopup(){
+    var overlay = document.getElementById('overlay').classList.remove('active');
+    var popup = document.getElementById('popup').classList.remove('active');
   }
 
   logout(){
