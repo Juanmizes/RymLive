@@ -3,11 +3,10 @@ import { Router } from '@angular/router';
 import {Session} from "../shared/session";
 import { map } from 'rxjs/operators';
 import { User } from '../shared/user';
-import { Res } from '../shared/res';
+import { Res, ResSong } from '../shared/res';
 import { Global } from '../services/global';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-// import { timingSafeEqual } from "crypto";
 
 @Injectable({
   providedIn: 'root'
@@ -75,21 +74,21 @@ export class StorageService {
     this.updateSessionUser().subscribe(
       data => console.log(data.status),
       error => console.log(error)
-    );;
+    );
   }
 
-  updateImage(image: string) {
+  updateImage(image) {
     const auth = new HttpHeaders({
       'auth': 'Bearer ' + this.currentSession.token
     });
-    return this._http.put(this.url+'profile/updateImage', image, {headers:auth});
+    return this._http.put(this.url+'profile/updateImage',image,{headers:auth});
   }
 
   getCurrentImage() {
     const auth = new HttpHeaders({
       'auth': 'Bearer ' + this.currentSession.token
     });
-    return this._http.get(this.url+'getImage/'+this.currentSession.user.image, {headers:auth})
+    return this._http.get(this.url+'getImage/'+this.currentSession.user.image, {headers:auth});
   }
 
   getNameFiles() {
@@ -102,16 +101,21 @@ export class StorageService {
   playThisSong(nameFile: String) {
     const auth = new HttpHeaders({
       'auth': 'Bearer ' + this.currentSession.token,
-      'Content-Type': 'text/plain'
+      // 'Accept': 'text/plain',
+      // 'Content-Type': 'text/plain',
+      // 'responseType': 'text'
     });
-    return this._http.get(this.url+'getSong/'+nameFile, {headers:auth, responseType:'json'});
+    return this._http.get(this.url+'getSong/'+nameFile, {headers:auth});
   }
 
-  uploadSong(autor, cancion) {
+  uploadSong(formData) {
     const auth = new HttpHeaders({
       'auth': 'Bearer ' + this.currentSession.token
     });
-    return this._http.post(this.url+'uploadSong/', {autor,cancion}, {headers:auth});
+
+    return this._http.post(this.url+'uploadSong/', formData, {headers:auth});
+   
+    // return this._http.post<ResSong>(this.url+'uploadSong/', {file,autor,title}, {headers:auth});
   }
   
   logout(): void{

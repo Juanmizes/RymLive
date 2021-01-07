@@ -1,10 +1,10 @@
-<div id="songListening"> 
+<!-- <div id="songListening"> 
   <p id="songName">{{songName}}</p>
 </div>
 <div id="oneLess" (click)="oneLess()"><img src="../assets/img/skip_previous-white-18dp.svg"></div>
-<div id="oneMore" (click)="oneMore()"><img src="../assets/img/skip_next-white-18dp.svg"></div>
-<div class="music-player" id="music-player" mat-card-image plyr loadSprite plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" 
+<div id="oneMore" (click)="oneMore()"><img src="../assets/img/skip_next-white-18dp.svg"></div> -->
+<!-- <plyr class="music-player" id="music-player" #musicPlayer mat-card-image plyr loadSprite plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" 
   [plyrCrossOrigin]="true" [plyrSources]="audio">
-</div>
-  
-
+</plyr> -->
+<ngx-audio-player class="music-player" id="music-player" #audioPlayer [playlist]="playlist" [displayTitle]="true" [autoPlay]="false" 
+muted="muted" [displayPlaylist]="true" [expanded]="false" [displayVolumeControls]="true" [disablePositionSlider]="false"></ngx-audio-player> 

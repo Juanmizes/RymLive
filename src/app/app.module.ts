@@ -22,6 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {StorageService} from "./services/storage.service";
 import {AuthorizatedGuard} from "./shared/authorizatedGuard";
+import { NgxAudioPlayerModule } from 'ngx-audio-player';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import {AuthorizatedGuard} from "./shared/authorizatedGuard";
     AppRoutingModule,
     LayoutModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgxAudioPlayerModule
   ],
   providers: [
     StorageService,

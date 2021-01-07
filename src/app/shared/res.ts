@@ -6,3 +6,10 @@ export class Res {
         public user: User,
     ) {}
 }
+
+export class ResSong {
+    constructor(
+        public status: string,
+        public song,
+    ) {}
+}

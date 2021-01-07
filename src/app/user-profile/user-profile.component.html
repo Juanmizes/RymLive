@@ -4,13 +4,13 @@
         <!--USUARIO-->
         <div id="profile-header">
             <!--IMAGEN DE PERFIL DE USUARIO-->
-            <div id="image-profile">
-                <img src="{{profileImage||user.image}}" id="user-icon">
+            <form id="image-profile" [formGroup]="imageForm">
+                <img src="{{this.url+'getImage/'+this.user.image || imageDefault}}" id="user-icon">
                 <div *ngIf="settingsAppear" class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile" accept="image">
+                    <input type="file" formControlName="image" class="custom-file-input" id="customFile" (change)="handleFileInput($event.target.files)" accept="image">
                     <label class="custom-file-label" for="customFile">Choose file</label>
                 </div>
-            </div>
+            </form>
             <!--INFORMACIÓN DEL USUARIO-->
             <div id="info-profile">
                 <div id="settings-icon" (click)="inSettings()">
@@ -30,7 +30,7 @@
                 </div>
 
                 <button *ngIf="settingsAppear" type="button" class="btn btn-dark btn-sm" id="saveChanges"
-                    (click)="saveChanges()">Guardar</button>
+                    (click)="saveChanges();uploadImage()">Guardar</button>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
         <div id="profile-main">
             <!--BARRA DE NAVEGACIÓN-->
             <div id="mySongs-header">
-                <div id="profile-main-mySongs"><span>Mis Canciones</span></div>
+                <div id="profile-main-mySongs" ><span>Mis Canciones</span></div>
                 <!-- <div id="profile-main-myList"><span>Mi Lista</span></div> -->
                 <div id="profile-main-upload" (click)="popupSong()"><span>Subir canción</span></div>
             </div>
@@ -51,7 +51,6 @@
                             <th scope="col">Song name</th>
                             <th scope="col">Autor</th>
                             <th scope="col">Views</th>
-                            <th scope="col">Play</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -60,7 +59,6 @@
                             <td>{{song.title}}</td>
                             <td>{{song.autor}}</td>
                             <td>{{song.views}}</td>
-                            <td><div id="musicPlayer-icon"><button type="button" class="btn btn-outline-dark btn-sm">Play</button></div></td>
                         </tr>
                     </tbody>
                 </table> 
@@ -69,10 +67,15 @@
                 <div class="popup" id="popup">
                     <a (click)="closePopup()" id="btn-close-popup" class="btn-close-popup"><img src="../../assets/img/close-24px.svg" alt=""></a>
                     <h3>Subir Cancion</h3><br>
-                    <div id="uploadSong">
-                        <input id="uploadSong-input" type="file">
-                    </div>
-                    <button id="submitButton" type="submit" class="btn btn-dark" (click)="uploadSong()" form="login-form"> Upload </button>
+                    <form id="uploadSong" [formGroup]="uploadSongForm">
+                        <p>Autor: </p>
+                        <input id="uploadSong-input" type="text" formControlName="autor">
+                        <p>Titulo: </p>
+                        <input id="uploadSong-input" type="text" formControlName="title">
+                        <p>Archivo: </p>
+                        <input id="uploadSong-input" type="file" formControlName="song" (change)="handleFileInput($event.target.files)">
+                        <button id="submitButton" (click)="uploadSong()" type="submit" class="btn btn-dark"  form="login-form"> Upload </button>
+                    </form>
                 </div>
             </div>
         </div>

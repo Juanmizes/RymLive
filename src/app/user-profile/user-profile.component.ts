@@ -2,10 +2,12 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../shared/user';
 import { Res } from '../shared/res';
+import { Global } from '../services/global';
 
 import {StorageService} from "../services/storage.service";
 import {AuthenticationService} from "../services/authentication.service";
 import {Session} from "../shared/session";
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-user-profile',
@@ -13,20 +15,16 @@ import {Session} from "../shared/session";
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+  public url: string;
   settingsAppear: boolean;
   oldValues: string;
   newValues: string;
-  imgRute: string;
-  imgRuteActually: string;
   imageDefault: string;
   imageActually: string;
-  profileImage: any;
 
   showTableHeader: boolean;
   showUploadSong: boolean;
   totalRowsSongs: number;
-
-  test: any;
 
   res: Res;
   user: User;
@@ -34,13 +32,23 @@ export class UserProfileComponent implements OnInit {
   nameService;
   nameSongs;
 
+  uploadSongForm = new FormGroup({
+    autor: new FormControl(''),
+    title: new FormControl(''),
+    song: new FormControl('')
+  });
+
+  imageForm = new FormGroup({
+    image: new FormControl(''),
+  });
+
 
   fileToUpload: File = null;
 
   constructor(
     private storageService: StorageService,
     private authenticationService: AuthenticationService
-  ) { }
+  ) { this.url = Global.url; }
 
   ngOnInit(): void {
     this.storageService.getNameFiles().subscribe(
@@ -56,36 +64,13 @@ export class UserProfileComponent implements OnInit {
         this.user = this.res.user;
         console.log("Usuario: ", this.user)
         this.oldValues = this.res.user.description;
-        this.user.image = this.res.user.image;
         if(this.user.image == null){
           this.user.image = "../../assets/img/account_circle-24px.svg"
         }
       }
     );
-    // this.storageService.getCurrentImage().subscribe(
-    //   data => console.log(data,"3")
-    // );
 
-
-    //Ochando 5fce7127c91df933046b0d8a
-    
-    // this.userService.getUser("5fda5e3291ea0200173870d0").subscribe(
-    //   res => { 
-    //     this.user = res.user;
-    //     this.oldValues = this.user.description;
-    //     if(this.user.image == null){
-    //       this.user.image = "../../assets/img/account_circle-24px.svg"
-    //     }
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
-
-    this.imgRute = "../../assets/img/";
-    this.imgRuteActually = this.imgRute;
     this.imageDefault = "account_circle-24px.svg";
-    this.imageActually = this.imageDefault;
 
     this.settingsAppear = false;
     this.showTableHeader = false;
@@ -104,6 +89,13 @@ export class UserProfileComponent implements OnInit {
     this.newValues = (document.getElementById('biography-input') as HTMLInputElement).value;
     this.oldValues = this.newValues;
 
+    this.storageService.updateUser(this.user);
+
+    this.settingsAppear = false;
+    console.log("Settings disappear");
+  }
+
+  uploadImage(){
     //Change Image
     const input = <HTMLInputElement>document.getElementById('customFile');
     if(input.files && input.files[0]){
@@ -114,13 +106,16 @@ export class UserProfileComponent implements OnInit {
     }else  console.log("No file selected " + input.files[0]);
     this.user.description = this.oldValues;
 
-    this.storageService.updateUser(this.user);
-    this.storageService.updateImage(this.imageActually).subscribe(
-      data => console.log(data)
-    );
+    this.user.image = this.imageActually;
 
-    this.settingsAppear = false;
-    console.log("Settings disappear");
+    const formData = new FormData();
+    formData.append('image', this.fileToUpload);
+
+    this.storageService.updateImage(formData).subscribe(
+      res => {
+        console.log(res)
+      }
+    );
   }
   
   public logout(): void{
@@ -138,20 +133,38 @@ export class UserProfileComponent implements OnInit {
     this.showTableHeader = false;
     this.showUploadSong = true;
   }
+  
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+  }
 
   uploadSong() {
     let song = <HTMLInputElement>document.getElementById('uploadSong-input');
-    let cadena;
-    let autor;
-    let cancion;
+    let cadena, autor, cancion, file;
+
+    const formData = new FormData();
+    formData.append('song', this.fileToUpload);
+    formData.append('title', this.uploadSongForm.get('title').value);
+    formData.append('autor', this.uploadSongForm.get('autor').value);
+
     if(song.files && song.files[0]){
       cadena = song.files[0].name;
       autor = cadena.split("-")[0];
       cancion = cadena.split("-")[1];
+      file = song.files[0];
+      console.log(file)
     }
-    this.storageService.uploadSong(autor, cancion).subscribe(
-      data => this.closePopup(),
-      error => console.log(error)
-    );
+    this.storageService.uploadSong(formData).subscribe(res => {
+      console.log(res);
+      this.storageService.getNameFiles().subscribe(
+        data => {
+          this.nameService = data,
+          this.nameSongs = this.nameService.song
+          console.log("Mis canciones: ",this.nameSongs)
+        }
+      );
+      this.closePopup();
+    });
+    
   }
 }

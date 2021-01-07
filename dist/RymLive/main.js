@@ -11,17 +11,25 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserProfileComponent", function() { return UserProfileComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _services_storage_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/storage.service */ "n90K");
-/* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/authentication.service */ "ej43");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _services_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/global */ "p9xo");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _services_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/storage.service */ "n90K");
+/* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/authentication.service */ "ej43");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "ofXK");
+
+
+
 
 
 
 
 
 function UserProfileComponent_section_1_div_5_Template(rf, ctx) { if (rf & 1) {
+    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 27);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "input", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "input", 28);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function UserProfileComponent_section_1_div_5_Template_input_change_1_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r7.handleFileInput($event.target.files); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "label", 29);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Choose file");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -48,13 +56,13 @@ function UserProfileComponent_section_1_div_16_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r3.oldValues);
 } }
 function UserProfileComponent_section_1_button_17_Template(rf, ctx) { if (rf & 1) {
-    const _r8 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    const _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 32);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UserProfileComponent_section_1_button_17_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r8); const ctx_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r7.saveChanges(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UserProfileComponent_section_1_button_17_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r10); const ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); ctx_r9.saveChanges(); return ctx_r9.uploadImage(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Guardar");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
-function UserProfileComponent_section_1_tr_41_Template(rf, ctx) { if (rf & 1) {
+function UserProfileComponent_section_1_tr_39_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "tr");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "th", 33);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
@@ -68,59 +76,69 @@ function UserProfileComponent_section_1_tr_41_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "td");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "td");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 34);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 35);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Play");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const song_r9 = ctx.$implicit;
+    const song_r11 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](song_r9.id);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](song_r11.id);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](song_r9.title);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](song_r11.title);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](song_r9.autor);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](song_r11.autor);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](song_r9.views);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](song_r11.views);
 } }
-function UserProfileComponent_section_1_div_42_Template(rf, ctx) { if (rf & 1) {
-    const _r11 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 36);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 37);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 38);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UserProfileComponent_section_1_div_42_Template_a_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r11); const ctx_r10 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r10.closePopup(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 39);
+function UserProfileComponent_section_1_div_40_Template(rf, ctx) { if (rf & 1) {
+    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 34);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 35);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 36);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UserProfileComponent_section_1_div_40_Template_a_click_2_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r13); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r12.closePopup(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 37);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "h3");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, "Subir Cancion");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "br");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 40);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "input", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "form", 38);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Autor: ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "button", 42);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UserProfileComponent_section_1_div_42_Template_button_click_9_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r11); const ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r12.uploadSong(); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, " Upload ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](10, "input", 39);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Titulo: ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "input", 40);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "p");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Archivo: ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "input", 41);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function UserProfileComponent_section_1_div_40_Template_input_change_16_listener($event) { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r13); const ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r14.handleFileInput($event.target.files); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "button", 42);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UserProfileComponent_section_1_div_40_Template_button_click_17_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r13); const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2); return ctx_r15.uploadSong(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18, " Upload ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r6.uploadSongForm);
 } }
 function UserProfileComponent_section_1_Template(rf, ctx) { if (rf & 1) {
-    const _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+    const _r17 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "section", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "section", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 5);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "form", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "img", 6);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, UserProfileComponent_section_1_div_5_Template, 4, 0, "div", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 8);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UserProfileComponent_section_1_Template_div_click_7_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r13.inSettings(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UserProfileComponent_section_1_Template_div_click_7_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r17); const ctx_r16 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r16.inSettings(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "img", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "p", 11);
@@ -145,7 +163,7 @@ function UserProfileComponent_section_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "div", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UserProfileComponent_section_1_Template_div_click_23_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r14); const ctx_r15 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r15.popupSong(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function UserProfileComponent_section_1_Template_div_click_23_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r17); const ctx_r18 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](); return ctx_r18.popupSong(); });
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "span");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Subir canci\u00F3n");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -167,24 +185,23 @@ function UserProfileComponent_section_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "th", 23);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37, "Views");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "th", 23);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "Play");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "tbody", 24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](39, UserProfileComponent_section_1_tr_39_Template, 9, 4, "tr", 25);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "tbody", 24);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](41, UserProfileComponent_section_1_tr_41_Template, 13, 4, "tr", 25);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](42, UserProfileComponent_section_1_div_42_Template, 11, 0, "div", 26);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](40, UserProfileComponent_section_1_div_40_Template, 19, 1, "div", 26);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", ctx_r0.profileImage || ctx_r0.user.image, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formGroup", ctx_r0.imageForm);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", ctx_r0.url + "getImage/" + ctx_r0.user.image || ctx_r0.imageDefault, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.settingsAppear);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
@@ -199,7 +216,7 @@ function UserProfileComponent_section_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx_r0.settingsAppear);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.settingsAppear);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](24);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](22);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.nameSongs);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.showUploadSong);
@@ -208,7 +225,16 @@ class UserProfileComponent {
     constructor(storageService, authenticationService) {
         this.storageService = storageService;
         this.authenticationService = authenticationService;
+        this.uploadSongForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            autor: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
+            title: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
+            song: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('')
+        });
+        this.imageForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
+            image: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](''),
+        });
         this.fileToUpload = null;
+        this.url = _services_global__WEBPACK_IMPORTED_MODULE_1__["Global"].url;
     }
     ngOnInit() {
         this.storageService.getNameFiles().subscribe(data => {
@@ -221,31 +247,11 @@ class UserProfileComponent {
             this.user = this.res.user;
             console.log("Usuario: ", this.user);
             this.oldValues = this.res.user.description;
-            this.user.image = this.res.user.image;
             if (this.user.image == null) {
                 this.user.image = "../../assets/img/account_circle-24px.svg";
             }
         });
-        // this.storageService.getCurrentImage().subscribe(
-        //   data => console.log(data,"3")
-        // );
-        //Ochando 5fce7127c91df933046b0d8a
-        // this.userService.getUser("5fda5e3291ea0200173870d0").subscribe(
-        //   res => { 
-        //     this.user = res.user;
-        //     this.oldValues = this.user.description;
-        //     if(this.user.image == null){
-        //       this.user.image = "../../assets/img/account_circle-24px.svg"
-        //     }
-        //   },
-        //   error => {
-        //     console.log(error);
-        //   }
-        // );
-        this.imgRute = "../../assets/img/";
-        this.imgRuteActually = this.imgRute;
         this.imageDefault = "account_circle-24px.svg";
-        this.imageActually = this.imageDefault;
         this.settingsAppear = false;
         this.showTableHeader = false;
         this.showUploadSong = false;
@@ -259,6 +265,11 @@ class UserProfileComponent {
         let error = null;
         this.newValues = document.getElementById('biography-input').value;
         this.oldValues = this.newValues;
+        this.storageService.updateUser(this.user);
+        this.settingsAppear = false;
+        console.log("Settings disappear");
+    }
+    uploadImage() {
         //Change Image
         const input = document.getElementById('customFile');
         if (input.files && input.files[0]) {
@@ -269,10 +280,12 @@ class UserProfileComponent {
         else
             console.log("No file selected " + input.files[0]);
         this.user.description = this.oldValues;
-        this.storageService.updateUser(this.user);
-        this.storageService.updateImage(this.imageActually).subscribe(data => console.log(data));
-        this.settingsAppear = false;
-        console.log("Settings disappear");
+        this.user.image = this.imageActually;
+        const formData = new FormData();
+        formData.append('image', this.fileToUpload);
+        this.storageService.updateImage(formData).subscribe(res => {
+            console.log(res);
+        });
     }
     logout() {
         this.authenticationService.logout().subscribe(response => { if (response) {
@@ -287,27 +300,42 @@ class UserProfileComponent {
         this.showTableHeader = false;
         this.showUploadSong = true;
     }
+    handleFileInput(files) {
+        this.fileToUpload = files.item(0);
+    }
     uploadSong() {
         let song = document.getElementById('uploadSong-input');
-        let cadena;
-        let autor;
-        let cancion;
+        let cadena, autor, cancion, file;
+        const formData = new FormData();
+        formData.append('song', this.fileToUpload);
+        formData.append('title', this.uploadSongForm.get('title').value);
+        formData.append('autor', this.uploadSongForm.get('autor').value);
         if (song.files && song.files[0]) {
             cadena = song.files[0].name;
             autor = cadena.split("-")[0];
             cancion = cadena.split("-")[1];
+            file = song.files[0];
+            console.log(file);
         }
-        this.storageService.uploadSong(autor, cancion).subscribe(data => this.closePopup(), error => console.log(error));
+        this.storageService.uploadSong(formData).subscribe(res => {
+            console.log(res);
+            this.storageService.getNameFiles().subscribe(data => {
+                this.nameService = data,
+                    this.nameSongs = this.nameService.song;
+                console.log("Mis canciones: ", this.nameSongs);
+            });
+            this.closePopup();
+        });
     }
 }
-UserProfileComponent.ɵfac = function UserProfileComponent_Factory(t) { return new (t || UserProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_storage_service__WEBPACK_IMPORTED_MODULE_1__["StorageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"])); };
-UserProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: UserProfileComponent, selectors: [["app-user-profile"]], decls: 2, vars: 1, consts: [["name", "viewport", "content", "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"], ["id", "naturalContainer", 4, "ngIf"], ["id", "naturalContainer"], ["id", "container"], ["id", "profile-header"], ["id", "image-profile"], ["id", "user-icon", 3, "src"], ["class", "custom-file", 4, "ngIf"], ["id", "info-profile"], ["id", "settings-icon", 3, "click"], ["src", "../../assets/img/settings-24px.svg", "onclick", ""], ["id", "userName"], ["id", "completeName"], ["id", "temporal", 2, "display", "none"], [4, "ngIf"], ["type", "button", "class", "btn btn-dark btn-sm", "id", "saveChanges", 3, "click", 4, "ngIf"], ["id", "profile-main"], ["id", "mySongs-header"], ["id", "profile-main-mySongs"], ["id", "profile-main-upload", 3, "click"], ["id", "mySongs-main"], [1, "table", "table-striped", "table-white"], ["id", "tableHeader"], ["scope", "col"], ["id", "tableBody"], [4, "ngFor", "ngForOf"], ["class", "overlay", "id", "overlay", 4, "ngIf"], [1, "custom-file"], ["type", "file", "id", "customFile", "accept", "image", 1, "custom-file-input"], ["for", "customFile", 1, "custom-file-label"], ["id", "biography-input", "type", "text", "placeholder", "Write your biography", "maxlength", "110", 3, "value"], ["id", "biography"], ["type", "button", "id", "saveChanges", 1, "btn", "btn-dark", "btn-sm", 3, "click"], ["scope", "row"], ["id", "musicPlayer-icon"], ["type", "button", 1, "btn", "btn-outline-dark", "btn-sm"], ["id", "overlay", 1, "overlay"], ["id", "popup", 1, "popup"], ["id", "btn-close-popup", 1, "btn-close-popup", 3, "click"], ["src", "../../assets/img/close-24px.svg", "alt", ""], ["id", "uploadSong"], ["id", "uploadSong-input", "type", "file"], ["id", "submitButton", "type", "submit", "form", "login-form", 1, "btn", "btn-dark", 3, "click"]], template: function UserProfileComponent_Template(rf, ctx) { if (rf & 1) {
+UserProfileComponent.ɵfac = function UserProfileComponent_Factory(t) { return new (t || UserProfileComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_storage_service__WEBPACK_IMPORTED_MODULE_3__["StorageService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_authentication_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticationService"])); };
+UserProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: UserProfileComponent, selectors: [["app-user-profile"]], decls: 2, vars: 1, consts: [["name", "viewport", "content", "width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"], ["id", "naturalContainer", 4, "ngIf"], ["id", "naturalContainer"], ["id", "container"], ["id", "profile-header"], ["id", "image-profile", 3, "formGroup"], ["id", "user-icon", 3, "src"], ["class", "custom-file", 4, "ngIf"], ["id", "info-profile"], ["id", "settings-icon", 3, "click"], ["src", "../../assets/img/settings-24px.svg", "onclick", ""], ["id", "userName"], ["id", "completeName"], ["id", "temporal", 2, "display", "none"], [4, "ngIf"], ["type", "button", "class", "btn btn-dark btn-sm", "id", "saveChanges", 3, "click", 4, "ngIf"], ["id", "profile-main"], ["id", "mySongs-header"], ["id", "profile-main-mySongs"], ["id", "profile-main-upload", 3, "click"], ["id", "mySongs-main"], [1, "table", "table-striped", "table-white"], ["id", "tableHeader"], ["scope", "col"], ["id", "tableBody"], [4, "ngFor", "ngForOf"], ["class", "overlay", "id", "overlay", 4, "ngIf"], [1, "custom-file"], ["type", "file", "formControlName", "image", "id", "customFile", "accept", "image", 1, "custom-file-input", 3, "change"], ["for", "customFile", 1, "custom-file-label"], ["id", "biography-input", "type", "text", "placeholder", "Write your biography", "maxlength", "110", 3, "value"], ["id", "biography"], ["type", "button", "id", "saveChanges", 1, "btn", "btn-dark", "btn-sm", 3, "click"], ["scope", "row"], ["id", "overlay", 1, "overlay"], ["id", "popup", 1, "popup"], ["id", "btn-close-popup", 1, "btn-close-popup", 3, "click"], ["src", "../../assets/img/close-24px.svg", "alt", ""], ["id", "uploadSong", 3, "formGroup"], ["id", "uploadSong-input", "type", "text", "formControlName", "autor"], ["id", "uploadSong-input", "type", "text", "formControlName", "title"], ["id", "uploadSong-input", "type", "file", "formControlName", "song", 3, "change"], ["id", "submitButton", "type", "submit", "form", "login-form", 1, "btn", "btn-dark", 3, "click"]], template: function UserProfileComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "meta", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, UserProfileComponent_section_1_Template, 43, 10, "section", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, UserProfileComponent_section_1_Template, 41, 11, "section", 1);
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.user);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"]], styles: ["#naturalContainer[_ngcontent-%COMP%] {\n  width: 100%;\n  height: calc(100% - 90px);\n}\n\n#container[_ngcontent-%COMP%] {\n  margin: auto;\n  width: 60%;\n  height: 100%;\n}\n\n#profile-header[_ngcontent-%COMP%] {\n  background: linear-gradient(115deg, #EC2E26 -20%, transparent 110%);\n  position: relative;\n  width: 100%;\n  height: 30%;\n}\n\n#image-profile[_ngcontent-%COMP%] {\n  float: left;\n  width: 20%;\n  height: 100%;\n}\n\n#user-icon[_ngcontent-%COMP%] {\n  margin-left: 10%;\n  margin-top: 8%;\n  width: 80%;\n  height: 78%;\n}\n\n#info-profile[_ngcontent-%COMP%] {\n  float: left;\n  width: 80%;\n  height: 100%;\n}\n\n#settings-icon[_ngcontent-%COMP%] {\n  display: inline-flex;\n  float: right;\n  cursor: pointer;\n  padding: 5px;\n}\n\n.custom-file[_ngcontent-%COMP%] {\n  margin-left: 5px;\n  margin-bottom: 3px;\n  width: 172px;\n}\n\n#userName[_ngcontent-%COMP%] {\n  padding-top: 20px;\n  padding-left: 20px;\n  font-weight: 500;\n  font-size: x-large;\n  font-family: Arial;\n}\n\n#completeName[_ngcontent-%COMP%] {\n  padding-top: 3px;\n  padding-left: 20px;\n  font-weight: 500;\n  font-size: medium;\n  font-family: Arial;\n}\n\n#biography-input[_ngcontent-%COMP%] {\n  display: block;\n  width: 70% !important;\n  font-size: 0.8rem !important;\n  margin-left: 18px;\n  margin-top: 20px;\n}\n\n#biography[_ngcontent-%COMP%] {\n  padding-top: 15px;\n  padding-left: 20px;\n  font-weight: 500;\n  font-size: small;\n  font-family: Arial;\n}\n\n#saveChanges[_ngcontent-%COMP%] {\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  margin-bottom: 3px;\n  margin-right: 5px;\n  height: calc(1.5em + .75rem + 2px);\n}\n\n#profile-main[_ngcontent-%COMP%] {\n  background-color: #FFFFFF;\n  width: 100%;\n  height: 70%;\n}\n\n#mySongs-header[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 8%;\n  border-bottom: #A09F9F solid 0.2px;\n  background-color: #3e444a;\n  color: #FFFFFF;\n}\n\n#profile-main-mySongs[_ngcontent-%COMP%] {\n  float: left;\n  cursor: pointer;\n  padding: 10px 10px 10px 10px;\n  margin-left: 30px;\n  margin-top: 4px;\n}\n\n#profile-main-mySongs[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: medium;\n  font-family: Arial;\n}\n\n#profile-main-upload[_ngcontent-%COMP%] {\n  float: right;\n  cursor: pointer;\n  padding: 10px 10px 10px 10px;\n  margin-right: 20px;\n  margin-top: 4px;\n}\n\n#profile-main-upload[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: medium;\n  font-family: Arial;\n}\n\n#mySongs-main[_ngcontent-%COMP%] {\n  overflow-y: auto;\n  width: 100%;\n}\n\n.table[_ngcontent-%COMP%] {\n  margin: 0 0 114px 0;\n}\n\n#biography-input[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  height: calc(1.5em + .75rem + 2px);\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #495057;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n\n#transparent[_ngcontent-%COMP%] {\n  height: 110px;\n}\n\n#uploadSong-container[_ngcontent-%COMP%] {\n  width: 100%;\n}\n\n#uploadSong[_ngcontent-%COMP%] {\n  width: 200px;\n  margin-left: 10%;\n}\n\n#uploadSong-input[_ngcontent-%COMP%] {\n  padding: 50px;\n}\n\n@media screen and (max-width: 800px) {\n  #container[_ngcontent-%COMP%] {\n    margin: auto;\n    width: 100%;\n    height: 100%;\n  }\n\n  #info-profile[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    font-size: small;\n  }\n\n  #mySongs-main[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n\n  #mySongs-header[_ngcontent-%COMP%]   div[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n    font-size: small;\n  }\n\n  #profile-main-mySongs[_ngcontent-%COMP%] {\n    float: left;\n    padding: 5px 5px 5px 5px;\n    margin-left: 20px;\n    margin-top: 2px;\n  }\n\n  #profile-main-mySongs[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n    font-weight: 600;\n    font-size: medium;\n    font-family: Arial;\n  }\n\n  #profile-main-upload[_ngcontent-%COMP%] {\n    float: right;\n    padding: 5px 5px 5px 5px;\n    margin-right: 20px;\n    margin-top: 2px;\n  }\n\n  #profile-main-upload[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n    font-weight: 600;\n    font-size: medium;\n    font-family: Arial;\n  }\n\n  #uploadSong-container[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n\n  #uploadSong[_ngcontent-%COMP%] {\n    width: 20%;\n    height: auto;\n    margin-left: 8%;\n    margin-top: 100px;\n  }\n\n  #uploadSong-input[_ngcontent-%COMP%] {\n    background-color: #94a2b1;\n    padding: 10%;\n  }\n}\n\n.overlay[_ngcontent-%COMP%] {\n  background: rgba(0, 0, 0, 0.3);\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  align-items: center;\n  justify-content: center;\n  display: flex;\n  z-index: 1;\n}\n\n.overlay.active[_ngcontent-%COMP%] {\n  visibility: visible;\n}\n\n.popup[_ngcontent-%COMP%] {\n  background: #F8F8F8;\n  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);\n  border-radius: 3px;\n  font-family: \"Montserrat\", sans-serif;\n  padding: 20px;\n  text-align: center;\n  width: 600px;\n  transition: 0.3s ease all;\n  transform: scale(0.7);\n}\n\n.popup[_ngcontent-%COMP%]   .btn-close-popup[_ngcontent-%COMP%] {\n  font-size: 16px;\n  line-height: 16px;\n  display: block;\n  cursor: pointer;\n  text-align: right;\n  transition: 0.3s ease all;\n  color: #BBBBBB;\n}\n\n.popup[_ngcontent-%COMP%]   .btn-close-popup[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n\n.popup[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 36px;\n  font-weight: 600;\n  margin-bottom: 10px;\n}\n\n.popup[_ngcontent-%COMP%]   div[_ngcontent-%COMP%]   .container-inputs[_ngcontent-%COMP%] {\n  opacity: 0;\n}\n\n.popup[_ngcontent-%COMP%]   div[_ngcontent-%COMP%]   .container-inputs[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 20px;\n  height: 52px;\n  font-size: 18px;\n  line-height: 52px;\n  border: 1px solid #BBBBBB;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci1wcm9maWxlL3VzZXItcHJvZmlsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSx5QkFBQTtBQUNKOztBQUVBO0VBQ0ksWUFBQTtFQUNBLFVBQUE7RUFDQSxZQUFBO0FBQ0o7O0FBRUE7RUFDSSxtRUFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7QUFDSjs7QUFFQTtFQUNJLFdBQUE7RUFDQSxVQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUVBO0VBQ0ksZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7QUFDSjs7QUFFQTtFQUNJLFdBQUE7RUFDQSxVQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUVBO0VBQ0ksb0JBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLFlBQUE7QUFDSjs7QUFFQTtFQUNJLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0FBQ0o7O0FBRUE7RUFDSSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0FBQ0o7O0FBRUE7RUFDSSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FBQ0o7O0FBRUE7RUFDSSxjQUFBO0VBQ0EscUJBQUE7RUFDQSw0QkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFDSjs7QUFFQTtFQUNJLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7QUFDSjs7QUFFQTtFQUNJLFFBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0NBQUE7QUFDSjs7QUFFQTtFQUNJLHlCQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7QUFDSjs7QUFFQTtFQUNJLFdBQUE7RUFDQSxVQUFBO0VBQ0Esa0NBQUE7RUFDQSx5QkFBQTtFQUNBLGNBQUE7QUFDSjs7QUFFQTtFQUNJLFdBQUE7RUFDQSxlQUFBO0VBQ0EsNEJBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7QUFDSjs7QUFFQTtFQUNJLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtBQUNKOztBQWdCQTtFQUNJLFlBQUE7RUFDQSxlQUFBO0VBQ0EsNEJBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7QUFiSjs7QUFnQkE7RUFDSSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUFiSjs7QUFnQkE7RUFDSSxnQkFBQTtFQUNBLFdBQUE7QUFiSjs7QUFnQkE7RUFDSSxtQkFBQTtBQWJKOztBQWdCQTtFQUNJLGNBQUE7RUFDQSxXQUFBO0VBQ0Esa0NBQUE7RUFDQSx5QkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EsNEJBQUE7RUFDQSx5QkFBQTtFQUNBLHNCQUFBO0VBQ0Esd0VBQUE7QUFiSjs7QUFnQkE7RUFDSSxhQUFBO0FBYko7O0FBZ0JBO0VBQ0ksV0FBQTtBQWJKOztBQWdCQTtFQUNJLFlBQUE7RUFDQSxnQkFBQTtBQWJKOztBQWdCQTtFQUNJLGFBQUE7QUFiSjs7QUFnQkE7RUFFSTtJQUNJLFlBQUE7SUFDQSxXQUFBO0lBQ0EsWUFBQTtFQWROOztFQWlCRTtJQUNJLGdCQUFBO0VBZE47O0VBaUJFO0lBQ0ksV0FBQTtFQWROOztFQWlCRTtJQUNJLGdCQUFBO0VBZE47O0VBaUJFO0lBQ0ksV0FBQTtJQUNBLHdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxlQUFBO0VBZE47O0VBaUJFO0lBQ0ksZ0JBQUE7SUFDQSxpQkFBQTtJQUNBLGtCQUFBO0VBZE47O0VBOEJFO0lBQ0ksWUFBQTtJQUNBLHdCQUFBO0lBQ0Esa0JBQUE7SUFDQSxlQUFBO0VBM0JOOztFQThCRTtJQUNJLGdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxrQkFBQTtFQTNCTjs7RUE4QkU7SUFDSSxXQUFBO0VBM0JOOztFQThCRTtJQUNJLFVBQUE7SUFDQSxZQUFBO0lBQ0EsZUFBQTtJQUNBLGlCQUFBO0VBM0JOOztFQThCRTtJQUNJLHlCQUFBO0lBQ0EsWUFBQTtFQTNCTjtBQUNGOztBQThCQTtFQUNJLDhCQUFBO0VBQ0EsZUFBQTtFQUNBLE1BQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsYUFBQTtFQUVBLFVBQUE7QUE3Qko7O0FBZ0NBO0VBQ0ksbUJBQUE7QUE3Qko7O0FBZ0NBO0VBQ0ksbUJBQUE7RUFDQSw4Q0FBQTtFQUNBLGtCQUFBO0VBQ0EscUNBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBRUEseUJBQUE7RUFDQSxxQkFBQTtBQTlCSjs7QUFrQ0E7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQUFBO0FBL0JKOztBQWtDQTtFQUNJLFdBQUE7QUEvQko7O0FBa0NBO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7QUEvQko7O0FBbUNBO0VBQ0ksVUFBQTtBQWhDSjs7QUFtQ0E7RUFDSSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBQ0EseUJBQUE7QUFoQ0oiLCJmaWxlIjoic3JjL2FwcC91c2VyLXByb2ZpbGUvdXNlci1wcm9maWxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI25hdHVyYWxDb250YWluZXJ7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogY2FsYygxMDAlIC0gOTBweCk7XHJcbn1cclxuXHJcbiNjb250YWluZXIge1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgd2lkdGg6IDYwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxufVxyXG5cclxuI3Byb2ZpbGUtaGVhZGVyIHtcclxuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMTVkZWcsICNFQzJFMjYgLTIwJSwgdHJhbnNwYXJlbnQgMTEwJSk7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMzAlO1xyXG59XHJcblxyXG4jaW1hZ2UtcHJvZmlsZSB7XHJcbiAgICBmbG9hdDogbGVmdDtcclxuICAgIHdpZHRoOiAyMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbiN1c2VyLWljb24ge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwJTtcclxuICAgIG1hcmdpbi10b3A6IDglO1xyXG4gICAgd2lkdGg6IDgwJTtcclxuICAgIGhlaWdodDogNzglO1xyXG59XHJcblxyXG4jaW5mby1wcm9maWxlIHtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgd2lkdGg6IDgwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxufVxyXG5cclxuI3NldHRpbmdzLWljb24ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBwYWRkaW5nOiA1cHg7XHJcbn1cclxuXHJcbi5jdXN0b20tZmlsZSB7XHJcbiAgICBtYXJnaW4tbGVmdDogNXB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogM3B4O1xyXG4gICAgd2lkdGg6IDE3MnB4O1xyXG59XHJcblxyXG4jdXNlck5hbWUge1xyXG4gICAgcGFkZGluZy10b3A6IDIwcHg7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgZm9udC1zaXplOiB4LWxhcmdlO1xyXG4gICAgZm9udC1mYW1pbHk6IEFyaWFsO1xyXG59XHJcblxyXG4jY29tcGxldGVOYW1lIHtcclxuICAgIHBhZGRpbmctdG9wOiAzcHg7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgZm9udC1zaXplOiBtZWRpdW07XHJcbiAgICBmb250LWZhbWlseTogQXJpYWw7XHJcbn1cclxuXHJcbiNiaW9ncmFwaHktaW5wdXQge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogNzAlICFpbXBvcnRhbnQ7XHJcbiAgICBmb250LXNpemU6IDAuOHJlbSAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE4cHg7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG59XHJcblxyXG4jYmlvZ3JhcGh5IHtcclxuICAgIHBhZGRpbmctdG9wOiAxNXB4O1xyXG4gICAgcGFkZGluZy1sZWZ0OiAyMHB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICAgIGZvbnQtc2l6ZTogc21hbGw7XHJcbiAgICBmb250LWZhbWlseTogQXJpYWw7XHJcbn1cclxuXHJcbiNzYXZlQ2hhbmdlcyB7XHJcbiAgICByaWdodDogMDtcclxuICAgIGJvdHRvbTogMDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIG1hcmdpbi1ib3R0b206IDNweDtcclxuICAgIG1hcmdpbi1yaWdodDogNXB4O1xyXG4gICAgaGVpZ2h0OiBjYWxjKDEuNWVtICsgLjc1cmVtICsgMnB4KTtcclxufVxyXG5cclxuI3Byb2ZpbGUtbWFpbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZGRkZGO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDcwJTtcclxufVxyXG5cclxuI215U29uZ3MtaGVhZGVyIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiA4JTtcclxuICAgIGJvcmRlci1ib3R0b206ICNBMDlGOUYgc29saWQgMC4ycHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjM2U0NDRhO1xyXG4gICAgY29sb3I6ICNGRkZGRkY7XHJcbn1cclxuXHJcbiNwcm9maWxlLW1haW4tbXlTb25ncyB7XHJcbiAgICBmbG9hdDogbGVmdDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHBhZGRpbmc6IDEwcHggMTBweCAxMHB4IDEwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMzBweDtcclxuICAgIG1hcmdpbi10b3A6IDRweDtcclxufVxyXG5cclxuI3Byb2ZpbGUtbWFpbi1teVNvbmdzIHNwYW57XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgZm9udC1zaXplOiBtZWRpdW07XHJcbiAgICBmb250LWZhbWlseTogQXJpYWw7XHJcbn1cclxuXHJcbi8vICNwcm9maWxlLW1haW4tbXlMaXN0IHtcclxuLy8gICAgIGZsb2F0OiBsZWZ0O1xyXG4vLyAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4vLyAgICAgcGFkZGluZzogMTBweCAxMHB4IDEwcHggMTBweDtcclxuLy8gICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4vLyAgICAgbWFyZ2luLXRvcDogNHB4O1xyXG4vLyB9XHJcblxyXG4vLyAjcHJvZmlsZS1tYWluLW15TGlzdCBzcGFue1xyXG4vLyAgICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuLy8gICAgIGZvbnQtc2l6ZTogbWVkaXVtO1xyXG4vLyAgICAgZm9udC1mYW1pbHk6IEFyaWFsO1xyXG4vLyB9XHJcblxyXG4jcHJvZmlsZS1tYWluLXVwbG9hZHtcclxuICAgIGZsb2F0OiByaWdodDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHBhZGRpbmc6IDEwcHggMTBweCAxMHB4IDEwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDIwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA0cHg7XHJcbn1cclxuXHJcbiNwcm9maWxlLW1haW4tdXBsb2FkIHNwYW57XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgZm9udC1zaXplOiBtZWRpdW07XHJcbiAgICBmb250LWZhbWlseTogQXJpYWw7XHJcbn1cclxuXHJcbiNteVNvbmdzLW1haW4ge1xyXG4gICAgb3ZlcmZsb3cteTogYXV0bztcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4udGFibGV7XHJcbiAgICBtYXJnaW46IDAgMCAxMTRweCAwO1xyXG59XHJcblxyXG4jYmlvZ3JhcGh5LWlucHV0IHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IGNhbGMoMS41ZW0gKyAuNzVyZW0gKyAycHgpO1xyXG4gICAgcGFkZGluZzogLjM3NXJlbSAuNzVyZW07XHJcbiAgICBmb250LXNpemU6IDFyZW07XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxuICAgIGNvbG9yOiAjNDk1MDU3O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICAgIGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2VkNGRhO1xyXG4gICAgYm9yZGVyLXJhZGl1czogLjI1cmVtO1xyXG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWNvbG9yIC4xNXMgZWFzZS1pbi1vdXQsYm94LXNoYWRvdyAuMTVzIGVhc2UtaW4tb3V0O1xyXG59XHJcblxyXG4jdHJhbnNwYXJlbnR7XHJcbiAgICBoZWlnaHQ6IDExMHB4O1xyXG59XHJcblxyXG4jdXBsb2FkU29uZy1jb250YWluZXJ7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuI3VwbG9hZFNvbmd7XHJcbiAgICB3aWR0aDogMjAwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMTAlO1xyXG59XHJcblxyXG4jdXBsb2FkU29uZy1pbnB1dHtcclxuICAgIHBhZGRpbmc6IDUwcHg7XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDgwMHB4KXtcclxuICAgIFxyXG4gICAgI2NvbnRhaW5lciB7XHJcbiAgICAgICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgIH1cclxuXHJcbiAgICAjaW5mby1wcm9maWxlIHB7XHJcbiAgICAgICAgZm9udC1zaXplOiBzbWFsbDtcclxuICAgIH1cclxuXHJcbiAgICAjbXlTb25ncy1tYWlue1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG5cclxuICAgICNteVNvbmdzLWhlYWRlciBkaXYgc3BhbntcclxuICAgICAgICBmb250LXNpemU6IHNtYWxsO1xyXG4gICAgfVxyXG5cclxuICAgICNwcm9maWxlLW1haW4tbXlTb25ncyB7XHJcbiAgICAgICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICAgICAgcGFkZGluZzogNXB4IDVweCA1cHggNXB4O1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDJweDtcclxuICAgIH1cclxuICAgIFxyXG4gICAgI3Byb2ZpbGUtbWFpbi1teVNvbmdzIHNwYW57XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgICAgICBmb250LXNpemU6IG1lZGl1bTtcclxuICAgICAgICBmb250LWZhbWlseTogQXJpYWw7XHJcbiAgICB9XHJcbiAgICBcclxuICAgIC8vICNwcm9maWxlLW1haW4tbXlMaXN0IHtcclxuICAgIC8vICAgICBmbG9hdDogbGVmdDtcclxuICAgIC8vICAgICBwYWRkaW5nOiA1cHggNXB4IDVweCA1cHg7XHJcbiAgICAvLyAgICAgbWFyZ2luLWxlZnQ6IDIwcHg7XHJcbiAgICAvLyAgICAgbWFyZ2luLXRvcDogMnB4O1xyXG4gICAgLy8gfVxyXG4gICAgXHJcbiAgICAvLyAjcHJvZmlsZS1tYWluLW15TGlzdCBzcGFue1xyXG4gICAgLy8gICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICAvLyAgICAgZm9udC1zaXplOiBtZWRpdW07XHJcbiAgICAvLyAgICAgZm9udC1mYW1pbHk6IEFyaWFsO1xyXG4gICAgLy8gfVxyXG5cclxuICAgICNwcm9maWxlLW1haW4tdXBsb2Fke1xyXG4gICAgICAgIGZsb2F0OiByaWdodDtcclxuICAgICAgICBwYWRkaW5nOiA1cHggNXB4IDVweCA1cHg7XHJcbiAgICAgICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDJweDtcclxuICAgIH1cclxuICAgIFxyXG4gICAgI3Byb2ZpbGUtbWFpbi11cGxvYWQgc3BhbntcclxuICAgICAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogbWVkaXVtO1xyXG4gICAgICAgIGZvbnQtZmFtaWx5OiBBcmlhbDtcclxuICAgIH1cclxuICAgIFxyXG4gICAgI3VwbG9hZFNvbmctY29udGFpbmVye1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG4gICAgXHJcbiAgICAjdXBsb2FkU29uZ3tcclxuICAgICAgICB3aWR0aDogMjAlO1xyXG4gICAgICAgIGhlaWdodDogYXV0bztcclxuICAgICAgICBtYXJnaW4tbGVmdDogOCU7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMTAwcHhcclxuICAgIH1cclxuICAgIFxyXG4gICAgI3VwbG9hZFNvbmctaW5wdXR7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzk0YTJiMTtcclxuICAgICAgICBwYWRkaW5nOiAxMCU7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5vdmVybGF5IHtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMCwwLDAsLjMpO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgdG9wOiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG4gICAgbGVmdDogMDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIC8vIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgIHotaW5kZXg6IDE7XHJcbn1cclxuXHJcbi5vdmVybGF5LmFjdGl2ZSB7XHJcbiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG59XHJcblxyXG4ucG9wdXAge1xyXG4gICAgYmFja2dyb3VuZDogI0Y4RjhGODtcclxuICAgIGJveC1zaGFkb3c6IDBweCAwcHggNXB4IDBweCByZ2JhKDAsMCwwLDAuMyk7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzcHg7XHJcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnLCBzYW5zLXNlcmlmO1xyXG4gICAgcGFkZGluZzogMjBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHdpZHRoOiA2MDBweDtcclxuICAgIFxyXG4gICAgdHJhbnNpdGlvbjogLjNzIGVhc2UgYWxsO1xyXG4gICAgdHJhbnNmb3JtOiBzY2FsZSgwLjcpO1xyXG4gICAgLy8gb3BhY2l0eTogMDtcclxufVxyXG5cclxuLnBvcHVwIC5idG4tY2xvc2UtcG9wdXAge1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDE2cHg7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG4gICAgdHJhbnNpdGlvbjogLjNzIGVhc2UgYWxsO1xyXG4gICAgY29sb3I6ICNCQkJCQkI7XHJcbn1cclxuXHJcbi5wb3B1cCAuYnRuLWNsb3NlLXBvcHVwOmhvdmVyIHtcclxuICAgIGNvbG9yOiAjMDAwO1xyXG59XHJcblxyXG4ucG9wdXAgaDMge1xyXG4gICAgZm9udC1zaXplOiAzNnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbiAgICAvLyBvcGFjaXR5OiAwO1xyXG59XHJcblxyXG4ucG9wdXAgZGl2IC5jb250YWluZXItaW5wdXRzIHtcclxuICAgIG9wYWNpdHk6IDA7XHJcbn1cclxuXHJcbi5wb3B1cCBkaXYgLmNvbnRhaW5lci1pbnB1dHMgaW5wdXQge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG4gICAgaGVpZ2h0OiA1MnB4O1xyXG4gICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDUycHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjQkJCQkJCO1xyXG59XHJcblxyXG4vLyAucG9wdXAgZGl2IC5jb250YWluZXItaW5wdXRzIGlucHV0W3R5cGU9dGV4dF0sICBpbnB1dFt0eXBlPXBhc3N3b3JkXXtcclxuLy8gICAgIHBhZGRpbmctbGVmdDogMTZweDtcclxuLy8gfVxyXG5cclxuLy8gLnBvcHVwIGRpdiAuYnRuLXN1Ym1pdCB7XHJcbi8vICAgICBwYWRkaW5nOiAwIDIwcHg7XHJcbi8vICAgICBoZWlnaHQ6IDQwcHg7XHJcbi8vICAgICBsaW5lLWhlaWdodDogNDBweDtcclxuLy8gICAgIGJvcmRlcjogbm9uZTtcclxuLy8gICAgIGNvbG9yOiAjZmZmO1xyXG4vLyAgICAgYmFja2dyb3VuZDogIzA3MDkwZjtcclxuLy8gICAgIGJvcmRlci1yYWRpdXM6IDNweDtcclxuLy8gICAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsIHNhbnMtc2VyaWY7XHJcbi8vICAgICBmb250LXNpemU6IDE2cHg7XHJcbi8vICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbi8vICAgICB0cmFuc2l0aW9uOiAuM3MgZWFzZSBhbGw7XHJcbi8vIH1cclxuXHJcbi8vIC5wb3B1cCBkaXYgLmJ0bi1zdWJtaXQ6aG92ZXIge1xyXG4vLyAgICAgYmFja2dyb3VuZDogcmdiYSg1MCwgNTEsIDUzLCAwLjkpO1xyXG4vLyB9Il19 */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"]], styles: ["#naturalContainer[_ngcontent-%COMP%] {\n  width: 100%;\n  height: calc(100% - 90px);\n}\n\n#container[_ngcontent-%COMP%] {\n  margin: auto;\n  width: 60%;\n  height: 100%;\n}\n\n#profile-header[_ngcontent-%COMP%] {\n  background: linear-gradient(115deg, #EC2E26 -20%, transparent 110%);\n  position: relative;\n  width: 100%;\n  height: 30%;\n}\n\n#image-profile[_ngcontent-%COMP%] {\n  float: left;\n  width: 20%;\n  height: 100%;\n}\n\n#user-icon[_ngcontent-%COMP%] {\n  margin-left: 10%;\n  margin-top: 8%;\n  width: 80%;\n  height: 78%;\n}\n\n#info-profile[_ngcontent-%COMP%] {\n  float: left;\n  width: 80%;\n  height: 100%;\n}\n\n#settings-icon[_ngcontent-%COMP%] {\n  display: inline-flex;\n  float: right;\n  cursor: pointer;\n  padding: 5px;\n}\n\n.custom-file[_ngcontent-%COMP%] {\n  margin-left: 5px;\n  margin-bottom: 3px;\n  width: 172px;\n}\n\n#userName[_ngcontent-%COMP%] {\n  padding-top: 20px;\n  padding-left: 20px;\n  font-weight: 500;\n  font-size: x-large;\n  font-family: Arial;\n}\n\n#completeName[_ngcontent-%COMP%] {\n  padding-top: 3px;\n  padding-left: 20px;\n  font-weight: 500;\n  font-size: medium;\n  font-family: Arial;\n}\n\n#biography-input[_ngcontent-%COMP%] {\n  display: block;\n  width: 70% !important;\n  font-size: 0.8rem !important;\n  margin-left: 18px;\n  margin-top: 20px;\n}\n\n#biography[_ngcontent-%COMP%] {\n  padding-top: 15px;\n  padding-left: 20px;\n  font-weight: 500;\n  font-size: small;\n  font-family: Arial;\n}\n\n#saveChanges[_ngcontent-%COMP%] {\n  right: 0;\n  bottom: 0;\n  position: absolute;\n  margin-bottom: 3px;\n  margin-right: 5px;\n  height: calc(1.5em + .75rem + 2px);\n}\n\n#profile-main[_ngcontent-%COMP%] {\n  background-color: #FFFFFF;\n  width: 100%;\n  height: 70%;\n}\n\n#mySongs-header[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 8%;\n  border-bottom: #A09F9F solid 0.2px;\n  background-color: #3e444a;\n  color: #FFFFFF;\n}\n\n#profile-main-mySongs[_ngcontent-%COMP%] {\n  float: left;\n  cursor: pointer;\n  padding: 10px 10px 10px 10px;\n  margin-left: 30px;\n  margin-top: 4px;\n}\n\n#profile-main-mySongs[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: medium;\n  font-family: Arial;\n}\n\n#profile-main-upload[_ngcontent-%COMP%] {\n  float: right;\n  cursor: pointer;\n  padding: 10px 10px 10px 10px;\n  margin-right: 20px;\n  margin-top: 4px;\n}\n\n#profile-main-upload[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: medium;\n  font-family: Arial;\n}\n\n#mySongs-main[_ngcontent-%COMP%] {\n  overflow-y: auto;\n  width: 100%;\n}\n\n.table[_ngcontent-%COMP%] {\n  margin: 0 0 114px 0;\n}\n\n#biography-input[_ngcontent-%COMP%] {\n  display: block;\n  width: 100%;\n  height: calc(1.5em + .75rem + 2px);\n  padding: 0.375rem 0.75rem;\n  font-size: 1rem;\n  font-weight: 400;\n  line-height: 1.5;\n  color: #495057;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ced4da;\n  border-radius: 0.25rem;\n  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;\n}\n\n#transparent[_ngcontent-%COMP%] {\n  height: 110px;\n}\n\n#uploadSong-container[_ngcontent-%COMP%] {\n  width: 100%;\n}\n\n#uploadSong[_ngcontent-%COMP%] {\n  width: 200px;\n  margin-left: 10%;\n}\n\n#uploadSong-input[_ngcontent-%COMP%] {\n  padding: 50px;\n}\n\n@media screen and (max-width: 800px) {\n  #container[_ngcontent-%COMP%] {\n    margin: auto;\n    width: 100%;\n    height: 100%;\n  }\n\n  #info-profile[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n    font-size: small;\n  }\n\n  #mySongs-main[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n\n  #mySongs-header[_ngcontent-%COMP%]   div[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n    font-size: small;\n  }\n\n  #profile-main-mySongs[_ngcontent-%COMP%] {\n    float: left;\n    padding: 5px 5px 5px 5px;\n    margin-left: 20px;\n    margin-top: 2px;\n  }\n\n  #profile-main-mySongs[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n    font-weight: 600;\n    font-size: medium;\n    font-family: Arial;\n  }\n\n  #profile-main-upload[_ngcontent-%COMP%] {\n    float: right;\n    padding: 5px 5px 5px 5px;\n    margin-right: 20px;\n    margin-top: 2px;\n  }\n\n  #profile-main-upload[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n    font-weight: 600;\n    font-size: medium;\n    font-family: Arial;\n  }\n\n  #uploadSong-container[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n\n  #uploadSong[_ngcontent-%COMP%] {\n    width: 20%;\n    height: auto;\n    margin-left: 8%;\n    margin-top: 100px;\n  }\n\n  #uploadSong-input[_ngcontent-%COMP%] {\n    background-color: #94a2b1;\n    padding: 10%;\n  }\n}\n\n.overlay[_ngcontent-%COMP%] {\n  background: rgba(0, 0, 0, 0.3);\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  align-items: center;\n  justify-content: center;\n  display: flex;\n  z-index: 1;\n}\n\n.overlay.active[_ngcontent-%COMP%] {\n  visibility: visible;\n}\n\n.popup[_ngcontent-%COMP%] {\n  background: #F8F8F8;\n  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);\n  border-radius: 3px;\n  font-family: \"Montserrat\", sans-serif;\n  padding: 20px;\n  text-align: center;\n  width: 600px;\n  transition: 0.3s ease all;\n  transform: scale(0.7);\n}\n\n.popup[_ngcontent-%COMP%]   .btn-close-popup[_ngcontent-%COMP%] {\n  font-size: 16px;\n  line-height: 16px;\n  display: block;\n  cursor: pointer;\n  text-align: right;\n  transition: 0.3s ease all;\n  color: #BBBBBB;\n}\n\n.popup[_ngcontent-%COMP%]   .btn-close-popup[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n\n.popup[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  font-size: 36px;\n  font-weight: 600;\n  margin-bottom: 10px;\n}\n\n.popup[_ngcontent-%COMP%]   div[_ngcontent-%COMP%]   .container-inputs[_ngcontent-%COMP%] {\n  opacity: 0;\n}\n\n.popup[_ngcontent-%COMP%]   div[_ngcontent-%COMP%]   .container-inputs[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  width: 100%;\n  margin-bottom: 20px;\n  height: 52px;\n  font-size: 18px;\n  line-height: 52px;\n  border: 1px solid #BBBBBB;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdXNlci1wcm9maWxlL3VzZXItcHJvZmlsZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLFdBQUE7RUFDQSx5QkFBQTtBQUNKOztBQUVBO0VBQ0ksWUFBQTtFQUNBLFVBQUE7RUFDQSxZQUFBO0FBQ0o7O0FBRUE7RUFDSSxtRUFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7QUFDSjs7QUFFQTtFQUNJLFdBQUE7RUFDQSxVQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUVBO0VBQ0ksZ0JBQUE7RUFDQSxjQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7QUFDSjs7QUFFQTtFQUNJLFdBQUE7RUFDQSxVQUFBO0VBQ0EsWUFBQTtBQUNKOztBQUVBO0VBQ0ksb0JBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLFlBQUE7QUFDSjs7QUFFQTtFQUNJLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0FBQ0o7O0FBRUE7RUFDSSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0FBQ0o7O0FBRUE7RUFDSSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0FBQ0o7O0FBRUE7RUFDSSxjQUFBO0VBQ0EscUJBQUE7RUFDQSw0QkFBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFDSjs7QUFFQTtFQUNJLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7QUFDSjs7QUFFQTtFQUNJLFFBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0NBQUE7QUFDSjs7QUFFQTtFQUNJLHlCQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7QUFDSjs7QUFFQTtFQUNJLFdBQUE7RUFDQSxVQUFBO0VBQ0Esa0NBQUE7RUFDQSx5QkFBQTtFQUNBLGNBQUE7QUFDSjs7QUFFQTtFQUNJLFdBQUE7RUFDQSxlQUFBO0VBQ0EsNEJBQUE7RUFDQSxpQkFBQTtFQUNBLGVBQUE7QUFDSjs7QUFFQTtFQUNJLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxrQkFBQTtBQUNKOztBQWdCQTtFQUNJLFlBQUE7RUFDQSxlQUFBO0VBQ0EsNEJBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7QUFiSjs7QUFnQkE7RUFDSSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7QUFiSjs7QUFnQkE7RUFDSSxnQkFBQTtFQUNBLFdBQUE7QUFiSjs7QUFnQkE7RUFDSSxtQkFBQTtBQWJKOztBQWdCQTtFQUNJLGNBQUE7RUFDQSxXQUFBO0VBQ0Esa0NBQUE7RUFDQSx5QkFBQTtFQUNBLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLHNCQUFBO0VBQ0EsNEJBQUE7RUFDQSx5QkFBQTtFQUNBLHNCQUFBO0VBQ0Esd0VBQUE7QUFiSjs7QUFnQkE7RUFDSSxhQUFBO0FBYko7O0FBZ0JBO0VBQ0ksV0FBQTtBQWJKOztBQWdCQTtFQUNJLFlBQUE7RUFDQSxnQkFBQTtBQWJKOztBQWdCQTtFQUNJLGFBQUE7QUFiSjs7QUFnQkE7RUFFSTtJQUNJLFlBQUE7SUFDQSxXQUFBO0lBQ0EsWUFBQTtFQWROOztFQWlCRTtJQUNJLGdCQUFBO0VBZE47O0VBaUJFO0lBQ0ksV0FBQTtFQWROOztFQWlCRTtJQUNJLGdCQUFBO0VBZE47O0VBaUJFO0lBQ0ksV0FBQTtJQUNBLHdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxlQUFBO0VBZE47O0VBaUJFO0lBQ0ksZ0JBQUE7SUFDQSxpQkFBQTtJQUNBLGtCQUFBO0VBZE47O0VBOEJFO0lBQ0ksWUFBQTtJQUNBLHdCQUFBO0lBQ0Esa0JBQUE7SUFDQSxlQUFBO0VBM0JOOztFQThCRTtJQUNJLGdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxrQkFBQTtFQTNCTjs7RUE4QkU7SUFDSSxXQUFBO0VBM0JOOztFQThCRTtJQUNJLFVBQUE7SUFDQSxZQUFBO0lBQ0EsZUFBQTtJQUNBLGlCQUFBO0VBM0JOOztFQThCRTtJQUNJLHlCQUFBO0lBQ0EsWUFBQTtFQTNCTjtBQUNGOztBQThCQTtFQUNJLDhCQUFBO0VBQ0EsZUFBQTtFQUNBLE1BQUE7RUFDQSxTQUFBO0VBQ0EsT0FBQTtFQUNBLFFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsYUFBQTtFQUVBLFVBQUE7QUE3Qko7O0FBZ0NBO0VBQ0ksbUJBQUE7QUE3Qko7O0FBZ0NBO0VBQ0ksbUJBQUE7RUFDQSw4Q0FBQTtFQUNBLGtCQUFBO0VBQ0EscUNBQUE7RUFDQSxhQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBRUEseUJBQUE7RUFDQSxxQkFBQTtBQTlCSjs7QUFrQ0E7RUFDSSxlQUFBO0VBQ0EsaUJBQUE7RUFDQSxjQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBQ0EseUJBQUE7RUFDQSxjQUFBO0FBL0JKOztBQWtDQTtFQUNJLFdBQUE7QUEvQko7O0FBa0NBO0VBQ0ksZUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7QUEvQko7O0FBbUNBO0VBQ0ksVUFBQTtBQWhDSjs7QUFtQ0E7RUFDSSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxZQUFBO0VBQ0EsZUFBQTtFQUNBLGlCQUFBO0VBQ0EseUJBQUE7QUFoQ0oiLCJmaWxlIjoic3JjL2FwcC91c2VyLXByb2ZpbGUvdXNlci1wcm9maWxlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI25hdHVyYWxDb250YWluZXJ7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogY2FsYygxMDAlIC0gOTBweCk7XHJcbn1cclxuXHJcbiNjb250YWluZXIge1xyXG4gICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgd2lkdGg6IDYwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxufVxyXG5cclxuI3Byb2ZpbGUtaGVhZGVyIHtcclxuICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMTVkZWcsICNFQzJFMjYgLTIwJSwgdHJhbnNwYXJlbnQgMTEwJSk7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGhlaWdodDogMzAlO1xyXG59XHJcblxyXG4jaW1hZ2UtcHJvZmlsZSB7XHJcbiAgICBmbG9hdDogbGVmdDtcclxuICAgIHdpZHRoOiAyMCU7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcbn1cclxuXHJcbiN1c2VyLWljb24ge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDEwJTtcclxuICAgIG1hcmdpbi10b3A6IDglO1xyXG4gICAgd2lkdGg6IDgwJTtcclxuICAgIGhlaWdodDogNzglO1xyXG59XHJcblxyXG4jaW5mby1wcm9maWxlIHtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgd2lkdGg6IDgwJTtcclxuICAgIGhlaWdodDogMTAwJTtcclxufVxyXG5cclxuI3NldHRpbmdzLWljb24ge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWZsZXg7XHJcbiAgICBmbG9hdDogcmlnaHQ7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBwYWRkaW5nOiA1cHg7XHJcbn1cclxuXHJcbi5jdXN0b20tZmlsZSB7XHJcbiAgICBtYXJnaW4tbGVmdDogNXB4O1xyXG4gICAgbWFyZ2luLWJvdHRvbTogM3B4O1xyXG4gICAgd2lkdGg6IDE3MnB4O1xyXG59XHJcblxyXG4jdXNlck5hbWUge1xyXG4gICAgcGFkZGluZy10b3A6IDIwcHg7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgZm9udC1zaXplOiB4LWxhcmdlO1xyXG4gICAgZm9udC1mYW1pbHk6IEFyaWFsO1xyXG59XHJcblxyXG4jY29tcGxldGVOYW1lIHtcclxuICAgIHBhZGRpbmctdG9wOiAzcHg7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XHJcbiAgICBmb250LXdlaWdodDogNTAwO1xyXG4gICAgZm9udC1zaXplOiBtZWRpdW07XHJcbiAgICBmb250LWZhbWlseTogQXJpYWw7XHJcbn1cclxuXHJcbiNiaW9ncmFwaHktaW5wdXQge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB3aWR0aDogNzAlICFpbXBvcnRhbnQ7XHJcbiAgICBmb250LXNpemU6IDAuOHJlbSAhaW1wb3J0YW50O1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE4cHg7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG59XHJcblxyXG4jYmlvZ3JhcGh5IHtcclxuICAgIHBhZGRpbmctdG9wOiAxNXB4O1xyXG4gICAgcGFkZGluZy1sZWZ0OiAyMHB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcclxuICAgIGZvbnQtc2l6ZTogc21hbGw7XHJcbiAgICBmb250LWZhbWlseTogQXJpYWw7XHJcbn1cclxuXHJcbiNzYXZlQ2hhbmdlcyB7XHJcbiAgICByaWdodDogMDtcclxuICAgIGJvdHRvbTogMDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIG1hcmdpbi1ib3R0b206IDNweDtcclxuICAgIG1hcmdpbi1yaWdodDogNXB4O1xyXG4gICAgaGVpZ2h0OiBjYWxjKDEuNWVtICsgLjc1cmVtICsgMnB4KTtcclxufVxyXG5cclxuI3Byb2ZpbGUtbWFpbiB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZGRkZGO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IDcwJTtcclxufVxyXG5cclxuI215U29uZ3MtaGVhZGVyIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgaGVpZ2h0OiA4JTtcclxuICAgIGJvcmRlci1ib3R0b206ICNBMDlGOUYgc29saWQgMC4ycHg7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjM2U0NDRhO1xyXG4gICAgY29sb3I6ICNGRkZGRkY7XHJcbn1cclxuXHJcbiNwcm9maWxlLW1haW4tbXlTb25ncyB7XHJcbiAgICBmbG9hdDogbGVmdDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHBhZGRpbmc6IDEwcHggMTBweCAxMHB4IDEwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMzBweDtcclxuICAgIG1hcmdpbi10b3A6IDRweDtcclxufVxyXG5cclxuI3Byb2ZpbGUtbWFpbi1teVNvbmdzIHNwYW57XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgZm9udC1zaXplOiBtZWRpdW07XHJcbiAgICBmb250LWZhbWlseTogQXJpYWw7XHJcbn1cclxuXHJcbi8vICNwcm9maWxlLW1haW4tbXlMaXN0IHtcclxuLy8gICAgIGZsb2F0OiBsZWZ0O1xyXG4vLyAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4vLyAgICAgcGFkZGluZzogMTBweCAxMHB4IDEwcHggMTBweDtcclxuLy8gICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4vLyAgICAgbWFyZ2luLXRvcDogNHB4O1xyXG4vLyB9XHJcblxyXG4vLyAjcHJvZmlsZS1tYWluLW15TGlzdCBzcGFue1xyXG4vLyAgICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuLy8gICAgIGZvbnQtc2l6ZTogbWVkaXVtO1xyXG4vLyAgICAgZm9udC1mYW1pbHk6IEFyaWFsO1xyXG4vLyB9XHJcblxyXG4jcHJvZmlsZS1tYWluLXVwbG9hZHtcclxuICAgIGZsb2F0OiByaWdodDtcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHBhZGRpbmc6IDEwcHggMTBweCAxMHB4IDEwcHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDIwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiA0cHg7XHJcbn1cclxuXHJcbiNwcm9maWxlLW1haW4tdXBsb2FkIHNwYW57XHJcbiAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgZm9udC1zaXplOiBtZWRpdW07XHJcbiAgICBmb250LWZhbWlseTogQXJpYWw7XHJcbn1cclxuXHJcbiNteVNvbmdzLW1haW4ge1xyXG4gICAgb3ZlcmZsb3cteTogYXV0bztcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4udGFibGV7XHJcbiAgICBtYXJnaW46IDAgMCAxMTRweCAwO1xyXG59XHJcblxyXG4jYmlvZ3JhcGh5LWlucHV0IHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6IGNhbGMoMS41ZW0gKyAuNzVyZW0gKyAycHgpO1xyXG4gICAgcGFkZGluZzogLjM3NXJlbSAuNzVyZW07XHJcbiAgICBmb250LXNpemU6IDFyZW07XHJcbiAgICBmb250LXdlaWdodDogNDAwO1xyXG4gICAgbGluZS1oZWlnaHQ6IDEuNTtcclxuICAgIGNvbG9yOiAjNDk1MDU3O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogI2ZmZjtcclxuICAgIGJhY2tncm91bmQtY2xpcDogcGFkZGluZy1ib3g7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjY2VkNGRhO1xyXG4gICAgYm9yZGVyLXJhZGl1czogLjI1cmVtO1xyXG4gICAgdHJhbnNpdGlvbjogYm9yZGVyLWNvbG9yIC4xNXMgZWFzZS1pbi1vdXQsYm94LXNoYWRvdyAuMTVzIGVhc2UtaW4tb3V0O1xyXG59XHJcblxyXG4jdHJhbnNwYXJlbnR7XHJcbiAgICBoZWlnaHQ6IDExMHB4O1xyXG59XHJcblxyXG4jdXBsb2FkU29uZy1jb250YWluZXJ7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuI3VwbG9hZFNvbmd7XHJcbiAgICB3aWR0aDogMjAwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogMTAlO1xyXG59XHJcblxyXG4jdXBsb2FkU29uZy1pbnB1dHtcclxuICAgIHBhZGRpbmc6IDUwcHg7XHJcbn1cclxuXHJcbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDgwMHB4KXtcclxuICAgIFxyXG4gICAgI2NvbnRhaW5lciB7XHJcbiAgICAgICAgbWFyZ2luOiBhdXRvO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIGhlaWdodDogMTAwJTtcclxuICAgIH1cclxuXHJcbiAgICAjaW5mby1wcm9maWxlIHB7XHJcbiAgICAgICAgZm9udC1zaXplOiBzbWFsbDtcclxuICAgIH1cclxuXHJcbiAgICAjbXlTb25ncy1tYWlue1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG5cclxuICAgICNteVNvbmdzLWhlYWRlciBkaXYgc3BhbntcclxuICAgICAgICBmb250LXNpemU6IHNtYWxsO1xyXG4gICAgfVxyXG5cclxuICAgICNwcm9maWxlLW1haW4tbXlTb25ncyB7XHJcbiAgICAgICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICAgICAgcGFkZGluZzogNXB4IDVweCA1cHggNXB4O1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAyMHB4O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDJweDtcclxuICAgIH1cclxuICAgIFxyXG4gICAgI3Byb2ZpbGUtbWFpbi1teVNvbmdzIHNwYW57XHJcbiAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgICAgICBmb250LXNpemU6IG1lZGl1bTtcclxuICAgICAgICBmb250LWZhbWlseTogQXJpYWw7XHJcbiAgICB9XHJcbiAgICBcclxuICAgIC8vICNwcm9maWxlLW1haW4tbXlMaXN0IHtcclxuICAgIC8vICAgICBmbG9hdDogbGVmdDtcclxuICAgIC8vICAgICBwYWRkaW5nOiA1cHggNXB4IDVweCA1cHg7XHJcbiAgICAvLyAgICAgbWFyZ2luLWxlZnQ6IDIwcHg7XHJcbiAgICAvLyAgICAgbWFyZ2luLXRvcDogMnB4O1xyXG4gICAgLy8gfVxyXG4gICAgXHJcbiAgICAvLyAjcHJvZmlsZS1tYWluLW15TGlzdCBzcGFue1xyXG4gICAgLy8gICAgIGZvbnQtd2VpZ2h0OiA2MDA7XHJcbiAgICAvLyAgICAgZm9udC1zaXplOiBtZWRpdW07XHJcbiAgICAvLyAgICAgZm9udC1mYW1pbHk6IEFyaWFsO1xyXG4gICAgLy8gfVxyXG5cclxuICAgICNwcm9maWxlLW1haW4tdXBsb2Fke1xyXG4gICAgICAgIGZsb2F0OiByaWdodDtcclxuICAgICAgICBwYWRkaW5nOiA1cHggNXB4IDVweCA1cHg7XHJcbiAgICAgICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDJweDtcclxuICAgIH1cclxuICAgIFxyXG4gICAgI3Byb2ZpbGUtbWFpbi11cGxvYWQgc3BhbntcclxuICAgICAgICBmb250LXdlaWdodDogNjAwO1xyXG4gICAgICAgIGZvbnQtc2l6ZTogbWVkaXVtO1xyXG4gICAgICAgIGZvbnQtZmFtaWx5OiBBcmlhbDtcclxuICAgIH1cclxuICAgIFxyXG4gICAgI3VwbG9hZFNvbmctY29udGFpbmVye1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgfVxyXG4gICAgXHJcbiAgICAjdXBsb2FkU29uZ3tcclxuICAgICAgICB3aWR0aDogMjAlO1xyXG4gICAgICAgIGhlaWdodDogYXV0bztcclxuICAgICAgICBtYXJnaW4tbGVmdDogOCU7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMTAwcHhcclxuICAgIH1cclxuICAgIFxyXG4gICAgI3VwbG9hZFNvbmctaW5wdXR7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzk0YTJiMTtcclxuICAgICAgICBwYWRkaW5nOiAxMCU7XHJcbiAgICB9XHJcbn1cclxuXHJcbi5vdmVybGF5IHtcclxuICAgIGJhY2tncm91bmQ6IHJnYmEoMCwwLDAsLjMpO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgdG9wOiAwO1xyXG4gICAgYm90dG9tOiAwO1xyXG4gICAgbGVmdDogMDtcclxuICAgIHJpZ2h0OiAwO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIC8vIHZpc2liaWxpdHk6IGhpZGRlbjtcclxuICAgIHotaW5kZXg6IDE7XHJcbn1cclxuXHJcbi5vdmVybGF5LmFjdGl2ZSB7XHJcbiAgICB2aXNpYmlsaXR5OiB2aXNpYmxlO1xyXG59XHJcblxyXG4ucG9wdXAge1xyXG4gICAgYmFja2dyb3VuZDogI0Y4RjhGODtcclxuICAgIGJveC1zaGFkb3c6IDBweCAwcHggNXB4IDBweCByZ2JhKDAsMCwwLDAuMyk7XHJcbiAgICBib3JkZXItcmFkaXVzOiAzcHg7XHJcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnLCBzYW5zLXNlcmlmO1xyXG4gICAgcGFkZGluZzogMjBweDtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIHdpZHRoOiA2MDBweDtcclxuICAgIFxyXG4gICAgdHJhbnNpdGlvbjogLjNzIGVhc2UgYWxsO1xyXG4gICAgdHJhbnNmb3JtOiBzY2FsZSgwLjcpO1xyXG4gICAgLy8gb3BhY2l0eTogMDtcclxufVxyXG5cclxuLnBvcHVwIC5idG4tY2xvc2UtcG9wdXAge1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDE2cHg7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgIHRleHQtYWxpZ246IHJpZ2h0O1xyXG4gICAgdHJhbnNpdGlvbjogLjNzIGVhc2UgYWxsO1xyXG4gICAgY29sb3I6ICNCQkJCQkI7XHJcbn1cclxuXHJcbi5wb3B1cCAuYnRuLWNsb3NlLXBvcHVwOmhvdmVyIHtcclxuICAgIGNvbG9yOiAjMDAwO1xyXG59XHJcblxyXG4ucG9wdXAgaDMge1xyXG4gICAgZm9udC1zaXplOiAzNnB4O1xyXG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcclxuICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XHJcbiAgICAvLyBvcGFjaXR5OiAwO1xyXG59XHJcblxyXG4ucG9wdXAgZGl2IC5jb250YWluZXItaW5wdXRzIHtcclxuICAgIG9wYWNpdHk6IDA7XHJcbn1cclxuXHJcbi5wb3B1cCBkaXYgLmNvbnRhaW5lci1pbnB1dHMgaW5wdXQge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG4gICAgaGVpZ2h0OiA1MnB4O1xyXG4gICAgZm9udC1zaXplOiAxOHB4O1xyXG4gICAgbGluZS1oZWlnaHQ6IDUycHg7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjQkJCQkJCO1xyXG59XHJcblxyXG4vLyAucG9wdXAgZGl2IC5jb250YWluZXItaW5wdXRzIGlucHV0W3R5cGU9dGV4dF0sICBpbnB1dFt0eXBlPXBhc3N3b3JkXXtcclxuLy8gICAgIHBhZGRpbmctbGVmdDogMTZweDtcclxuLy8gfVxyXG5cclxuLy8gLnBvcHVwIGRpdiAuYnRuLXN1Ym1pdCB7XHJcbi8vICAgICBwYWRkaW5nOiAwIDIwcHg7XHJcbi8vICAgICBoZWlnaHQ6IDQwcHg7XHJcbi8vICAgICBsaW5lLWhlaWdodDogNDBweDtcclxuLy8gICAgIGJvcmRlcjogbm9uZTtcclxuLy8gICAgIGNvbG9yOiAjZmZmO1xyXG4vLyAgICAgYmFja2dyb3VuZDogIzA3MDkwZjtcclxuLy8gICAgIGJvcmRlci1yYWRpdXM6IDNweDtcclxuLy8gICAgIGZvbnQtZmFtaWx5OiAnTW9udHNlcnJhdCcsIHNhbnMtc2VyaWY7XHJcbi8vICAgICBmb250LXNpemU6IDE2cHg7XHJcbi8vICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbi8vICAgICB0cmFuc2l0aW9uOiAuM3MgZWFzZSBhbGw7XHJcbi8vIH1cclxuXHJcbi8vIC5wb3B1cCBkaXYgLmJ0bi1zdWJtaXQ6aG92ZXIge1xyXG4vLyAgICAgYmFja2dyb3VuZDogcmdiYSg1MCwgNTEsIDUzLCAwLjkpO1xyXG4vLyB9Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserProfileComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -315,7 +343,7 @@ UserProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
                 templateUrl: './user-profile.component.html',
                 styleUrls: ['./user-profile.component.scss']
             }]
-    }], function () { return [{ type: _services_storage_service__WEBPACK_IMPORTED_MODULE_1__["StorageService"] }, { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"] }]; }, null); })();
+    }], function () { return [{ type: _services_storage_service__WEBPACK_IMPORTED_MODULE_3__["StorageService"] }, { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticationService"] }]; }, null); })();
 
 
 /***/ }),
@@ -563,6 +591,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "1kSV");
 /* harmony import */ var _services_storage_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/storage.service */ "n90K");
 /* harmony import */ var _shared_authorizatedGuard__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./shared/authorizatedGuard */ "AvSG");
+/* harmony import */ var ngx_audio_player__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ngx-audio-player */ "cDwd");
+
 
 
 
@@ -600,7 +630,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _app_routing_app_routing_module__WEBPACK_IMPORTED_MODULE_14__["AppRoutingModule"],
             _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_2__["LayoutModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
-            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__["NgbModule"]
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__["NgbModule"],
+            ngx_audio_player__WEBPACK_IMPORTED_MODULE_19__["NgxAudioPlayerModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
         _main_main_component__WEBPACK_IMPORTED_MODULE_8__["MainComponent"],
@@ -617,7 +648,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _app_routing_app_routing_module__WEBPACK_IMPORTED_MODULE_14__["AppRoutingModule"],
         _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_2__["LayoutModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
-        _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__["NgbModule"]] }); })();
+        _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__["NgbModule"],
+        ngx_audio_player__WEBPACK_IMPORTED_MODULE_19__["NgxAudioPlayerModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -640,7 +672,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _app_routing_app_routing_module__WEBPACK_IMPORTED_MODULE_14__["AppRoutingModule"],
                     _angular_cdk_layout__WEBPACK_IMPORTED_MODULE_2__["LayoutModule"],
                     _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
-                    _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__["NgbModule"]
+                    _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_16__["NgbModule"],
+                    ngx_audio_player__WEBPACK_IMPORTED_MODULE_19__["NgxAudioPlayerModule"]
                 ],
                 providers: [
                     _services_storage_service__WEBPACK_IMPORTED_MODULE_17__["StorageService"],
@@ -666,9 +699,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _services_global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/global */ "p9xo");
 /* harmony import */ var _services_storage_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/storage.service */ "n90K");
-/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
-/* harmony import */ var ngx_plyr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-plyr */ "pr9R");
-
+/* harmony import */ var ngx_audio_player__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-audio-player */ "cDwd");
 
 
 
@@ -677,6 +708,7 @@ __webpack_require__.r(__webpack_exports__);
 class MusicPlayerComponent {
     constructor(storageService) {
         this.storageService = storageService;
+        this.playlist = [];
         this.url = _services_global__WEBPACK_IMPORTED_MODULE_1__["Global"].url;
     }
     ngOnInit() {
@@ -687,97 +719,24 @@ class MusicPlayerComponent {
                     this.nameSongs = this.nameService.song,
                     this.musicListLength = this.nameSongs.length,
                     this.songName = this.nameSongs[this.songSelected].title + " - " + this.nameSongs[this.songSelected].autor;
-                // this.storageService.playThisSong(this.nameSongs[this.songSelected].nameFile).subscribe(
-                //   data => {
-                //     console.log(data)
-                //   },
-                //   error =>{
-                //     console.log(error)
-                //   }
-                // );
-                this.audio = [
-                    {
-                        src: this.nameSongs[this.songSelected].nameFile,
-                        type: 'audio/mp3',
-                        id: 'song',
-                    }
-                ];
+                for (let i = 0; i < this.musicListLength; i++) {
+                    this.playlist.push({
+                        title: this.nameSongs[i].title + " - " + this.nameSongs[i].autor,
+                        link: this.url + 'getSong/' + this.nameSongs[i].nameFile
+                    });
+                }
+                console.log(this.playlist);
             });
-        this.musicRute = "../../assets/music/";
-        this.musicList = ['1 - J Balvin - Brillo.mp3', '2 - Ozuna - La Modelo.mp3', '5 - Aitana - Lo Malo.mp3'];
-        // this.storageService.playThisSong(this.nameSongs[this.songSelected]).subscribe(
-        //   data => console.log(data,"1")
-        // );
         this.songName = this.nameSongs;
     }
     ;
-    play() {
-        this.player.play(); // or this.plyr.player.play()
-    }
-    pause() {
-        this.player.pause(); // or this.plyr.player.play()
-    }
-    stop() {
-        this.player.stop(); // or this.plyr.player.stop()
-    }
-    oneMore() {
-        if (this.songSelected === this.musicListLength) {
-            this.songSelected = 0;
-        }
-        else {
-            this.songSelected++;
-        }
-        this.listenMusic = this.musicRute + this.musicList[this.songSelected];
-        this.songChanges();
-    }
-    oneLess() {
-        if (this.songSelected === 0) {
-            this.songSelected = this.musicListLength;
-        }
-        else {
-            this.songSelected--;
-        }
-        this.listenMusic = this.musicRute + this.musicList[this.songSelected];
-        this.songChanges();
-    }
-    songChanges() {
-        this.storageService.getNameFiles().subscribe(data => {
-            this.nameService = data,
-                this.nameSongs = this.nameService.song,
-                this.musicListLength = this.nameSongs.length,
-                this.songName = this.nameSongs[this.songSelected].title + " - " + this.nameSongs[this.songSelected].autor;
-            this.audio = [
-                {
-                    src: this.nameSongs[this.songSelected].nameFile,
-                    type: 'audio/mp3',
-                    id: 'song',
-                }
-            ];
-        });
-    }
 }
 MusicPlayerComponent.ɵfac = function MusicPlayerComponent_Factory(t) { return new (t || MusicPlayerComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_storage_service__WEBPACK_IMPORTED_MODULE_2__["StorageService"])); };
-MusicPlayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MusicPlayerComponent, selectors: [["app-music-player"]], decls: 8, vars: 4, consts: [["id", "songListening"], ["id", "songName"], ["id", "oneLess", 3, "click"], ["src", "../assets/img/skip_previous-white-18dp.svg"], ["id", "oneMore", 3, "click"], ["src", "../assets/img/skip_next-white-18dp.svg"], ["id", "music-player", "mat-card-image", "", "plyr", "", "loadSprite", "", "plyrTitle", "Audio", "plyrType", "audio", 1, "music-player", 3, "plyrPlaysInline", "plyrCrossOrigin", "plyrSources"]], template: function MusicPlayerComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MusicPlayerComponent_Template_div_click_3_listener() { return ctx.oneLess(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "img", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function MusicPlayerComponent_Template_div_click_5_listener() { return ctx.oneMore(); });
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "img", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "div", 6);
+MusicPlayerComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MusicPlayerComponent, selectors: [["app-music-player"]], decls: 2, vars: 7, consts: [["id", "music-player", "muted", "muted", 1, "music-player", 3, "playlist", "displayTitle", "autoPlay", "displayPlaylist", "expanded", "displayVolumeControls", "disablePositionSlider"], ["audioPlayer", ""]], template: function MusicPlayerComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "ngx-audio-player", 0, 1);
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.songName);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("plyrPlaysInline", true)("plyrCrossOrigin", true)("plyrSources", ctx.audio);
-    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardImage"], ngx_plyr__WEBPACK_IMPORTED_MODULE_4__["PlyrComponent"]], styles: ["@media screen and (max-width: 700px) {\n  .music-player[_ngcontent-%COMP%]     .plyr__controls {\n    background-color: #282828;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls {\n    color: #FFF;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__progress {\n    position: relative;\n    left: 0;\n    bottom: 0;\n    margin-top: 16%;\n    margin-left: 17.5%;\n    margin-bottom: 1%;\n    width: 60%;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls .plyr__controls__item:first-child {\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    margin-left: 45%;\n    margin-bottom: 12%;\n    z-index: 1;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls .plyr__controls__item.plyr__time {\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    margin-left: 80%;\n    margin-bottom: 3.5%;\n    z-index: 1;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__volume input[type=range] {\n    position: absolute;\n    width: 60%;\n    left: 0;\n    bottom: 0;\n    margin-left: 6px;\n    margin-bottom: 3%;\n    z-index: 2;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__volume {\n    position: absolute;\n    bottom: 0;\n    width: 20%;\n    margin-bottom: 13%;\n  }\n\n  .music-player[_ngcontent-%COMP%]     button:not(:disabled), [type=button][_ngcontent-%COMP%]:not(:disabled), [type=reset][_ngcontent-%COMP%]:not(:disabled), [type=submit][_ngcontent-%COMP%]:not(:disabled) {\n    cursor: pointer;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    margin-left: -25px;\n    margin-bottom: -4px;\n  }\n\n  #songListening[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    font-size: x-small;\n    left: 0;\n    bottom: 0;\n    margin-left: 2%;\n    margin-bottom: 10%;\n    z-index: 1;\n  }\n\n  #oneMore[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    left: 0;\n    bottom: 0;\n    margin-left: 55%;\n    margin-bottom: 12%;\n    z-index: 1;\n  }\n\n  #oneMore[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:hover {\n    background-color: rgba(0, 204, 255, 0.979);\n    border-radius: 10%;\n  }\n\n  #oneLess[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    left: 0;\n    bottom: 0;\n    margin-left: 35%;\n    margin-bottom: 12%;\n    z-index: 1;\n  }\n\n  #oneLess[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:hover {\n    background-color: rgba(0, 204, 255, 0.979);\n    border-radius: 10%;\n  }\n\n  div[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 30px;\n  }\n}\n@media screen and (min-width: 700px) {\n  .music-player[_ngcontent-%COMP%]     .plyr__controls {\n    background-color: #282828;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls {\n    color: #FFF;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__progress {\n    position: relative;\n    left: 0;\n    bottom: 0;\n    margin-top: 3%;\n    margin-left: 30.5%;\n    margin-bottom: 0.5%;\n    width: 48%;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls .plyr__controls__item:first-child {\n    position: absolute;\n    left: 0;\n    bottom: -5px;\n    margin-left: 49%;\n    margin-bottom: 3.2%;\n    z-index: 1;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls .plyr__controls__item.plyr__time {\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    margin-left: 73%;\n    margin-bottom: 1%;\n    z-index: 1;\n  }\n\n  #songListening[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    left: 0;\n    bottom: 0;\n    margin-left: 2%;\n    margin-bottom: 1.5%;\n    z-index: 1;\n  }\n\n  #oneMore[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    left: 0;\n    cursor: pointer;\n    bottom: -5px;\n    margin-left: 54%;\n    margin-bottom: 3.2%;\n    z-index: 1;\n  }\n\n  #oneMore[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:hover {\n    background-color: rgba(0, 204, 255, 0.979);\n    border-radius: 10%;\n  }\n\n  #oneLess[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    cursor: pointer;\n    left: 0;\n    bottom: -5px;\n    margin-left: 44%;\n    margin-bottom: 3.2%;\n    z-index: 1;\n  }\n\n  #oneLess[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:hover {\n    background-color: rgba(0, 204, 255, 0.979);\n    border-radius: 10%;\n  }\n\n  div[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 30px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbXVzaWMtcGxheWVyL211c2ljLXBsYXllci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJO0lBQ0kseUJBQUE7RUFDTjs7RUFDRTtJQUNJLFdBQUE7RUFFTjs7RUFDRTtJQUNJLGtCQUFBO0lBQ0EsT0FBQTtJQUNBLFNBQUE7SUFDQSxlQUFBO0lBQ0Esa0JBQUE7SUFDQSxpQkFBQTtJQUNBLFVBQUE7RUFFTjs7RUFDRTtJQUNJLGtCQUFBO0lBQ0EsT0FBQTtJQUNBLFNBQUE7SUFDQSxnQkFBQTtJQUNBLGtCQUFBO0lBQ0EsVUFBQTtFQUVOOztFQUNFO0lBQ0ksa0JBQUE7SUFDQSxPQUFBO0lBQ0EsU0FBQTtJQUNBLGdCQUFBO0lBQ0EsbUJBQUE7SUFDQSxVQUFBO0VBRU47O0VBQ0U7SUFDSSxrQkFBQTtJQUNBLFVBQUE7SUFDQSxPQUFBO0lBQ0EsU0FBQTtJQUNBLGdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxVQUFBO0VBRU47O0VBQ0U7SUFDSSxrQkFBQTtJQUNBLFNBQUE7SUFDQSxVQUFBO0lBQ0Esa0JBQUE7RUFFTjs7RUFDRTtJQUNJLGVBQUE7SUFDQSxrQkFBQTtJQUNBLFNBQUE7SUFDQSxPQUFBO0lBQ0Esa0JBQUE7SUFDQSxtQkFBQTtFQUVOOztFQUFFO0lBQ0ksa0JBQUE7SUFDQSx5QkFBQTtJQUNBLGtCQUFBO0lBQ0EsT0FBQTtJQUNBLFNBQUE7SUFDQSxlQUFBO0lBQ0Esa0JBQUE7SUFDQSxVQUFBO0VBR047O0VBREU7SUFDSSxrQkFBQTtJQUNBLHlCQUFBO0lBQ0EsT0FBQTtJQUNBLFNBQUE7SUFDQSxnQkFBQTtJQUNBLGtCQUFBO0lBQ0EsVUFBQTtFQUlOOztFQURFO0lBQ0ksMENBQUE7SUFDQSxrQkFBQTtFQUlOOztFQUZFO0lBQ0ksa0JBQUE7SUFDQSx5QkFBQTtJQUNBLE9BQUE7SUFDQSxTQUFBO0lBQ0EsZ0JBQUE7SUFDQSxrQkFBQTtJQUNBLFVBQUE7RUFLTjs7RUFIRTtJQUNJLDBDQUFBO0lBQ0Esa0JBQUE7RUFNTjs7RUFKRTtJQUNJLFdBQUE7RUFPTjtBQUNGO0FBTEE7RUFDSTtJQUNJLHlCQUFBO0VBT047O0VBTEU7SUFDSSxXQUFBO0VBUU47O0VBTkU7SUFDSSxrQkFBQTtJQUNBLE9BQUE7SUFDQSxTQUFBO0lBQ0EsY0FBQTtJQUNBLGtCQUFBO0lBQ0EsbUJBQUE7SUFDQSxVQUFBO0VBU047O0VBUEU7SUFDSSxrQkFBQTtJQUNBLE9BQUE7SUFDQSxZQUFBO0lBQ0EsZ0JBQUE7SUFDQSxtQkFBQTtJQUNBLFVBQUE7RUFVTjs7RUFSRTtJQUNJLGtCQUFBO0lBQ0EsT0FBQTtJQUNBLFNBQUE7SUFDQSxnQkFBQTtJQUNBLGlCQUFBO0lBQ0EsVUFBQTtFQVdOOztFQVRFO0lBQ0ksa0JBQUE7SUFDQSx5QkFBQTtJQUNBLE9BQUE7SUFDQSxTQUFBO0lBQ0EsZUFBQTtJQUNBLG1CQUFBO0lBQ0EsVUFBQTtFQVlOOztFQVZFO0lBQ0ksa0JBQUE7SUFDQSx5QkFBQTtJQUNBLE9BQUE7SUFDQSxlQUFBO0lBQ0EsWUFBQTtJQUNBLGdCQUFBO0lBQ0EsbUJBQUE7SUFDQSxVQUFBO0VBYU47O0VBVkU7SUFDSSwwQ0FBQTtJQUNBLGtCQUFBO0VBYU47O0VBWEU7SUFDSSxrQkFBQTtJQUNBLHlCQUFBO0lBQ0EsZUFBQTtJQUNBLE9BQUE7SUFDQSxZQUFBO0lBQ0EsZ0JBQUE7SUFDQSxtQkFBQTtJQUNBLFVBQUE7RUFjTjs7RUFaRTtJQUNJLDBDQUFBO0lBQ0Esa0JBQUE7RUFlTjs7RUFiRTtJQUNJLFdBQUE7RUFnQk47QUFDRiIsImZpbGUiOiJzcmMvYXBwL211c2ljLXBsYXllci9tdXNpYy1wbGF5ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA3MDBweCl7XHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHN7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgIH1cclxuICAgIC5tdXNpYy1wbGF5ZXIgOjpuZy1kZWVwIC5wbHlyX19jb250cm9sc3tcclxuICAgICAgICBjb2xvcjogI0ZGRjtcclxuICAgIH1cclxuICAgIC8vUmVwcm9kdWN0b3JcclxuICAgIC5tdXNpYy1wbGF5ZXIgOjpuZy1kZWVwIC5wbHlyX19wcm9ncmVzcyB7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDE2JTtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTcuNSU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMSU7XHJcbiAgICAgICAgd2lkdGg6IDYwJTtcclxuICAgIH1cclxuICAgIC8vQm90b24gcGxheVxyXG4gICAgLm11c2ljLXBsYXllciA6Om5nLWRlZXAgLnBseXJfX2NvbnRyb2xzIC5wbHlyX19jb250cm9sc19faXRlbTpmaXJzdC1jaGlsZCB7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiA0NSU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTIlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICB9XHJcbiAgICAvL0NvbnRhZG9yIHNlZ3VuZG9zXHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHMgLnBseXJfX2NvbnRyb2xzX19pdGVtLnBseXJfX3RpbWUge1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogODAlO1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDMuNSU7XHJcbiAgICAgICAgei1pbmRleDogMTtcclxuICAgIH1cclxuICAgIC8vQm90b24gVm9sdW1lblxyXG4gICAgLm11c2ljLXBsYXllciA6Om5nLWRlZXAgLnBseXJfX3ZvbHVtZSBpbnB1dFt0eXBlPXJhbmdlXSB7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHdpZHRoOiA2MCU7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgICBib3R0b206IDA7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDZweDtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAzJTtcclxuICAgICAgICB6LWluZGV4OiAyO1xyXG4gICAgfVxyXG4gICAgLy9CYXJyYSBWb2x1bWVuXHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fdm9sdW1lIHtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIHdpZHRoOiAyMCU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTMlO1xyXG4gICAgfVxyXG4gICAgLy9BanVzdGVzXHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCBidXR0b246bm90KDpkaXNhYmxlZCksIFt0eXBlPWJ1dHRvbl06bm90KDpkaXNhYmxlZCksIFt0eXBlPXJlc2V0XTpub3QoOmRpc2FibGVkKSwgW3R5cGU9c3VibWl0XTpub3QoOmRpc2FibGVkKSB7XHJcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBib3R0b206IDA7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogLTI1cHg7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogLTRweDtcclxuICAgIH1cclxuICAgICNzb25nTGlzdGVuaW5ne1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjgyODI4O1xyXG4gICAgICAgIGZvbnQtc2l6ZTogeC1zbWFsbDtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMiU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTAlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICB9XHJcbiAgICAjb25lTW9yZXtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODsgIFxyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiA1NSU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTIlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICAgICAgXHJcbiAgICB9XHJcbiAgICAjb25lTW9yZSA6aG92ZXJ7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjpyZ2JhKDAsIDIwNCwgMjU1LCAwLjk3OSk7ICBcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMCU7XHJcbiAgICB9XHJcbiAgICAjb25lTGVzc3tcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMzUlO1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDEyJTtcclxuICAgICAgICB6LWluZGV4OiAxO1xyXG4gICAgfVxyXG4gICAgI29uZUxlc3MgOmhvdmVye1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6cmdiYSgwLCAyMDQsIDI1NSwgMC45NzkpOyAgXHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTAlO1xyXG4gICAgfVxyXG4gICAgZGl2IGltZ3tcclxuICAgICAgICB3aWR0aDogMzBweDtcclxuICAgIH1cclxufVxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA3MDBweCl7XHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHN7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgIH1cclxuICAgIC5tdXNpYy1wbGF5ZXIgOjpuZy1kZWVwIC5wbHlyX19jb250cm9sc3tcclxuICAgICAgICBjb2xvcjogI0ZGRjtcclxuICAgIH1cclxuICAgIC5tdXNpYy1wbGF5ZXIgOjpuZy1kZWVwIC5wbHlyX19wcm9ncmVzcyB7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDMlO1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAzMC41JTtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAwLjUlO1xyXG4gICAgICAgIHdpZHRoOiA0OCU7XHJcbiAgICB9XHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHMgLnBseXJfX2NvbnRyb2xzX19pdGVtOmZpcnN0LWNoaWxkIHtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgICBib3R0b206IC01cHg7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDQ5JTtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAzLjIlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICB9XHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHMgLnBseXJfX2NvbnRyb2xzX19pdGVtLnBseXJfX3RpbWUge1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogNzMlO1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDElO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICB9XHJcbiAgICAjc29uZ0xpc3RlbmluZ3tcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMiU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMS41JTtcclxuICAgICAgICB6LWluZGV4OiAxO1xyXG4gICAgfVxyXG4gICAgI29uZU1vcmV7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyODI4Mjg7ICBcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICBib3R0b206IC01cHg7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDU0JTtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAzLjIlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICAgICAgXHJcbiAgICB9XHJcbiAgICAjb25lTW9yZSA6aG92ZXJ7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjpyZ2JhKDAsIDIwNCwgMjU1LCAwLjk3OSk7ICBcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMCU7XHJcbiAgICB9XHJcbiAgICAjb25lTGVzc3tcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgICBib3R0b206IC01cHg7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDQ0JTtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAzLjIlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICB9XHJcbiAgICAjb25lTGVzcyA6aG92ZXJ7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjpyZ2JhKDAsIDIwNCwgMjU1LCAwLjk3OSk7ICBcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMCU7XHJcbiAgICB9XHJcbiAgICBkaXYgaW1ne1xyXG4gICAgICAgIHdpZHRoOiAzMHB4O1xyXG4gICAgfVxyXG59Il19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("playlist", ctx.playlist)("displayTitle", true)("autoPlay", false)("displayPlaylist", true)("expanded", false)("displayVolumeControls", true)("disablePositionSlider", false);
+    } }, directives: [ngx_audio_player__WEBPACK_IMPORTED_MODULE_3__["AudioPlayerComponent"]], styles: ["@media screen and (max-width: 700px) {\n  .music-player[_ngcontent-%COMP%]     .plyr__controls {\n    background-color: #282828;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls {\n    color: #FFF;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__progress {\n    position: relative;\n    left: 0;\n    bottom: 0;\n    margin-top: 16%;\n    margin-left: 17.5%;\n    margin-bottom: 1%;\n    width: 60%;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls .plyr__controls__item:first-child {\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    margin-left: 45%;\n    margin-bottom: 12%;\n    z-index: 1;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls .plyr__controls__item.plyr__time {\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    margin-left: 80%;\n    margin-bottom: 3.5%;\n    z-index: 1;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__volume input[type=range] {\n    position: absolute;\n    width: 60%;\n    left: 0;\n    bottom: 0;\n    margin-left: 6px;\n    margin-bottom: 3%;\n    z-index: 2;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__volume {\n    position: absolute;\n    bottom: 0;\n    width: 20%;\n    margin-bottom: 13%;\n  }\n\n  .music-player[_ngcontent-%COMP%]     button:not(:disabled), [type=button][_ngcontent-%COMP%]:not(:disabled), [type=reset][_ngcontent-%COMP%]:not(:disabled), [type=submit][_ngcontent-%COMP%]:not(:disabled) {\n    cursor: pointer;\n    position: absolute;\n    bottom: 0;\n    left: 0;\n    margin-left: -25px;\n    margin-bottom: -4px;\n  }\n\n  #songListening[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    font-size: x-small;\n    left: 0;\n    bottom: 0;\n    margin-left: 2%;\n    margin-bottom: 10%;\n    z-index: 1;\n  }\n\n  #oneMore[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    left: 0;\n    bottom: 0;\n    margin-left: 55%;\n    margin-bottom: 12%;\n    z-index: 1;\n  }\n\n  #oneMore[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:hover {\n    background-color: rgba(0, 204, 255, 0.979);\n    border-radius: 10%;\n  }\n\n  #oneLess[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    left: 0;\n    bottom: 0;\n    margin-left: 35%;\n    margin-bottom: 12%;\n    z-index: 1;\n  }\n\n  #oneLess[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:hover {\n    background-color: rgba(0, 204, 255, 0.979);\n    border-radius: 10%;\n  }\n\n  div[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 30px;\n  }\n}\n@media screen and (min-width: 700px) {\n  .music-player[_ngcontent-%COMP%]     .plyr__controls {\n    background-color: #282828;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls {\n    color: #FFF;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__progress {\n    position: relative;\n    left: 0;\n    bottom: 0;\n    margin-top: 3%;\n    margin-left: 30.5%;\n    margin-bottom: 0.5%;\n    width: 48%;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls .plyr__controls__item:first-child {\n    position: absolute;\n    left: 0;\n    bottom: -5px;\n    margin-left: 49%;\n    margin-bottom: 3.2%;\n    z-index: 1;\n  }\n\n  .music-player[_ngcontent-%COMP%]     .plyr__controls .plyr__controls__item.plyr__time {\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    margin-left: 73%;\n    margin-bottom: 1%;\n    z-index: 1;\n  }\n\n  #songListening[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    left: 0;\n    bottom: 0;\n    margin-left: 2%;\n    margin-bottom: 1.5%;\n    z-index: 1;\n  }\n\n  #oneMore[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    left: 0;\n    cursor: pointer;\n    bottom: -5px;\n    margin-left: 54%;\n    margin-bottom: 3.2%;\n    z-index: 1;\n  }\n\n  #oneMore[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:hover {\n    background-color: rgba(0, 204, 255, 0.979);\n    border-radius: 10%;\n  }\n\n  #oneLess[_ngcontent-%COMP%] {\n    position: absolute;\n    background-color: #282828;\n    cursor: pointer;\n    left: 0;\n    bottom: -5px;\n    margin-left: 44%;\n    margin-bottom: 3.2%;\n    z-index: 1;\n  }\n\n  #oneLess[_ngcontent-%COMP%]   [_ngcontent-%COMP%]:hover {\n    background-color: rgba(0, 204, 255, 0.979);\n    border-radius: 10%;\n  }\n\n  div[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n    width: 30px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbXVzaWMtcGxheWVyL211c2ljLXBsYXllci5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJO0lBQ0kseUJBQUE7RUFDTjs7RUFDRTtJQUNJLFdBQUE7RUFFTjs7RUFDRTtJQUNJLGtCQUFBO0lBQ0EsT0FBQTtJQUNBLFNBQUE7SUFDQSxlQUFBO0lBQ0Esa0JBQUE7SUFDQSxpQkFBQTtJQUNBLFVBQUE7RUFFTjs7RUFDRTtJQUNJLGtCQUFBO0lBQ0EsT0FBQTtJQUNBLFNBQUE7SUFDQSxnQkFBQTtJQUNBLGtCQUFBO0lBQ0EsVUFBQTtFQUVOOztFQUNFO0lBQ0ksa0JBQUE7SUFDQSxPQUFBO0lBQ0EsU0FBQTtJQUNBLGdCQUFBO0lBQ0EsbUJBQUE7SUFDQSxVQUFBO0VBRU47O0VBQ0U7SUFDSSxrQkFBQTtJQUNBLFVBQUE7SUFDQSxPQUFBO0lBQ0EsU0FBQTtJQUNBLGdCQUFBO0lBQ0EsaUJBQUE7SUFDQSxVQUFBO0VBRU47O0VBQ0U7SUFDSSxrQkFBQTtJQUNBLFNBQUE7SUFDQSxVQUFBO0lBQ0Esa0JBQUE7RUFFTjs7RUFDRTtJQUNJLGVBQUE7SUFDQSxrQkFBQTtJQUNBLFNBQUE7SUFDQSxPQUFBO0lBQ0Esa0JBQUE7SUFDQSxtQkFBQTtFQUVOOztFQUFFO0lBQ0ksa0JBQUE7SUFDQSx5QkFBQTtJQUNBLGtCQUFBO0lBQ0EsT0FBQTtJQUNBLFNBQUE7SUFDQSxlQUFBO0lBQ0Esa0JBQUE7SUFDQSxVQUFBO0VBR047O0VBREU7SUFDSSxrQkFBQTtJQUNBLHlCQUFBO0lBQ0EsT0FBQTtJQUNBLFNBQUE7SUFDQSxnQkFBQTtJQUNBLGtCQUFBO0lBQ0EsVUFBQTtFQUlOOztFQURFO0lBQ0ksMENBQUE7SUFDQSxrQkFBQTtFQUlOOztFQUZFO0lBQ0ksa0JBQUE7SUFDQSx5QkFBQTtJQUNBLE9BQUE7SUFDQSxTQUFBO0lBQ0EsZ0JBQUE7SUFDQSxrQkFBQTtJQUNBLFVBQUE7RUFLTjs7RUFIRTtJQUNJLDBDQUFBO0lBQ0Esa0JBQUE7RUFNTjs7RUFKRTtJQUNJLFdBQUE7RUFPTjtBQUNGO0FBTEE7RUFDSTtJQUNJLHlCQUFBO0VBT047O0VBTEU7SUFDSSxXQUFBO0VBUU47O0VBTkU7SUFDSSxrQkFBQTtJQUNBLE9BQUE7SUFDQSxTQUFBO0lBQ0EsY0FBQTtJQUNBLGtCQUFBO0lBQ0EsbUJBQUE7SUFDQSxVQUFBO0VBU047O0VBUEU7SUFDSSxrQkFBQTtJQUNBLE9BQUE7SUFDQSxZQUFBO0lBQ0EsZ0JBQUE7SUFDQSxtQkFBQTtJQUNBLFVBQUE7RUFVTjs7RUFSRTtJQUNJLGtCQUFBO0lBQ0EsT0FBQTtJQUNBLFNBQUE7SUFDQSxnQkFBQTtJQUNBLGlCQUFBO0lBQ0EsVUFBQTtFQVdOOztFQVRFO0lBQ0ksa0JBQUE7SUFDQSx5QkFBQTtJQUNBLE9BQUE7SUFDQSxTQUFBO0lBQ0EsZUFBQTtJQUNBLG1CQUFBO0lBQ0EsVUFBQTtFQVlOOztFQVZFO0lBQ0ksa0JBQUE7SUFDQSx5QkFBQTtJQUNBLE9BQUE7SUFDQSxlQUFBO0lBQ0EsWUFBQTtJQUNBLGdCQUFBO0lBQ0EsbUJBQUE7SUFDQSxVQUFBO0VBYU47O0VBVkU7SUFDSSwwQ0FBQTtJQUNBLGtCQUFBO0VBYU47O0VBWEU7SUFDSSxrQkFBQTtJQUNBLHlCQUFBO0lBQ0EsZUFBQTtJQUNBLE9BQUE7SUFDQSxZQUFBO0lBQ0EsZ0JBQUE7SUFDQSxtQkFBQTtJQUNBLFVBQUE7RUFjTjs7RUFaRTtJQUNJLDBDQUFBO0lBQ0Esa0JBQUE7RUFlTjs7RUFiRTtJQUNJLFdBQUE7RUFnQk47QUFDRiIsImZpbGUiOiJzcmMvYXBwL211c2ljLXBsYXllci9tdXNpYy1wbGF5ZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA3MDBweCl7XHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHN7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgIH1cclxuICAgIC5tdXNpYy1wbGF5ZXIgOjpuZy1kZWVwIC5wbHlyX19jb250cm9sc3tcclxuICAgICAgICBjb2xvcjogI0ZGRjtcclxuICAgIH1cclxuICAgIC8vUmVwcm9kdWN0b3JcclxuICAgIC5tdXNpYy1wbGF5ZXIgOjpuZy1kZWVwIC5wbHlyX19wcm9ncmVzcyB7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDE2JTtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMTcuNSU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMSU7XHJcbiAgICAgICAgd2lkdGg6IDYwJTtcclxuICAgIH1cclxuICAgIC8vQm90b24gcGxheVxyXG4gICAgLm11c2ljLXBsYXllciA6Om5nLWRlZXAgLnBseXJfX2NvbnRyb2xzIC5wbHlyX19jb250cm9sc19faXRlbTpmaXJzdC1jaGlsZCB7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiA0NSU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTIlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICB9XHJcbiAgICAvL0NvbnRhZG9yIHNlZ3VuZG9zXHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHMgLnBseXJfX2NvbnRyb2xzX19pdGVtLnBseXJfX3RpbWUge1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogODAlO1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDMuNSU7XHJcbiAgICAgICAgei1pbmRleDogMTtcclxuICAgIH1cclxuICAgIC8vQm90b24gVm9sdW1lblxyXG4gICAgLm11c2ljLXBsYXllciA6Om5nLWRlZXAgLnBseXJfX3ZvbHVtZSBpbnB1dFt0eXBlPXJhbmdlXSB7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIHdpZHRoOiA2MCU7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgICBib3R0b206IDA7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDZweDtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAzJTtcclxuICAgICAgICB6LWluZGV4OiAyO1xyXG4gICAgfVxyXG4gICAgLy9CYXJyYSBWb2x1bWVuXHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fdm9sdW1lIHtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIHdpZHRoOiAyMCU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTMlO1xyXG4gICAgfVxyXG4gICAgLy9BanVzdGVzXHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCBidXR0b246bm90KDpkaXNhYmxlZCksIFt0eXBlPWJ1dHRvbl06bm90KDpkaXNhYmxlZCksIFt0eXBlPXJlc2V0XTpub3QoOmRpc2FibGVkKSwgW3R5cGU9c3VibWl0XTpub3QoOmRpc2FibGVkKSB7XHJcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBib3R0b206IDA7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogLTI1cHg7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogLTRweDtcclxuICAgIH1cclxuICAgICNzb25nTGlzdGVuaW5ne1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjgyODI4O1xyXG4gICAgICAgIGZvbnQtc2l6ZTogeC1zbWFsbDtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMiU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTAlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICB9XHJcbiAgICAjb25lTW9yZXtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODsgIFxyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiA1NSU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMTIlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICAgICAgXHJcbiAgICB9XHJcbiAgICAjb25lTW9yZSA6aG92ZXJ7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjpyZ2JhKDAsIDIwNCwgMjU1LCAwLjk3OSk7ICBcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMCU7XHJcbiAgICB9XHJcbiAgICAjb25lTGVzc3tcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMzUlO1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDEyJTtcclxuICAgICAgICB6LWluZGV4OiAxO1xyXG4gICAgfVxyXG4gICAgI29uZUxlc3MgOmhvdmVye1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6cmdiYSgwLCAyMDQsIDI1NSwgMC45NzkpOyAgXHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogMTAlO1xyXG4gICAgfVxyXG4gICAgZGl2IGltZ3tcclxuICAgICAgICB3aWR0aDogMzBweDtcclxuICAgIH1cclxufVxyXG5AbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA3MDBweCl7XHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHN7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgIH1cclxuICAgIC5tdXNpYy1wbGF5ZXIgOjpuZy1kZWVwIC5wbHlyX19jb250cm9sc3tcclxuICAgICAgICBjb2xvcjogI0ZGRjtcclxuICAgIH1cclxuICAgIC5tdXNpYy1wbGF5ZXIgOjpuZy1kZWVwIC5wbHlyX19wcm9ncmVzcyB7XHJcbiAgICAgICAgcG9zaXRpb246IHJlbGF0aXZlO1xyXG4gICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgYm90dG9tOiAwO1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDMlO1xyXG4gICAgICAgIG1hcmdpbi1sZWZ0OiAzMC41JTtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAwLjUlO1xyXG4gICAgICAgIHdpZHRoOiA0OCU7XHJcbiAgICB9XHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHMgLnBseXJfX2NvbnRyb2xzX19pdGVtOmZpcnN0LWNoaWxkIHtcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgICBib3R0b206IC01cHg7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDQ5JTtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAzLjIlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICB9XHJcbiAgICAubXVzaWMtcGxheWVyIDo6bmctZGVlcCAucGx5cl9fY29udHJvbHMgLnBseXJfX2NvbnRyb2xzX19pdGVtLnBseXJfX3RpbWUge1xyXG4gICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogNzMlO1xyXG4gICAgICAgIG1hcmdpbi1ib3R0b206IDElO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICB9XHJcbiAgICAjc29uZ0xpc3RlbmluZ3tcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGJvdHRvbTogMDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogMiU7XHJcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMS41JTtcclxuICAgICAgICB6LWluZGV4OiAxO1xyXG4gICAgfVxyXG4gICAgI29uZU1vcmV7XHJcbiAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyODI4Mjg7ICBcclxuICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICBib3R0b206IC01cHg7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDU0JTtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAzLjIlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICAgICAgXHJcbiAgICB9XHJcbiAgICAjb25lTW9yZSA6aG92ZXJ7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjpyZ2JhKDAsIDIwNCwgMjU1LCAwLjk3OSk7ICBcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMCU7XHJcbiAgICB9XHJcbiAgICAjb25lTGVzc3tcclxuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzI4MjgyODtcclxuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICAgICAgbGVmdDogMDtcclxuICAgICAgICBib3R0b206IC01cHg7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IDQ0JTtcclxuICAgICAgICBtYXJnaW4tYm90dG9tOiAzLjIlO1xyXG4gICAgICAgIHotaW5kZXg6IDE7XHJcbiAgICB9XHJcbiAgICAjb25lTGVzcyA6aG92ZXJ7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjpyZ2JhKDAsIDIwNCwgMjU1LCAwLjk3OSk7ICBcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAxMCU7XHJcbiAgICB9XHJcbiAgICBkaXYgaW1ne1xyXG4gICAgICAgIHdpZHRoOiAzMHB4O1xyXG4gICAgfVxyXG59Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MusicPlayerComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1219,7 +1178,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import { timingSafeEqual } from "crypto";
 class StorageService {
     constructor(router, _http) {
         this.router = router;
@@ -1274,7 +1232,6 @@ class StorageService {
     updateUser(updatedUser) {
         this.currentSession.user = updatedUser;
         this.updateSessionUser().subscribe(data => console.log(data.status), error => console.log(error));
-        ;
     }
     updateImage(image) {
         const auth = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
@@ -1297,15 +1254,15 @@ class StorageService {
     playThisSong(nameFile) {
         const auth = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
             'auth': 'Bearer ' + this.currentSession.token,
-            'Content-Type': 'text/plain'
         });
-        return this._http.get(this.url + 'getSong/' + nameFile, { headers: auth, responseType: 'json' });
+        return this._http.get(this.url + 'getSong/' + nameFile, { headers: auth });
     }
-    uploadSong(autor, cancion) {
+    uploadSong(formData) {
         const auth = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
             'auth': 'Bearer ' + this.currentSession.token
         });
-        return this._http.post(this.url + 'uploadSong/', { autor, cancion }, { headers: auth });
+        return this._http.post(this.url + 'uploadSong/', formData, { headers: auth });
+        // return this._http.post<ResSong>(this.url+'uploadSong/', {file,autor,title}, {headers:auth});
     }
     logout() {
         this.removeCurrentSession();
@@ -1341,7 +1298,8 @@ StorageService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineIn
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Global", function() { return Global; });
 var Global = {
-    url: 'https://rymliveapi.herokuapp.com/api/'
+    // url: 'https://rymliveapi.herokuapp.com/api/'
+    url: 'http://localhost:3900/api/'
 };
 
 

@@ -40,6 +40,7 @@
     "jquery": "^3.5.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.14",
+    "ngx-audio-player": "^11.0.0",
     "ngx-plyr": "^4.0.0",
     "path": "^0.12.7",
     "plyr": "^3.6.2",
