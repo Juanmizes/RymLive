@@ -275,8 +275,8 @@ var controller = {
 
     uploadSong: async (req, res) => {
 
-        const { title, autor } = req.body;
-        if (!title && !autor) {
+        const { title, autor} = req.body;
+        if (!title && !autor && !req.file) {
             return res.status(500).json({
                 status: 'error',
                 message: 'No has enviado todos los datos'
@@ -342,6 +342,7 @@ var controller = {
 
         if (exist) {
 
+            
             return res.sendFile(path.resolve(path_file));
 
         } else {
