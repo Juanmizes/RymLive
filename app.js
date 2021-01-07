@@ -23,7 +23,7 @@ api.use((req, res, next) => {
     res.header('Access-Control-Request-Headers', '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
     res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
-    res.header('');
+    res.header('Access-Control-Allow-Credentials', 'true');
     next();
 });
 
