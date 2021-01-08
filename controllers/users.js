@@ -380,24 +380,7 @@ var controller = {
         })
 
     },//end getUserSongs
-    AddViews: async (req, res) => {
-        const params = req.params;
-        try {
-            let songUpdate = await Song.findOne({nameFile: params.nameFile});
-            let viewsUpdated = songUpdate.views + 1;
-            const updateSong = await Song.findOneAndUpdate({ nameFile: params.nameFile }, { views: viewsUpdated  }, { new: true });
-            return res.status(500).send({
-                status: 'success',
-                song: updateSong
-            })
-        } catch (err) {
-            return res.status(500).send({
-                status: 'error',
-                message: 'Error al sumar una View'
-            });
-        }
-        
-    },//end AddViews
+    
     getPopularSong: async (req,res) => {
         const songs = await Song.find().sort({views: -1}).limit(3);
         return res.status(200).send({
