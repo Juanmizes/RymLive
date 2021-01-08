@@ -403,7 +403,7 @@ var controller = {
         let searchString = req.params.search
         const usersSearched = await User.find({ "$or": [
             {username: {"$regex": searchString , "$options": "i"}}
-        ]}).sort().catch(() => []);
+        ]}).sort().limit(5).catch(() => []);
         
         return res.status(200).send({
             status: 'success',
