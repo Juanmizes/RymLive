@@ -186,7 +186,7 @@ var controller = {
     getUser: async (req, res) => {
         const userName = req.params.username;
         try {
-            const targetUser = await User.findById({ username: userName });
+            const targetUser = await User.findOne({ username: userName });
             if (!targetUser) {
                 return res.status(404).send({
                     status: 'error',
