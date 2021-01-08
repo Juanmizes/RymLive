@@ -364,8 +364,8 @@ var controller = {
 
     },
     getUsersSongs: async (req, res) => {
-        let userId = req.params.id;
-        const users = await Song.find({user: userId}).catch(() => []);
+        let userName = req.params.username;
+        const users = await Song.find({username: userName}).catch(() => []);
         console.log(users);
         res.status(200).json({
             status: 'success',
