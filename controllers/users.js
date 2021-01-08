@@ -399,7 +399,7 @@ var controller = {
         
     },//end AddViews
     getPopularSong: async (req,res) => {
-        const songs = await Song.find().sort({views: -1}).limit(1);
+        const songs = await Song.find().sort({views: -1}).limit(3);
         return res.status(200).send({
             status: 'success',
             song: songs
