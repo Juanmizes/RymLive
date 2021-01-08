@@ -227,6 +227,12 @@ ngbd-alert-selfclosing {
     cursor: pointer;
 }
 
+.input-group.md-form.form-sm.form-1 input{
+    border: 1px solid #bdbdbd;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+
 @media screen and (max-width: 800px){
     #browser{
         font-size: small;
