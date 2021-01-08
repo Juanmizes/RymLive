@@ -402,7 +402,7 @@ var controller = {
     searchUser: async (req,res) =>{
         let searchString = req.params.search
         const usersSearched = await User.find({ "$or": [
-            {username: new RegExp('^' +searchString + '$', 'i')}
+            {username: {"$regex": searchString , "$options": "i"}}
         ]}).sort().catch(() => []);
         
         return res.status(200).send({
