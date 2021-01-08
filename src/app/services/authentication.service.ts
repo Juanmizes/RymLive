@@ -20,12 +20,12 @@ export class AuthenticationService {
   }
  
   login(loginObj: LoginObject): Observable<Session> {
-    return this._http.post(this.url+'/login', loginObj).pipe(map(this.extractData));
+    return this._http.post(this.url+'login', loginObj).pipe(map(this.extractData));
   }
 
   register(loginObj: LoginObject): Observable<Session> {
     console.log(loginObj);
-    return this._http.post(this.url+'/register', loginObj).pipe(map(this.extractData));
+    return this._http.post(this.url+'register', loginObj).pipe(map(this.extractData));
   }
  
   logout(): Observable<Boolean> {

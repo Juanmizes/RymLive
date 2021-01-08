@@ -5,6 +5,7 @@ import {StorageService} from "../services/storage.service";
 import { subscribeOn } from 'rxjs/operators';
 import { Global } from '../services/global';
 import { Track } from 'ngx-audio-player';
+import { PlaylistService } from '../services/playlist.service';
 
 
 @Component({
@@ -26,7 +27,8 @@ export class MusicPlayerComponent implements OnInit {
   playlist: Track[] = [];
 
   constructor(
-    private storageService: StorageService
+    private storageService: StorageService,
+    private playlistService: PlaylistService
   ) {
     this.url = Global.url;
   }
@@ -34,6 +36,23 @@ export class MusicPlayerComponent implements OnInit {
   ngOnInit(): void {
     this.nameSongs= [''];
     this.songSelected = 0,
+    this.playlistService.playlistChange.subscribe(
+      data => {
+        this.nameService = data,
+        this.nameSongs = this.nameService,
+        this.musicListLength = this.nameSongs.length,
+        this.songName = this.nameSongs[this.songSelected].title + " - " + this.nameSongs[this.songSelected].autor;
+        this.playlist = [];
+        for(let i = 0; i< this.musicListLength; i++){
+          this.playlist.push(
+            {
+              title: this.nameSongs[i].title + " - " + this.nameSongs[i].autor,
+              link: this.url+'getSong/'+this.nameSongs[i].nameFile
+            }
+          );
+        }
+      }
+    );
     this.storageService.getNameFiles().subscribe(
       data => {
         this.nameService = data,
@@ -49,7 +68,6 @@ export class MusicPlayerComponent implements OnInit {
             }
           );
         }
-        console.log(this.playlist);
       }
     );
     this.songName = this.nameSongs;

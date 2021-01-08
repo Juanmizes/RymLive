@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatCardModule } from '@angular/material/card';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -23,6 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {StorageService} from "./services/storage.service";
 import {AuthorizatedGuard} from "./shared/authorizatedGuard";
 import { NgxAudioPlayerModule } from 'ngx-audio-player';
+import { PlaylistService } from './services/playlist.service';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -32,12 +37,16 @@ import { NgxAudioPlayerModule } from 'ngx-audio-player';
     HeaderComponent,
     MusicPlayerComponent,
     UserProfileComponent,
-    NgbdAlertSelfclosing
+    NgbdAlertSelfclosing,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
     MatCardModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
     FormsModule,
     ReactiveFormsModule,
     MatTooltipModule,
@@ -50,7 +59,8 @@ import { NgxAudioPlayerModule } from 'ngx-audio-player';
   ],
   providers: [
     StorageService,
-    AuthorizatedGuard
+    AuthorizatedGuard,
+    PlaylistService
   ],
   bootstrap: [AppComponent]
 })

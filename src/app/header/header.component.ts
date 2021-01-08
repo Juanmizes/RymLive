@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../shared/user';
 import { NgbdAlertSelfclosing } from '../alert/alert.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,6 +12,8 @@ import {AuthenticationService} from "../services/authentication.service";
 import {StorageService} from "../services/storage.service";
 import {Router} from "@angular/router";
 import {Session} from "../shared/session";
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-header',
@@ -39,6 +41,18 @@ export class HeaderComponent implements OnInit {
   password = "";
   email = "";
   
+
+  // searchGroup: FormGroup;
+  searchControl = new FormControl();
+  options: string[] = [];
+  filteredOptions: Observable<string[]>;
+
+  uploadSongForm = new FormGroup({
+    autor: new FormControl(''),
+    title: new FormControl(''),
+    song: new FormControl('')
+  });
+
   constructor(
     private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService,
@@ -47,6 +61,7 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.logged = false;
     this.currentSession = this.storageService.getCurrentSession();
     if (this.currentSession) this.logged = true;
@@ -62,6 +77,45 @@ export class HeaderComponent implements OnInit {
       password: ['', Validators.required],
       email:['', [Validators.required, Validators.email]],
     });
+    // this.searchGroup = this.formBuilder.group({
+    //   buscador:['',  Validators.required],
+    // });
+  }
+
+  searchUsers(target){
+    if(target == "") {
+      this.options = [];
+      this.updateOptions();
+      return;
+    }
+    this.storageService.getOtherUsers(target).subscribe(
+      res =>{
+        let data:any = res;
+        let users = data.usersSearched.map(
+          user =>{
+            return user.username
+          } 
+        )
+        this.options = users;
+        this.updateOptions();
+      },
+      error =>{
+        this.options = [];
+      }
+    );
+  }
+
+  updateOptions(){
+    this.filteredOptions = this.searchControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value)
+    ));
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
 
   public submitLogin(): void {
@@ -132,10 +186,10 @@ export class HeaderComponent implements OnInit {
     overlay.classList.add('active');
     popup.classList.add('active');
     
-    btnOpenPopup.addEventListener('click', function(){
-      overlay.classList.add('active');
-      popup.classList.add('active');
-    });
+    // btnOpenPopup.addEventListener('click', function(){
+    //   overlay.classList.add('active');
+    //   popup.classList.add('active');
+    // });
     
     btnClosePopup.addEventListener('click', function(e){
       e.preventDefault();
@@ -152,6 +206,8 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.logged = false;
+    this.options = [];
+    this.updateOptions();
     this.currentSession = this.storageService.logout();
   }
 

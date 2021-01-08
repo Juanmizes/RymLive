@@ -1,4 +1,4 @@
-@media screen and (max-width: 700px){
+/*@media screen and (max-width: 700px){
     .music-player ::ng-deep .plyr__controls{
         background-color: #282828;
     }
@@ -172,5 +172,204 @@
     }
     div img{
         width: 30px;
+    }
+}*/
+
+@media screen and (max-width: 700px){
+    .music-player ::ng-deep {
+        color: #FFF;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 1;
+        text-align: center;
+        background-color: #282828;
+        height: 156px;
+    }
+
+    .music-player ::ng-deep .mat-expansion-panel{
+        position: absolute;
+        left: 0;
+        bottom: 110px;
+        width: 100%;
+        background-color: #9e2020;//#a82f2f
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-table{
+        background-color: #282828;
+    }
+
+    .music-player ::ng-deep .mat-table tr th{
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-table tr td{
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-paginator{
+        background-color: #282828;
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-select-value{
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-select-arrow{
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-button-wrapper{
+        color: lightgray;
+    }
+
+    .music-player ::ng-deep .mat-button-wrapper :hover{
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-button {
+        left: 30%;
+        bottom: -110px;
+        position: absolute;
+    }
+
+    .music-player ::ng-deep .play-pause {
+        left: 44%;
+        bottom: -110px;
+        position: absolute;
+    }
+
+    .music-player ::ng-deep .skip-next {
+        left: 58%;
+        bottom: -110px;
+        position: absolute;
+    }
+
+    .music-player ::ng-deep .mat-elevation-z1 div div {
+        left: 0px;
+        bottom: -125px;
+        width: 30%;
+        position: absolute;
+        margin: 1px 2px;
+        padding: 1em;
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-focus-indicator div div span{
+        font-size: x-small;
+    }
+
+    .music-player ::ng-deep .ngx-col {
+        bottom: -155px;
+        position: absolute;
+        color: white;
+    }
+
+    .music-player ::ng-deep .volume{
+        left: 80%;
+        bottom: -125px;
+        position: absolute;
+    }
+}
+@media screen and (min-width: 700px){
+    
+    .music-player ::ng-deep {
+        color: #FFF;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 1;
+        text-align: center;
+        background-color: #282828;
+        height: 156px;
+    }
+
+    .music-player ::ng-deep .mat-expansion-panel{
+        position: absolute;
+        left: 0;
+        bottom: 110px;
+        width: 100%;
+        background-color: #9e2020;//#a82f2f
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-table{
+        background-color: #282828;
+    }
+
+    .music-player ::ng-deep .mat-table tr th{
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-table tr td{
+        color: white;
+        width: 100%;
+    }
+
+    .music-player ::ng-deep .mat-paginator{
+        background-color: #282828;
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-select-value{
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-select-arrow{
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-button-wrapper{
+        color: lightgray;
+    }
+
+    .music-player ::ng-deep .mat-button-wrapper :hover{
+        color: white;
+    }
+
+    .music-player ::ng-deep .mat-button {
+        left: 42%;
+        bottom: -110px;
+        position: absolute;
+    }
+
+    .music-player ::ng-deep .play-pause {
+        left: 48%;
+        bottom: -110px;
+        position: absolute;
+    }
+
+    .music-player ::ng-deep .skip-next {
+        left: 54%;
+        bottom: -110px;
+        position: absolute;
+    }
+
+    .music-player ::ng-deep .mat-elevation-z1 div div {
+        left: 0px;
+        bottom: -125px;
+        width: 10%;
+        position: absolute;
+        margin: 1px 2px;
+        padding: 1em;
+        color: white;
+    }
+
+    .music-player ::ng-deep .ngx-col {
+        left: 11%;
+        bottom: -155px;
+        width: 75%;
+        position: absolute;
+        color: white;
+    }
+
+    .music-player ::ng-deep .volume{
+        left: 95%;
+        bottom: -125px;
+        position: absolute;
     }
 }

@@ -232,6 +232,11 @@ ngbd-alert-selfclosing {
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
   }
+.svgImage {
+    background: white;
+    border-radius: 50%;
+    height: 40px;
+}
 
 @media screen and (max-width: 800px){
     #browser{

@@ -7,6 +7,7 @@ import { Res, ResSong } from '../shared/res';
 import { Global } from '../services/global';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HIGH_CONTRAST_MODE_ACTIVE_CSS_CLASS } from "@angular/cdk/a11y/high-contrast-mode/high-contrast-mode-detector";
 
 @Injectable({
   providedIn: 'root'
@@ -47,8 +48,14 @@ export class StorageService {
     const auth = new HttpHeaders({
       'auth': 'Bearer ' + this.currentSession.token
     });
-    console.log("User Token: ", this.currentSession.token)
     return  this._http.get<Res>(this.url+'profile', {headers:auth});
+  };
+
+  getOtherUser(username): Observable<Res>{
+    const auth = new HttpHeaders({
+      'auth': 'Bearer ' + this.currentSession.token
+    });
+    return  this._http.get<Res>(this.url+'profile/user/'+username, {headers:auth});
   };
 
   isAuthenticated(): boolean {
@@ -97,6 +104,12 @@ export class StorageService {
     });
     return this._http.get(this.url+'getNameFile', {headers:auth});
   }
+  getOtherNameFiles(userId) {
+    const auth = new HttpHeaders({
+      'auth': 'Bearer ' + this.currentSession.token
+    });
+    return  this._http.get(this.url+'getNameFile/'+userId, {headers:auth});
+  }
 
   playThisSong(nameFile: String) {
     const auth = new HttpHeaders({
@@ -120,6 +133,13 @@ export class StorageService {
 
   getSongMostViewed(){
     return this._http.get(this.url+'popularSong/');
+  }
+  
+  getOtherUsers(target){
+    const auth = new HttpHeaders({
+      'auth': 'Bearer ' + this.currentSession.token
+    });
+    return this._http.get(this.url+'/search/'+target,{headers:auth});
   }
   
   logout(): void{

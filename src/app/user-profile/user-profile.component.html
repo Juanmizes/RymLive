@@ -5,7 +5,7 @@
         <div id="profile-header">
             <!--IMAGEN DE PERFIL DE USUARIO-->
             <form id="image-profile" [formGroup]="imageForm">
-                <img src="{{this.url+'getImage/'+this.user.image == null || imageDefault}}" id="user-icon">
+                <img src="{{this.url+'getImage/'+this.user.image || imageDefault}}" id="user-icon">
                 <div *ngIf="settingsAppear" class="custom-file">
                     <input type="file" formControlName="image" class="custom-file-input" id="customFile" (change)="handleFileInput($event.target.files)" accept="image">
                     <label class="custom-file-label" for="customFile">Choose file</label>
@@ -13,7 +13,7 @@
             </form>
             <!--INFORMACIÓN DEL USUARIO-->
             <div id="info-profile">
-                <div id="settings-icon" (click)="inSettings()">
+                <div id="settings-icon" *ngIf="!userSearched" (click)="inSettings()">
                     <img src="../../assets/img/settings-24px.svg" onclick="">
                 </div>
 
@@ -38,7 +38,7 @@
         <div id="profile-main">
             <!--BARRA DE NAVEGACIÓN-->
             <div id="mySongs-header">
-                <div id="profile-main-mySongs" ><span>Mis Canciones</span></div>
+                <div id="profile-main-mySongs" (click)="updatePlaylist()"><span>Mis Canciones</span></div>
                 <!-- <div id="profile-main-myList"><span>Mi Lista</span></div> -->
                 <div id="profile-main-upload" (click)="popupSong()"><span>Subir canción</span></div>
             </div>

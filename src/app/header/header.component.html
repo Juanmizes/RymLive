@@ -1,26 +1,51 @@
-<div class="header-container">
-    <a routerLink="/home" class="logo">
-        <img src="../../assets/img/rymLive logo.png" alt="rymLiveLogo">
-    </a>
-    <div class="header-left">
-      <div class="input-group md-form form-sm form-1 pl-0">
-        <div class="input-group-prepend">
-          <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fas fa-search text-white"
-              aria-hidden="true"></i></span>
-        </div>
-        <input class="form-control my-0 py-1" type="text" placeholder="Search" aria-label="Search">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+  <a routerLink="/home" class="navbar-brand logo" href="#">
+    <img src="../../assets/img/rymLive logo.png" alt="rymLiveLogo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+    <nav class="dark bg-dark navbar-nav ml-auto" *ngIf="logged">
+      <div class="container-fluid">
+        <!-- <form class="d-flex"> -->
+          <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+          <form class="example-form d-flex" >
+            <mat-form-field class="example-full-width">
+              <input #buscador type="search" aria-label="Search" class="form-control me-2" (keyup)="searchUsers(buscador.value)" matInput [formControl]="searchControl"  [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <div *ngFor="let option of filteredOptions | async">
+                  <a [routerLink]="'profile/'+option"  >
+                    <mat-option  [value]="option">
+                      {{option}}
+                    </mat-option>
+                  </a>
+                </div>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+          <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+        <!-- </form> -->
       </div>
+    </nav>
+    <div class="navbar-nav ml-auto">
+      <ul class="navbar-nav">
+        <a *ngIf="!logged" class="navbar-brand btn-open-popup" (click)="popUp()">Login</a>
+        <li *ngIf="logged" class="nav-item dropdown dropstart">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img class="svgImage" src="../../assets/img/person-24px.svg" alt="">
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" (click)="profile()">Profile</a></li>
+            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-    <div *ngIf="!logged" class="header-right" (click)="popUp()">
-        <span class="browserSpan" id="btn-open-popup">Login</span>
-    </div>
-    <div *ngIf="logged" class="logout-menu" (click)="logout()">
-      <span class="logout-menu button">Logout</span>
-    </div>
-    <div *ngIf="logged" class="profile-menu" (click)="profile()">
-      <span class="profile-menu button">Profile</span>
-    </div>
-    
+  </div>
+</nav>
+
+
 <div class="overlay" id="overlay">
   <div class="popup" id="popup" [formGroup]="loginForm">
       <a  id="btn-close-popup" class="btn-close-popup"><img src="../../assets/img/close-24px.svg" alt=""></a>
@@ -49,4 +74,3 @@
       <button *ngIf="register" id="submitButton" type="submit"  class="btn btn-dark"(click)="submitLogin()" form="login-form" style="margin-left: -80px;"> Register</button>
   </div>
 </div>
-<ngbd-alert-selfclosing *ngIf="error"></ngbd-alert-selfclosing>
