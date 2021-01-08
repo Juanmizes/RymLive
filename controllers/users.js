@@ -401,8 +401,10 @@ var controller = {
 
     searchUser: async (req,res) =>{
         const searchString = req.params.search
-        const usersSearched = await User.find({ "$or": [
-            {username: {"$regex":  '^'+searchString , "$options": "m, i"}}
+        const userId = req.userId;
+        const usersSearched = await User.find({ "$and": [
+            {username: {"$regex":  '^'+searchString , "$options": "m, i"}}, 
+            {_id: {"$ne": userId}}
         ]}).sort().limit(5).catch(() => []);
         
         return res.status(200).send({
