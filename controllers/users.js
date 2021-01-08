@@ -400,9 +400,9 @@ var controller = {
     },//end getPopularSong
 
     searchUser: async (req,res) =>{
-        let searchString = req.params.search
+        const searchString = req.params.search
         const usersSearched = await User.find({ "$or": [
-            {username: {"$regex": searchString , "$options": "i"}}
+            {username: {"$regex":  '^'+searchString , "$options": "m, i"}}
         ]}).sort().limit(5).catch(() => []);
         
         return res.status(200).send({
