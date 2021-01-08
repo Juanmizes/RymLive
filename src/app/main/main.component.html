@@ -1,27 +1,13 @@
 <div class="main">
-    <h1 class="title">CARDS QUE JUANMA ME PIDIÓ</h1>
+    <h1 class="title">Las canciones mas escuchadas</h1>
     
     <div class="container">
        
-        <div class="card">
-            <img src="../assets/img/ny.jpg">
-            <h4>Cosa1</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
-            <a href="#">Leer más</a>
-        </div>
-        
-        <div class="card">
-            <img src="../assets/img/ny.jpg">
-            <h4>Cosa2</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
-            <a href="#">Leer más</a>
-        </div>
-        
-        <div class="card">
-            <img src="../assets/img/ny.jpg">
-            <h4>Cosa3</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
-            <a href="#">Leer más</a>
+        <div *ngFor="let song of songsMostViewed" class="card">
+            <img src="{{songImgDefault}}">
+            <hr>
+            <h2>{{song.title}} - {{song.autor}}</h2>
+            <p>Repdroduciones: {{song.views}}</p>
         </div>
         
     </div>

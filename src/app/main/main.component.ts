@@ -1,4 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { User } from '../shared/user';
+import { NgbdAlertSelfclosing } from '../alert/alert.component';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
+
+
+import {LoginObject} from "../shared/loginObject";
+import {RegisterObject} from "../shared/registerObject";
+import {AuthenticationService} from "../services/authentication.service";
+import {StorageService} from "../services/storage.service";
+import {Router} from "@angular/router";
+import {Session} from "../shared/session";
+import { Res, ResSong } from '../shared/res';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +21,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  songsMostViewed;
+  songImgDefault;
+  resSong: ResSong;
+
+  constructor(
+    private storageService: StorageService,
+  ) { }
 
   ngOnInit(): void {
+    this.songImgDefault = "../../assets/img/musical-note.svg";
+    this.songsMostViewed = []
+    this.storageService.getSongMostViewed().subscribe(
+      data => {
+        console.log(data)
+        this.resSong = <ResSong>data
+        console.log(this.resSong) 
+        this.songsMostViewed = this.resSong.song
+        console.log(this.songsMostViewed)
+      }
+    );
   }
 
 }

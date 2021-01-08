@@ -5,7 +5,7 @@
         <div id="profile-header">
             <!--IMAGEN DE PERFIL DE USUARIO-->
             <form id="image-profile" [formGroup]="imageForm">
-                <img src="{{this.url+'getImage/'+this.user.image || imageDefault}}" id="user-icon">
+                <img src="{{this.url+'getImage/'+this.user.image == null || imageDefault}}" id="user-icon">
                 <div *ngIf="settingsAppear" class="custom-file">
                     <input type="file" formControlName="image" class="custom-file-input" id="customFile" (change)="handleFileInput($event.target.files)" accept="image">
                     <label class="custom-file-label" for="customFile">Choose file</label>

@@ -117,6 +117,10 @@ export class StorageService {
    
     // return this._http.post<ResSong>(this.url+'uploadSong/', {file,autor,title}, {headers:auth});
   }
+
+  getSongMostViewed(){
+    return this._http.get(this.url+'popularSong/');
+  }
   
   logout(): void{
     this.removeCurrentSession();

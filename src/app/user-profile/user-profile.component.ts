@@ -70,7 +70,7 @@ export class UserProfileComponent implements OnInit {
       }
     );
 
-    this.imageDefault = "account_circle-24px.svg";
+    this.imageDefault = "../../assets/img/account_circle-24px.svg";
 
     this.settingsAppear = false;
     this.showTableHeader = false;
