@@ -274,9 +274,9 @@ var controller = {
 
 
     uploadSong: async (req, res) => {
-
+        console.log(req.file)
         const { title, autor} = req.body;
-        if (!title && !autor && !req.file) {
+        if (!title && !autor && req.file === undefined) {
             return res.status(500).json({
                 status: 'error',
                 message: 'No has enviado todos los datos'
@@ -333,7 +333,7 @@ var controller = {
         saveSong();
     },//end uploadSong
 
-    getSong: (req, res) => {
+    getSong: async (req, res) => {
         const file = req.params.song;
 
         var path_file = './public/upload/usersSong/' + file;
@@ -341,10 +341,17 @@ var controller = {
         const exist = fs.existsSync(path_file);
 
         if (exist) {
-
-            
-            return res.sendFile(path.resolve(path_file));
-
+            try{
+                let songView = await Song.findOne({nameFile: file});
+                let songSum = songView.views + 1;
+                await Song.findOneAndUpdate({ nameFile: file }, { views: songSum});
+                return res.sendFile(path.resolve(path_file));
+            }catch(err){
+                return res.status(500).json({
+                    status: 'error',
+                    message: 'Error de servidor'
+                });
+            }
         } else {
             return res.status(404).json({
                 status: 'error',
