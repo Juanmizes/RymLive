@@ -14,7 +14,7 @@ router.post('/register', userController.register);
 router.post('/login', userController.login);
 router.put('/profile/update',userController.tokenMiddleware, userController.updateProfile);
 router.get('/profile',userController.tokenMiddleware,userController.getOwnUser);
-router.get('/profile/user/:username', userController.getUser);
+router.get('/profile/user/:username',userController.tokenMiddleware, userController.getUser);
 router.get('/search/:search', userController.tokenMiddleware, userController.searchUser)
 router.put('/profile/updateImage', userController.tokenMiddleware, uploadImages ,userController.uploadImage);
 router.get('/getImage/:image', userController.getImage);

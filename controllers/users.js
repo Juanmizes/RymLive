@@ -184,9 +184,9 @@ var controller = {
         }
     },//end getOwnUser
     getUser: async (req, res) => {
-        const userId = req.params.id;
+        const userName = req.params.username;
         try {
-            const targetUser = await User.findById({ _id: userId });
+            const targetUser = await User.findById({ username: userName });
             if (!targetUser) {
                 return res.status(404).send({
                     status: 'error',
@@ -364,8 +364,8 @@ var controller = {
 
     },
     getUsersSongs: async (req, res) => {
-        let userName = req.params.username;
-        const users = await Song.find({username: userName}).catch(() => []);
+        let userId = req.params.id;
+        const users = await Song.find({user: userId}).catch(() => []);
         console.log(users);
         res.status(200).json({
             status: 'success',
