@@ -61,7 +61,7 @@ var controller = {
                 user.username = params.username;
                 user.email = params.email;
                 user.name = params.name;
-                user.description = params.description;
+                user.description = null;
                 user.image = null;
 
                 //Cifrado de contraseña
