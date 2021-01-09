@@ -24,7 +24,6 @@ router.post('/uploadSong',userController.tokenMiddleware, uploadSongs ,userContr
 router.get('/getSong/:song', userController.getSong);
 router.get('/getNameFile', userController.tokenMiddleware, userController.getOwnSongs);
 router.get('/getNameFile/:id', userController.tokenMiddleware, userController.getUsersSongs);
-router.put('/addViews/:nameFile', userController.AddViews);
 router.get('/popularSong', userController.getPopularSong)
 
 
