@@ -382,11 +382,11 @@ var controller = {
     },//end getUserSongs
     
     getPopularSong: async (req,res) => {
-        const songs = await Song.find().sort({views: -1}).limit(3);
+        const songs = await Song.find().sort({views: -1}).limit(3).catch(() => []);
         return res.status(200).send({
             status: 'success',
             song: songs
-        })
+        });
     },//end getPopularSong
 
     searchUser: async (req,res) =>{
