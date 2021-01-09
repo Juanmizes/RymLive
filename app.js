@@ -30,15 +30,5 @@ api.use((req, res, next) => {
 // Añadir prefijos a rutas/ Cargar rutas
 api.use('/api', user_routes);
 
-
-//Ruta o metodo prueba
-/*app.get('/probando', (req, res)=>{
-    return res.status(200).send({
-        curso: 'Master bro',
-        autor: 'El menda',
-        url : 'Adrianelguapo.es'
-    });
-});
-*/
 // Exportar modulo (fichero actual)
 module.exports = api;
