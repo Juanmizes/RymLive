@@ -7,6 +7,7 @@ import { LoginObject } from "../shared/loginObject";
 import { Session } from "../shared/session";
 import { Global } from '../services/global';
 import { Res } from '../shared/res';
+import { RegisterObject } from "../shared/registerObject";
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,8 @@ export class AuthenticationService {
     return this._http.post(this.url+'login', loginObj).pipe(map(this.extractData));
   }
 
-  register(loginObj: LoginObject): Observable<Session> {
-    console.log(loginObj);
-    return this._http.post(this.url+'register', loginObj).pipe(map(this.extractData));
+  register(registerObj: RegisterObject): Observable<Session> {
+    return this._http.post(this.url+'register', registerObj).pipe(map(this.extractData));
   }
  
   logout(): Observable<Boolean> {

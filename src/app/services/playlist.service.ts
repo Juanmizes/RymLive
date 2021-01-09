@@ -16,6 +16,7 @@ export class PlaylistService {
 
   setPlaylist(songs: Track[]) {
     this.playlist = songs;
+    console.log("Playlist: "+songs)
     this.playlistChange.emit(this.playlist);
   }
 

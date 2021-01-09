@@ -119,10 +119,9 @@ export class HeaderComponent implements OnInit {
   }
 
   public submitLogin(): void {
-    this.submitted = true;
     this.error = null;
+    
     if(this.loginForm.valid){
-      this.logged = true;
       this.authenticationService.login(new LoginObject(this.loginForm.value)).subscribe(
         data => this.correctLogin(data),
         error => this.error = JSON.parse(error._body)
@@ -131,7 +130,6 @@ export class HeaderComponent implements OnInit {
     }
 
     if(this.registerForm.valid){
-      console.log("register")
       this.authenticationService.register(new RegisterObject(this.registerForm.value)).subscribe(
         data => this.correctRegister(data),
         error => this.error = JSON.parse(error._body)
@@ -142,6 +140,8 @@ export class HeaderComponent implements OnInit {
 
   private correctLogin(data: Session){
     console.log(data)
+    this.submitted = true;
+    this.logged = true;
     this.storageService.setCurrentSession(data);
     this.closePopup();
     this.profile();

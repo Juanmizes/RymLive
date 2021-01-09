@@ -238,6 +238,15 @@ ngbd-alert-selfclosing {
     height: 40px;
 }
 
+#searchBar{
+    padding: 0 10px;
+}
+
+#searchBar:focus, #searchBar:hover {
+    border: 3px solid #343a40;
+    border-radius:0% ;
+}
+
 @media screen and (max-width: 800px){
     #browser{
         font-size: small;

@@ -20,7 +20,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class UserProfileComponent implements OnInit {
   public url: string;
   settingsAppear: boolean;
-  oldValues: string;
   newValues: string;
   imageDefault: string;
   imageActually: string;
@@ -69,22 +68,7 @@ export class UserProfileComponent implements OnInit {
       data =>{
         if(data['user']){
           this.userSearched = true;
-          this.storageService.getOtherUser(data['user']).subscribe(
-            data => {
-              this.res = data;
-              this.user = this.res.user;
-              this.oldValues = this.res.user.description;
-              if(this.user.image == null){
-                this.user.image = "../../assets/img/account_circle-24px.svg"
-              }
-              this.storageService.getOtherNameFiles(this.user._id).subscribe(
-                data => {
-                  this.nameService = data,
-                  this.nameSongs = this.nameService.song
-                }
-              );
-            }
-          );
+          this.recibeUser(data);
           this.imageDefault = "../../assets/img/account_circle-24px.svg";
   
           this.settingsAppear = false;
@@ -104,7 +88,6 @@ export class UserProfileComponent implements OnInit {
         data => {
           this.res = data;
           this.user = this.res.user;
-          this.oldValues = this.res.user.description;
           if(this.user.image == null){
             this.user.image = "../../assets/img/account_circle-24px.svg"
           }
@@ -124,16 +107,29 @@ export class UserProfileComponent implements OnInit {
       console.log("In settings");
     }
   }
+  noInSettings(){
+    if( this.userSearched == false){
+      this.settingsAppear = false;
+      console.log("In settings Off");
+    }
+  }
 
   saveChanges(){
     //Change Biography
     let error = null;
     this.newValues = (document.getElementById('biography-input') as HTMLInputElement).value;
-    this.oldValues = this.newValues;
-
+    this.user.description = this.newValues;
     this.storageService.updateUser(this.user);
-
     this.settingsAppear = false;
+    this.storageService.getCurrentUser().subscribe(
+      data => {
+        this.res = data;
+        this.user = this.res.user;
+        if(this.user.image == null){
+          this.user.image = "../../assets/img/account_circle-24px.svg"
+        }
+      }
+    );
   }
 
   uploadImage(){
@@ -145,7 +141,6 @@ export class UserProfileComponent implements OnInit {
       //this.imgRuteActually = (document.getElementById("customFile") as HTMLInputElement).value;
 
     }else  console.log("No file selected " + input.files[0]);
-    this.user.description = this.oldValues;
 
     this.user.image = this.imageActually;
 
@@ -154,7 +149,16 @@ export class UserProfileComponent implements OnInit {
 
     this.storageService.updateImage(formData).subscribe(
       res => {
-        console.log(res)
+        console.log("Imagen subida : ",res)
+      }
+    );
+    this.storageService.getCurrentUser().subscribe(
+      data => {
+        this.res = data;
+        this.user = this.res.user;
+        if(this.user.image == null){
+          this.user.image = "../../assets/img/account_circle-24px.svg"
+        }
       }
     );
   }
@@ -194,19 +198,41 @@ export class UserProfileComponent implements OnInit {
       cancion = cadena.split("-")[1];
       file = song.files[0];
     }
-    this.storageService.uploadSong(formData).subscribe(res => {
-      this.storageService.getNameFiles().subscribe(
-        data => {
-          this.nameService = data,
-          this.nameSongs = this.nameService.song
-        }
-      );
-      this.closePopup();
-    });
-    
+   this.recibeSong(formData);
   }
 
   updatePlaylist() {
     this.playlistService.setPlaylist(this.nameSongs);
+  }
+
+  recibeUser(data){
+    this.storageService.getOtherUser(data['user']).subscribe(
+      data => {
+        this.res = data;
+        this.user = this.res.user;
+        if(this.user.image == null){
+          this.user.image = "../../assets/img/account_circle-24px.svg"
+        }
+        this.storageService.getOtherNameFiles(this.user._id).subscribe(
+          data => {
+            this.nameService = data,
+            this.nameSongs = this.nameService.song
+          }
+        );
+      }
+    );
+  }
+
+  recibeSong(formData){
+    this.storageService.uploadSong(formData).subscribe(res => {
+      this.storageService.getNameFiles().subscribe(
+        data => {
+          this.nameService = data,
+          this.nameSongs = this.nameService.song,
+          this.playlistService.setPlaylist(this.nameSongs)
+        }
+      );
+      this.closePopup();
+    });
   }
 }

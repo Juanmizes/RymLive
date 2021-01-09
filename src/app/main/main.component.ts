@@ -13,6 +13,7 @@ import {StorageService} from "../services/storage.service";
 import {Router} from "@angular/router";
 import {Session} from "../shared/session";
 import { Res, ResSong } from '../shared/res';
+import { PlaylistService } from '../services/playlist.service';
 
 @Component({
   selector: 'app-main',
@@ -27,6 +28,7 @@ export class MainComponent implements OnInit {
 
   constructor(
     private storageService: StorageService,
+    private playlistService: PlaylistService
   ) { }
 
   ngOnInit(): void {
@@ -38,9 +40,13 @@ export class MainComponent implements OnInit {
         this.resSong = <ResSong>data
         console.log(this.resSong) 
         this.songsMostViewed = this.resSong.song
-        console.log(this.songsMostViewed)
+        this.updatePlaylist();
       }
     );
+  }
+
+  updatePlaylist() {
+    this.playlistService.setPlaylist(this.songsMostViewed);
   }
 
 }

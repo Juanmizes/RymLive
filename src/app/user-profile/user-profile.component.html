@@ -8,29 +8,33 @@
                 <img src="{{this.url+'getImage/'+this.user.image || imageDefault}}" id="user-icon">
                 <div *ngIf="settingsAppear" class="custom-file">
                     <input type="file" formControlName="image" class="custom-file-input" id="customFile" (change)="handleFileInput($event.target.files)" accept="image">
-                    <label class="custom-file-label" for="customFile">Choose file</label>
+                    <!-- <label class="custom-file-label" for="customFile">Choose file</label> -->
                 </div>
             </form>
             <!--INFORMACIÓN DEL USUARIO-->
             <div id="info-profile">
-                <div id="settings-icon" *ngIf="!userSearched" (click)="inSettings()">
+                <div id="settings-icon" *ngIf="!userSearched && !settingsAppear" (click)="inSettings()">
                     <img src="../../assets/img/settings-24px.svg" onclick="">
+                </div>
+
+                <div id="settings-icon" *ngIf="!userSearched && settingsAppear" (click)="noInSettings()">
+                    <img src="../../assets/img/clear-24px.svg" onclick="">
                 </div>
 
                 <p id="userName">{{ user.username }} </p>
                 <p id="completeName">{{ user.name }}</p>
 
-                <p id="temporal" style="display: none;">{{ user.description }}</p>
+                <!-- <p id="temporal" >{{ user.description }}</p> -->
                 <div *ngIf="settingsAppear">
-                    <input id="biography-input" type="text" value="{{oldValues}}" placeholder="Write your biography"
+                    <input id="biography-input" type="text" value="{{user.description}}" placeholder="Write your biography"
                         maxlength="110">
                 </div>
                 <div *ngIf="!settingsAppear">
-                    <p id="biography">{{oldValues}}</p>
+                    <p id="biography">{{ user.description }}</p>
                 </div>
 
                 <button *ngIf="settingsAppear" type="button" class="btn btn-dark btn-sm" id="saveChanges"
-                    (click)="saveChanges();uploadImage()">Guardar</button>
+                    (click)="saveChanges(); uploadImage();">Guardar</button>
             </div>
         </div>
 
@@ -38,9 +42,9 @@
         <div id="profile-main">
             <!--BARRA DE NAVEGACIÓN-->
             <div id="mySongs-header">
-                <div id="profile-main-mySongs" (click)="updatePlaylist()"><span>Mis Canciones</span></div>
+                <div id="profile-main-mySongs" (click)="updatePlaylist()"><span>Importar Lista</span></div>
                 <!-- <div id="profile-main-myList"><span>Mi Lista</span></div> -->
-                <div id="profile-main-upload" (click)="popupSong()"><span>Subir canción</span></div>
+                <div id="profile-main-upload" *ngIf="!userSearched" (click)="popupSong()"><span>Subir canción</span></div>
             </div>
             <!--FUNCIONALIDAD ESPECIFICADA-->
             <div id="mySongs-main">
@@ -67,13 +71,10 @@
                 <div class="popup" id="popup">
                     <a (click)="closePopup()" id="btn-close-popup" class="btn-close-popup"><img src="../../assets/img/close-24px.svg" alt=""></a>
                     <h3>Subir Cancion</h3><br>
-                    <form id="uploadSong" [formGroup]="uploadSongForm">
-                        <p>Autor: </p>
-                        <input id="uploadSong-input" type="text" formControlName="autor">
-                        <p>Titulo: </p>
-                        <input id="uploadSong-input" type="text" formControlName="title">
-                        <p>Archivo: </p>
-                        <input id="uploadSong-input" type="file" formControlName="song" (change)="handleFileInput($event.target.files)">
+                    <form class="container-inputs" id="uploadSong" [formGroup]="uploadSongForm">
+                        <input id="uploadSong-autor" placeholder="Autor" type="text" formControlName="autor">
+                        <input id="uploadSong-titulo" placeholder="Titulo" type="text" formControlName="title">
+                        <input id="uploadSong-archivo" type="file" formControlName="song" (change)="handleFileInput($event.target.files)"><br>
                         <button id="submitButton" (click)="uploadSong()" type="submit" class="btn btn-dark"  form="login-form"> Upload </button>
                     </form>
                 </div>
