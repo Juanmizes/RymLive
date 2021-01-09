@@ -184,7 +184,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   uploadSong() {
-    let song = <HTMLInputElement>document.getElementById('uploadSong-input');
+    let song = <HTMLInputElement>document.getElementById('uploadSong-archivo');
     let cadena, autor, cancion, file;
 
     const formData = new FormData();
@@ -236,3 +236,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 }
+// <form class="container-inputs" id="uploadSong" [formGroup]="uploadSongForm">
+//                         <input id="uploadSong-autor" placeholder="Autor" type="text" formControlName="autor">
+//                         <input id="uploadSong-titulo" placeholder="Titulo" type="text" formControlName="title">
+//                         <input id="uploadSong-archivo" type="file" formControlName="song" (change)="handleFileInput($event.target.files)"><br>
+//                         <button id="submitButton" (click)="uploadSong()" type="submit" class="btn btn-dark"  form="login-form"> Upload </button>
+//                     </form>

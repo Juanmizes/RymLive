@@ -353,7 +353,7 @@ class UserProfileComponent {
         this.fileToUpload = files.item(0);
     }
     uploadSong() {
-        let song = document.getElementById('uploadSong-input');
+        let song = document.getElementById('uploadSong-archivo');
         let cadena, autor, cancion, file;
         const formData = new FormData();
         formData.append('song', this.fileToUpload);
