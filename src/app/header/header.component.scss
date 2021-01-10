@@ -103,6 +103,11 @@
     opacity: 0;
 }
 
+#loginh3{
+    position: relative;
+    top: -20px;
+}
+
 .popup div .container-inputs {
     opacity: 0;
 }
@@ -182,7 +187,13 @@
 #register{
     float: left;
     margin-top: 10px;
+    text-decoration: none;
+    color: #22262a;
     cursor: pointer;
+}
+
+#navbarDropdown {
+    text-decoration: none;
 }
 
 #browser{

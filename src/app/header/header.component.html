@@ -12,7 +12,7 @@
           <input #buscador class="form-control me-2 bg-light" id="searchBar"(keyup)="searchUsers(buscador.value)" type="search" placeholder="Search" aria-label="Search" matInput [formControl]="searchControl"  [matAutocomplete]="auto">
           <mat-autocomplete #auto="matAutocomplete">
             <div *ngFor="let option of filteredOptions | async">
-              <a [routerLink]="'profile/'+option"  >
+              <a id="navbarDropdown" [routerLink]="'profile/'+option"  >
                 <mat-option  [value]="option">
                   {{option}}
                 </mat-option>
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <h3 *ngIf="!register">Login</h3>
+      <h3 *ngIf="!register" id="loginh3">Login</h3>
 
       <div *ngIf="!register" role="form" id="login-form" #lForm="ngForm" [formGroup]="loginForm" (ngSubmit)="submitLogin()" novalidate>
         <div class="container-inputs">      
