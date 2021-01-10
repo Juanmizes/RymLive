@@ -27,8 +27,7 @@
 
                 <!-- <p id="temporal" >{{ user.description }}</p> -->
                 <div *ngIf="settingsAppear">
-                    <input id="biography-input" type="text" value="{{user.description}}" placeholder="Write your biography"
-                        maxlength="110">
+                    <input id="biography-input" type="text" value="{{user.description}}" placeholder="Escribe una descripción para tu perfil" maxlength="110">
                 </div>
                 <div *ngIf="!settingsAppear">
                     <p id="biography">{{ user.description }}</p>
@@ -53,9 +52,9 @@
                     <thead id="tableHeader">     
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Song name</th>
+                            <th scope="col">Título</th>
                             <th scope="col">Autor</th>
-                            <th scope="col">Views</th>
+                            <th scope="col">Reproducciones</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -76,7 +75,7 @@
                         <input id="uploadSong-autor" placeholder="Autor" type="text" formControlName="autor">
                         <input id="uploadSong-titulo" placeholder="Titulo" type="text" formControlName="title">
                         <input id="uploadSong-archivo" type="file" formControlName="song" (change)="handleFileInput($event.target.files)"><br>
-                        <button id="submitButton" (click)="uploadSong()" type="submit" class="btn btn-dark"  form="login-form"> Upload </button>
+                        <button id="submitButton" (click)="uploadSong()" type="submit" class="btn btn-dark"  form="login-form"> Subir </button>
                     </form>
                 </div>
             </div>

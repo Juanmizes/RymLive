@@ -9,7 +9,7 @@
     <nav class="ml-auto navbar-nav" *ngIf="logged">
       <div class="container-fluid">
         <form class="d-flex">
-          <input #buscador class="form-control me-2 bg-light" id="searchBar"(keyup)="searchUsers(buscador.value)" type="search" placeholder="Search" aria-label="Search" matInput [formControl]="searchControl"  [matAutocomplete]="auto">
+          <input #buscador class="form-control me-2 bg-light" id="searchBar"(keyup)="searchUsers(buscador.value)" type="search" placeholder="Buscar" aria-label="Search" matInput [formControl]="searchControl"  [matAutocomplete]="auto">
           <mat-autocomplete #auto="matAutocomplete">
             <div *ngFor="let option of filteredOptions | async">
               <a id="navbarDropdown" [routerLink]="'profile/'+option"  >
@@ -24,14 +24,14 @@
     </nav>
     <div class="navbar-nav ml-auto">
       <ul class="navbar-nav">
-        <a *ngIf="!logged" class="navbar-brand btn-open-popup" (click)="popUp()">Login</a>
+        <a *ngIf="!logged" class="navbar-brand btn-open-popup" (click)="popUp()">Iniciar Sesión</a>
         <li *ngIf="logged" class="nav-item dropdown dropstart">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img class="svgImage" src="../../assets/img/person-24px.svg" alt="">
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" (click)="profile()">Profile</a></li>
-            <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+            <li><a class="dropdown-item" (click)="profile()">Perfil</a></li>
+            <li><a class="dropdown-item" (click)="logout()">Desconectarse</a></li>
           </ul>
         </li>
       </ul>
@@ -43,28 +43,28 @@
 <div class="overlay" id="overlay">
   <div class="popup" id="popup" [formGroup]="loginForm">
       <a  id="btn-close-popup" class="btn-close-popup"><img src="../../assets/img/close-24px.svg" alt=""></a>
-      <h3 *ngIf="register">Sing In</h3><br>
+      <h3 *ngIf="register">Registro</h3><br>
       
       <div *ngIf="register" role="form" id="login-form" #lForm="ngForm" [formGroup]="registerForm" (ngSubmit)="submitLogin()" novalidate>
         <div class="container-inputs">
-          <input ([ngModel])="name" formControlName="name"  type="text" id="name" name="name" value="" placeholder="Name"><br>
-          <input ([ngModel])="username" formControlName="username" type="text" id="user" name="user" value="" placeholder="Username"><br>         
+          <input ([ngModel])="name" formControlName="name"  type="text" id="name" name="name" value="" placeholder="Tu Nombre"><br>
+          <input ([ngModel])="username" formControlName="username" type="text" id="user" name="user" value="" placeholder="Nombre Usuario"><br>         
           <input ([ngModel])="email" formControlName="email"  type="text" id="email" name="email" value="" placeholder="Email"><br>
-          <input ([ngModel])="password" formControlName="password"  type="password" id="password" name="password" placeholder="Password"><br>
+          <input ([ngModel])="password" formControlName="password"  type="password" id="password" name="password" placeholder="Contraseña"><br>
         </div>
       </div>
 
-      <h3 *ngIf="!register" id="loginh3">Login</h3>
+      <h3 *ngIf="!register" id="loginh3">Iniciar Sesión</h3>
 
       <div *ngIf="!register" role="form" id="login-form" #lForm="ngForm" [formGroup]="loginForm" (ngSubmit)="submitLogin()" novalidate>
         <div class="container-inputs">      
           <input ([ngModel])="email" formControlName="email"  type="text" id="email" name="email" placeholder="Email"><br>
-          <input ([ngModel])="password" formControlName="password"  type="password" id="password" name="password" placeholder="Password"><br>
+          <input ([ngModel])="password" formControlName="password"  type="password" id="password" name="password" placeholder="Contraseña"><br>
         </div>
       </div>
 
-      <a *ngIf="!register" id="register" (click)="toggleRegister()">Register</a><a *ngIf="register" id="register" (click)="toggleRegister()">Cancel Register</a>
-      <button *ngIf="!register" id="submitButton" type="submit" class="btn btn-dark" (click)="submitLogin()" form="login-form">Submit</button>
-      <button *ngIf="register" id="submitButton" type="submit"  class="btn btn-dark"(click)="submitLogin()" form="login-form" style="margin-left: -80px;"> Register</button>
+      <a *ngIf="!register" id="register" (click)="toggleRegister()">Registrarse</a><a *ngIf="register" id="register" (click)="toggleRegister()">Cancelar Registro</a>
+      <button *ngIf="!register" id="submitButton" type="submit" class="btn btn-dark" (click)="submitLogin()" form="login-form">Enviar</button>
+      <button *ngIf="register" id="submitButton" type="submit"  class="btn btn-dark"(click)="submitLogin()" form="login-form" style="margin-left: -80px;"> Registrar</button>
   </div>
 </div>
