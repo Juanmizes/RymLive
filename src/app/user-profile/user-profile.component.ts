@@ -69,7 +69,7 @@ export class UserProfileComponent implements OnInit {
         if(data['user']){
           this.userSearched = true;
           this.recibeUser(data);
-          this.imageDefault = "../../assets/img/account_circle-24px.svg";
+          this.imageDefault = "../assets/img/account_circle-24px.svg";
   
           this.settingsAppear = false;
           this.showTableHeader = false;
@@ -88,12 +88,10 @@ export class UserProfileComponent implements OnInit {
         data => {
           this.res = data;
           this.user = this.res.user;
-          if(this.user.image == null){
-            this.user.image = "../../assets/img/account_circle-24px.svg"
-          }
+          console.log(this.user.image)
         }
       );
-      this.imageDefault = "../../assets/img/account_circle-24px.svg";
+      this.imageDefault = "../assets/img/account_circle-24px.svg";
   
       this.settingsAppear = false;
       this.showTableHeader = false;
@@ -125,9 +123,6 @@ export class UserProfileComponent implements OnInit {
       data => {
         this.res = data;
         this.user = this.res.user;
-        if(this.user.image == null){
-          this.user.image = "../../assets/img/account_circle-24px.svg"
-        }
       }
     );
   }
@@ -156,9 +151,6 @@ export class UserProfileComponent implements OnInit {
       data => {
         this.res = data;
         this.user = this.res.user;
-        if(this.user.image == null){
-          this.user.image = "../../assets/img/account_circle-24px.svg"
-        }
       }
     );
   }
@@ -210,9 +202,6 @@ export class UserProfileComponent implements OnInit {
       data => {
         this.res = data;
         this.user = this.res.user;
-        if(this.user.image == null){
-          this.user.image = "../../assets/img/account_circle-24px.svg"
-        }
         this.storageService.getOtherNameFiles(this.user._id).subscribe(
           data => {
             this.nameService = data,
